@@ -79,6 +79,29 @@ If you are new to these, here are a few references you can complete prior to cla
 
 <a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/00%20-%20Pre-Requisites.md" >A full pre-requisites document is located here</a>. These instructions should be completed before the workshop starts, since you will not have time to cover these in class. <i>Remember to turn off any Virtual Machines from the Azure Portal when not taking the class so that you do incur charges (shutting down the machine in the VM itself is not sufficient)</i>.
 
+<img style="float: left; margin: 0px 15px 15px 0px;" src="https://raw.githubusercontent.com/microsoft/sqlworkshops/master/graphics/clipboardcheck.png"> <h3>AI-Assisted Development with MCP Servers</h3>
+
+This repository includes pre-configured [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers for use with **VS Code** (GitHub Copilot) and **GitHub Copilot CLI**. These servers give your AI assistant direct access to Fabric APIs, Azure resources, Microsoft Learn documentation, and more.
+
+**Configured MCP Servers:**
+
+| Server | What it does | Auth needed |
+|--------|-------------|-------------|
+| **GitHub** | Manage PRs, issues, repo operations | GitHub sign-in |
+| **Markdown Tools** | Lint, format, and generate TOCs for workshop content | None |
+| **Fabric Local** | Fabric API specs, item schemas, best-practice guidance | None |
+| **Fabric Core** | Live interaction with Fabric workspaces and items | Microsoft Entra ID |
+| **Azure** | Manage Azure subscriptions and resources | `az login` |
+| **Microsoft Learn** | Search official docs, fetch articles, find code samples | None |
+| **Fetch** | Retrieve any web page or documentation URL | None |
+
+**Quick setup:**
+
+1. Install prerequisites: [Node.js 20 LTS+](https://nodejs.org/), [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli), [GitHub CLI](https://cli.github.com/)
+2. Run `az login` and `gh auth login`
+3. Open the repo in VS Code or Copilot CLI — servers start automatically
+4. If anything isn't working, ask Copilot: *"Run the `/setup-mcp-env` skill to configure my environment"*
+
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="https://raw.githubusercontent.com/microsoft/sqlworkshops/master/graphics/pinmap.png"> <h2>Related Workshops</h2>

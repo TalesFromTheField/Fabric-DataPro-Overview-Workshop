@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "markdown-tools": {
+      "command": "npx",
+      "args": ["-y", "@rog0x/mcp-markdown-tools@latest"]
+    },
+    "fabric-local": {
+      "command": "npx",
+      "args": ["-y", "@microsoft/fabric-mcp@latest", "server", "start", "--mode", "all"]
+    },
+    "fabric-core": {
+      "type": "http",
+      "url": "https://api.fabric.microsoft.com/v1/mcp/core"
+    },
+    "azure": {
+      "command": "npx",
+      "args": ["-y", "@azure/mcp@latest", "server", "start"]
+    },
+    "microsoft-learn": {
+      "type": "http",
+      "url": "https://learn.microsoft.com/api/mcp"
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-fetch@latest"]
+    }
+  }
+}

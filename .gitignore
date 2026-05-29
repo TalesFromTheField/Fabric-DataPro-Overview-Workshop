@@ -1,0 +1,4 @@
+# Environment variables (secrets, tokens, API keys)
+.env
+.env.*
+!.env.example
