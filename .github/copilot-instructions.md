@@ -18,7 +18,7 @@ graphics/                Images referenced by the modules (PNG, GIF)
 LICENSES/                License files (CC BY 4.0 + MIT)
 .vscode/mcp.json         MCP server config for VS Code
 .github/mcp.json         MCP server config for Copilot CLI
-.github/skills/          Copilot skills (setup-mcp-env)
+.github/skills/          Copilot skills (setup-mcp-env, validate-links, check-flow)
 .github/hooks/           Session-start prereq check scripts
 .github/copilot-instructions.md   This file
 ```
@@ -145,6 +145,23 @@ accuracy, and the conventions listed above.
 
 When helping a student, focus on clear explanations, step-by-step guidance,
 and references to official Microsoft Learn documentation.
+
+## Content Quality Skills
+
+This repository includes skills for maintaining content quality:
+
+- **`/validate-links`** — Scan all content for broken, malformed, or outdated
+  links. Researches correct replacements on Microsoft Learn, verifies them, and
+  applies fixes. Run this periodically since Microsoft frequently reorganises
+  their documentation URLs.
+
+- **`/check-flow`** — Audit module structure against the content methodology
+  documented above. Checks section numbering, heading format consistency,
+  required sections, TOC alignment, and icon usage. Run this after adding or
+  reorganising content.
+
+If a user asks to "check links", "audit content", "validate the structure", or
+reports broken links, suggest the appropriate skill.
 
 ## MCP Server Setup
 
