@@ -46,6 +46,14 @@
     "fetch": {
       "command": "npx",
       "args": ["-y", "@anthropic-ai/mcp-server-fetch@latest"]
+    },
+
+    // ── Browser automation ───────────────────────────────────────
+    // Playwright: interact with web pages via accessibility snapshots
+    // Useful for visual link verification, screenshot capture, and page validation
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
     }
   }
 }

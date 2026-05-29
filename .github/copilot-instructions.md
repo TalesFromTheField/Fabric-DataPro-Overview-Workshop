@@ -18,7 +18,8 @@ graphics/                Images referenced by the modules (PNG, GIF)
 LICENSES/                License files (CC BY 4.0 + MIT)
 .vscode/mcp.json         MCP server config for VS Code
 .github/mcp.json         MCP server config for Copilot CLI
-.github/skills/          Copilot skills (setup-mcp-env, validate-links, check-flow, check-spelling, check-grammar)
+.github/skills/          Copilot skills (setup-mcp-env, validate-links, check-flow, check-spelling, check-grammar, generate-module, add-activity, freshness-check, update-screenshots)
+.github/agents/          Copilot agents (copy-editor, student-reviewer)
 .github/hooks/           Session-start prereq check scripts
 .github/copilot-instructions.md   This file
 ```
@@ -133,7 +134,7 @@ Two types of users work with this repo:
 
 1. **Authors** — workshop maintainers who write and edit module content, manage
    the repo, and update activities. They use the GitHub, Markdown Tools, Fabric
-   Local, Azure, and Microsoft Learn MCP servers.
+   Local, Azure, Microsoft Learn, and Playwright MCP servers.
 
 2. **Students** — data professionals taking the workshop. They follow activities,
    ask questions about Fabric concepts, and build solutions in their own Fabric
@@ -171,6 +172,41 @@ This repository includes skills for maintaining content quality:
 
 **Recommended quality workflow**: `/check-spelling` → `/check-grammar` →
 `/check-flow` → `/validate-links`
+
+### Authoring Skills
+
+- **`/generate-module`** — Scaffold a new workshop module with the correct
+  header, overview, TOC, section stubs, "For Further Study", and closing.
+  Accepts module number, title, and section list. Updates README and
+  previous-module navigation links automatically.
+
+- **`/add-activity`** — Add a properly formatted in-class or self-guided
+  activity to an existing section, with correct icons, Steps block, and
+  optional video embed. Ensures HTML matches existing activity patterns.
+
+### Maintenance Skills
+
+- **`/freshness-check`** — Compare module content against current Microsoft
+  Learn documentation to flag outdated terminology (e.g., "Synapse Real-Time
+  Analytics" → "Real-Time Intelligence"), features that left preview, renamed
+  services, and deprecated capabilities. Run quarterly or before delivery.
+
+- **`/update-screenshots`** — Audit all image references: check for broken
+  external image URLs, orphaned local images, missing files, accessibility
+  issues (alt text), and style compliance (height attributes).
+
+## Agents
+
+This repository includes Copilot agents for comprehensive workflows:
+
+- **`@copy-editor`** — Orchestrates all four quality skills (spelling →
+  grammar → flow → links) in sequence and produces a unified, prioritized
+  editorial report. Can auto-fix safe issues and flag risky changes for
+  human review.
+
+- **`@student-reviewer`** — Reviews content from a first-time learner's
+  perspective. Flags assumed knowledge, undefined acronyms, missing
+  prerequisites, unclear activity steps, and inaccessible resources.
 
 If a user asks to "check links", "audit content", "validate the structure", or
 reports broken links, suggest the appropriate skill.
