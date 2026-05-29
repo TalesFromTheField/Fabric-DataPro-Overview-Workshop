@@ -18,7 +18,7 @@ graphics/                Images referenced by the modules (PNG, GIF)
 LICENSES/                License files (CC BY 4.0 + MIT)
 .vscode/mcp.json         MCP server config for VS Code
 .github/mcp.json         MCP server config for Copilot CLI
-.github/skills/          Copilot skills (setup-mcp-env, validate-links, check-flow)
+.github/skills/          Copilot skills (setup-mcp-env, validate-links, check-flow, check-spelling, check-grammar)
 .github/hooks/           Session-start prereq check scripts
 .github/copilot-instructions.md   This file
 ```
@@ -159,6 +159,18 @@ This repository includes skills for maintaining content quality:
   documented above. Checks section numbering, heading format consistency,
   required sections, TOC alignment, and icon usage. Run this after adding or
   reorganising content.
+
+- **`/check-spelling`** — Scan all content for spelling errors, typos, and
+  inconsistent product terminology (e.g., "CoPilot" vs "Copilot", "Mirroing"
+  vs "Mirroring"). Understands Microsoft Fabric technical vocabulary and won't
+  flag legitimate product names or acronyms.
+
+- **`/check-grammar`** — Review content for grammar errors, awkward phrasing,
+  passive voice, style inconsistencies, and readability issues. Distinguishes
+  between clear errors and stylistic suggestions. Run after `/check-spelling`.
+
+**Recommended quality workflow**: `/check-spelling` → `/check-grammar` →
+`/check-flow` → `/validate-links`
 
 If a user asks to "check links", "audit content", "validate the structure", or
 reports broken links, suggest the appropriate skill.
