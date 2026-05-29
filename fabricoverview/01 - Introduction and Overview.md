@@ -353,11 +353,11 @@ Capacity Units offer more granularity than the previously used v-cores and let u
 For more information about the Microsoft Fabric Capacity app see the following references:
 
 -  [Capacity metrics in Microsoft Fabric Announcement](https://blog.fabric.microsoft.com/en-us/blog/capacity-metrics-in-microsoft-fabric)
--  [Understand the metrics app OneLake page](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-onelake-page)
+-  [Understand the metrics app storage page](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-storage-page)
 -  [Fabric Capacities – Everything you need to know about what’s new and what’s coming](https://blog.fabric.microsoft.com/en-us/blog/fabric-capacities-everything-you-need-to-know-about-whats-new-and-whats-coming?ft=All)
 -  [What is the utilization and metrics app?](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app)
 -  [Install the Microsoft Fabric capacity metrics app](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-install?tabs=1st)
--  [Understand the metrics app overview page](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-overview-page)
+-  [Understand the metrics app overview page](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app)
 -  [Understand the metrics app timepoint page](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-timepoint-page)
 
 You can also right-click this link to open it in another tab and review this video that introduces you to these concepts:

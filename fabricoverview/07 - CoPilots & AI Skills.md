@@ -101,7 +101,7 @@ For more information on the features and how to use Copilot for Power BI, see <a
 ### Copilot for Real-Time Intelligence
 Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists.
 
-For more information, see <a href="https://learn.microsoft.com/en-us/fabric/get-started/copilot-real-time-intelligence">Copilot for Real-Time Intelligence overview</a>.
+For more information, see <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/copilot-real-time-intelligence">Copilot for Real-Time Intelligence overview</a>.
 
 <p><a href="https://www.youtube.com/watch?v=WC-mxioPp_8"><img src="https://img.youtube.com/vi/WC-mxioPp_8/0.jpg" height = 200></a> 
 

@@ -196,7 +196,7 @@ You can also right-click the following video link to open it in another tab and 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 <ul>
   <li><a href="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/?context=/fabric/context/context-rta&pivots=fabric" >Kusto Query Overview</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/realtime-intelligence-compare" > Comparing Real-Time Intelligence and comparable Azure solutions</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/real-time-intelligence-compare" > Comparing Real-Time Intelligence and comparable Azure solutions</a></li>
   <li><a href="https://learn.microsoft.com/en-us/fabric/release-plan/">Microsoft Fabric release plan documentation</a></li>
   <li><a href="https://radacad.com/fabric-real-time-analytics">Microsoft MVP Reza Rad walks through a demo he built, including a custom streaming application, to demonstrate using Real-time Intelligence.</a></li>
   <li><a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/overview" >What is Real-Time Intelligence in Microsoft Fabric</a></li>
