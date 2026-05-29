@@ -27,6 +27,10 @@
     "playwright": {
       "command": "npx",
       "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "sharp": {
+      "command": "npx",
+      "args": ["-y", "sharp-mcp"]
     }
   }
 }

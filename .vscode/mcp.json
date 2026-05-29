@@ -54,6 +54,13 @@
     "playwright": {
       "command": "npx",
       "args": ["-y", "@playwright/mcp@latest"]
+    },
+
+    // Sharp: image processing — dimensions, compression, cropping, format conversion
+    // Useful for auditing and optimizing workshop images in graphics/
+    "sharp": {
+      "command": "npx",
+      "args": ["-y", "sharp-mcp"]
     }
   }
 }
