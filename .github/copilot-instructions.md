@@ -23,31 +23,109 @@ LICENSES/                License files (CC BY 4.0 + MIT)
 .github/copilot-instructions.md   This file
 ```
 
-## Content Conventions
+## Content Methodology
 
-Workshop modules follow a consistent structure. Preserve these patterns when
-editing or creating content:
+### Module Structure
 
-- **Header**: Each module starts with the Microsoft logo
-  (`![](../graphics/microsoftlogo.png)`), a title, and the workshop subtitle.
-- **Sections**: Use HTML `<h2>` tags with anchor IDs and an icon image
-  (e.g., `<img ... src="../graphics/pencil2.png">`), not plain Markdown `##`.
-- **Navigation**: Each module links to the Pre-Requisites page and ends with
-  a "Next Steps" link to the following module.
-- **Table of contents**: Use HTML `<dl>`/`<dt>` definition lists with anchor
-  links at the top of each module.
-- **Activities**: Prefixed with `<b>Activity:</b>` and the `point1.png` icon.
-  Steps use `checkmark.png`.
-- **Separators**: Use `<p style="border-bottom: 1px solid lightgrey;"></p>`
-  between sections.
-- **Images**: Referenced from `../graphics/` using relative paths. External
-  images from GitHub use full URLs.
-- **Numbering**: Modules are numbered `00` through `09`. Sections within a
-  module use `X.1`, `X.2`, etc.
-- **Links**: External references point to Microsoft Learn (`learn.microsoft.com`)
-  whenever possible.
-- **Inline HTML**: The modules mix Markdown with inline HTML (bold, italic,
-  tables, images). Maintain this hybrid style — do not convert to pure Markdown.
+Each module file (`XX - Title.md`) follows this top-to-bottom structure:
+
+1. **Header block** (required)
+   - Microsoft logo: `![](../graphics/microsoftlogo.png)`
+   - Workshop title: `# Workshop: Microsoft Fabric Overview for the Data Professional`
+   - Workshop subtitle: `#### <i>A Microsoft Workshop</i>`
+   - Grey separator line
+
+2. **Module overview** (required)
+   - Module title using `textbubble.png` icon with `<h2>` tag
+   - Brief description of what the module covers
+   - Link to the Pre-Requisites page (`00 - Pre-Requisites.md`)
+   - Table of contents as an HTML `<dl>`/`<dt>` definition list with anchor
+     links to each section (e.g., `<dt><a href="#3.1">3.1 - Section Title</a></dt>`)
+   - Grey separator line
+
+3. **Sections** (one or more, the body of the module)
+   - Each section follows the pattern described below under "Section Structure"
+   - Sections are separated by grey separator lines
+
+4. **"For Further Study"** (required)
+   - Owl icon: `<img ... src="../graphics/owl.png">`
+   - Heading: `<b>For Further Study</b>`
+   - Unordered list (`<ul>`/`<li>`) of links to Microsoft Learn documentation
+     and other references for deeper exploration of the module's topics
+
+5. **Module closing** (required)
+   - Congratulations message: `Congratulations! You have completed this Module.`
+   - Conditional next-module link: `If you understand the concepts here and
+     have completed all of the Activities, you can [proceed to the next Module](link)`
+   - The final module (08) uses a workshop-completion message instead
+
+### Section Structure
+
+Each section within a module follows this pattern:
+
+1. **Section heading**
+   - Uses `<h2>` with an anchor ID and the `pencil2.png` icon
+   - Format: `<h2 id="X.Y"><img ... src="../graphics/pencil2.png">X.Y Section Title</h2>`
+   - Numbering: `{module}.{section}` (e.g., `3.1`, `3.2`, `4.1`)
+
+2. **Content**
+   - Explanatory text about the topic (concepts, architecture, features)
+   - May include sub-sections using `<h3>` tags
+   - Images from Microsoft Learn docs or GitHub assets with `height` attributes
+   - Bullet lists for feature descriptions or comparisons
+   - Code blocks (T-SQL, PySpark, etc.) where relevant
+   - Links to Microsoft Learn for deeper reading inline with the text
+
+3. **Activity** (zero or more per section)
+   There are two types of activities:
+
+   **In-class Activity** — completed during the workshop:
+   - Icon: `<img ... src="../graphics/point1.png">`
+   - Heading: `<b>Activity: Title</b>`
+   - Brief description of what the student will do
+   - Steps marker: `<img ... src="../graphics/checkmark.png"><b>Steps</b>`
+   - Step-by-step instructions, typically linking to a Microsoft Learn tutorial
+   - Optional: embedded YouTube video thumbnail as a clickable link
+
+   **Self-Guided Activity** — completed after the workshop:
+   - Same format as above but heading uses `<b>Self-Guided Activity: Title</b>`
+   - These are for independent study and exploration
+
+4. **Section separator**
+   - Grey separator: `<p style="border-bottom: 1px solid lightgrey;"></p>`
+
+### HTML/Markdown Conventions
+
+- **Hybrid style**: Modules mix Markdown with inline HTML. Maintain this — do
+  not convert to pure Markdown.
+- **Section headers**: Use HTML `<h2>` tags with anchor IDs and icon images,
+  not plain Markdown `##`.
+- **Images**: Local images use relative paths (`../graphics/`). External images
+  from Microsoft Learn or GitHub use full URLs. Always include a `height`
+  attribute for sizing.
+- **Videos**: Embedded as clickable YouTube thumbnail images:
+  `<a href="https://www.youtube.com/watch?v=ID"><img src="https://img.youtube.com/vi/ID/0.jpg" height=200></a>`
+- **Separators**: `<p style="border-bottom: 1px solid lightgrey;"></p>`
+- **Module numbering**: Files are numbered `00` through `09`. Sections use
+  `X.1`, `X.2`, etc.
+- **Links**: Prefer Microsoft Learn (`learn.microsoft.com`) for all external
+  references.
+
+### Icon Reference
+
+| Icon file | Usage |
+|-----------|-------|
+| `microsoftlogo.png` | Top of every module (header) |
+| `textbubble.png` | Module title/overview heading |
+| `pencil2.png` | Section headings |
+| `point1.png` | Activity headings (in-class and self-guided) |
+| `checkmark.png` | Steps marker within activities |
+| `owl.png` | "For Further Study" section |
+| `listcheck.png` | "Technologies" section (README) |
+| `bulletlist.png` | "Setup" section (README) |
+| `pinmap.png` | "Related Workshops" section (README) |
+| `bookpencil.png` | "Workshop Modules" section (README) |
+| `geopin.png` | "Next Steps" section (README) |
 
 ## Personas
 
