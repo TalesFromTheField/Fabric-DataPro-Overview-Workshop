@@ -77,7 +77,7 @@ If you are new to these, here are a few references you can complete prior to cla
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="https://raw.githubusercontent.com/microsoft/sqlworkshops/master/graphics/bulletlist.png"> <h3>Setup</h3>
 
-<a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/00%20-%20Pre-Requisites.md" >A full pre-requisites document is located here</a>. These instructions should be completed before the workshop starts, since you will not have time to cover these in class. <i>Remember to turn off any Virtual Machines from the Azure Portal when not taking the class so that you do incur charges (shutting down the machine in the VM itself is not sufficient)</i>.
+<a href="fabricoverview/00%20-%20Pre-Requisites.md" >A full pre-requisites document is located here</a>. These instructions should be completed before the workshop starts, since you will not have time to cover these in class. <i>Remember to turn off any Virtual Machines from the Azure Portal when not taking the class so that you do incur charges (shutting down the machine in the VM itself is not sufficient)</i>.
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="https://raw.githubusercontent.com/microsoft/sqlworkshops/master/graphics/clipboardcheck.png"> <h3>AI-Assisted Development with MCP Servers</h3>
 
@@ -118,22 +118,22 @@ This is a modular workshop, and in each section, you'll learn concepts, technolo
 
   <tr><td style="background-color: AliceBlue; color: black;"><b>Module</b></td><td style="background-color: AliceBlue; color: black;"><b>Topics</b></td></tr>
 
-  <tr><td><a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/01%20-%20Introduction%20and%20Overview.md" >01 - Introduction and Overview </a></td><td> Introduction of the Workshop, Basic Concepts, Services, Roles, Benchmarks. Verification of prerequisites.</td></tr>
+  <tr><td><a href="fabricoverview/01%20-%20Introduction%20and%20Overview.md" >01 - Introduction and Overview </a></td><td> Introduction of the Workshop, Basic Concepts, Services, Roles, Benchmarks. Verification of prerequisites.</td></tr>
   
-  <tr><td style="background-color: AliceBlue; color: black;"><a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/02%20-%20Desktop%20Tools%20to%20use%20with%20Microsoft%20Fabric.md" >02 - Desktop Tools to use with Microsoft Fabric</a> </td><td td style="background-color: AliceBlue; color: black;"> Understanding what desktop tools interface with Microsoft Fabric and how to use them.</td></tr>
+  <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/02%20-%20Desktop%20Tools%20to%20use%20with%20Microsoft%20Fabric.md" >02 - Desktop Tools to use with Microsoft Fabric</a> </td><td td style="background-color: AliceBlue; color: black;"> Understanding what desktop tools interface with Microsoft Fabric and how to use them.</td></tr>
   
 
-   <tr><td><a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/03%20-%20Data%20Warehouse%20and%20Data%20Integration.md" >03 - Data Warehouse and Data Integration </a></td><td>  Understanding and creating Workspaces, creating a Data Warehouse, connecting and managing, ingesting data with pipelines and data flows</td></tr>
+   <tr><td><a href="fabricoverview/03%20-%20Data%20Warehouse%20and%20Data%20Integration.md" >03 - Data Warehouse and Data Integration </a></td><td>  Understanding and creating Workspaces, creating a Data Warehouse, connecting and managing, ingesting data with pipelines and data flows</td></tr>
 
-  <tr><td><a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/04%20-%20The%20Lakehouse.md" >04 - The Lakehouse </a></td><td>  Creating a Lakehouse, Linking data, using Spark to create new data sets in the Lakehouse</td></tr>
+  <tr><td><a href="fabricoverview/04%20-%20The%20Lakehouse.md" >04 - The Lakehouse </a></td><td>  Creating a Lakehouse, Linking data, using Spark to create new data sets in the Lakehouse</td></tr>
 
-  <tr><td><a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/05%20-%20Introduction%20to%20Mirroring%20in%20Fabric.md" >05 - Database Mirroring </a></td><td> Introduction to Mirroring in Microsoft Fabric and how to utilize Mirroring as a Data Integration tool</td></tr>
+  <tr><td><a href="fabricoverview/05%20-%20Introduction%20to%20Mirroring%20in%20Fabric.md" >05 - Database Mirroring </a></td><td> Introduction to Mirroring in Microsoft Fabric and how to utilize Mirroring as a Data Integration tool</td></tr>
    
-  <tr><td><a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/06%20-%20Real-Time%20Intelligence.md" >06 - Real-Time Analytics with Microsoft Fabric </a></td><td> Azure Data Explorer, Fabric and Streaming / Event Data, the Kusto Query Language (KQL)</td></tr>
+  <tr><td><a href="fabricoverview/06%20-%20Real-Time%20Intelligence.md" >06 - Real-Time Analytics with Microsoft Fabric </a></td><td> Azure Data Explorer, Fabric and Streaming / Event Data, the Kusto Query Language (KQL)</td></tr>
   
-  <tr><td style="background-color: AliceBlue; color: black;"><a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/07%20-%20CoPilots%20%26%20AI%20Skills.md" >07 - Copilots & Data Agents</a> </td><td td style="background-color: AliceBlue; color: black;"> Microsoft Fabric integrates AI and LLM capabilities to assist you in creating your data workloads.  Additionally you can use AI Skills to create RAG patterns off of your data to produce additional insights.</td></tr>
+  <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/07%20-%20CoPilots%20%26%20AI%20Skills.md" >07 - Copilots & Data Agents</a> </td><td td style="background-color: AliceBlue; color: black;"> Microsoft Fabric integrates AI and LLM capabilities to assist you in creating your data workloads.  Additionally you can use AI Skills to create RAG patterns off of your data to produce additional insights.</td></tr>
 
-  <tr><td style="background-color: AliceBlue; color: black;"><a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/08%20-%20OLTP%20Databases%20in%20Fabric.md" >08 - OLTP Databases In Microsoft Fabric</a> </td><td td style="background-color: AliceBlue; color: black;"> Microsoft Fabric integrates SQL database and Cosmos DB into your Fabric environment to provide a full end to end development OLTP to Analytics driven scenarios.</td></tr>
+  <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/08%20-%20OLTP%20Databases%20in%20Fabric.md" >08 - OLTP Databases In Microsoft Fabric</a> </td><td td style="background-color: AliceBlue; color: black;"> Microsoft Fabric integrates SQL database and Cosmos DB into your Fabric environment to provide a full end to end development OLTP to Analytics driven scenarios.</td></tr>
 
 
 
@@ -143,7 +143,7 @@ This is a modular workshop, and in each section, you'll learn concepts, technolo
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="https://raw.githubusercontent.com/microsoft/sqlworkshops/master/graphics/geopin.png"><b>Next Steps</b></p>
 
-Next, Continue to <a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/00%20-%20Pre-Requisites.md" ><i> Pre-Requisites</i></a>
+Next, Continue to <a href="fabricoverview/00%20-%20Pre-Requisites.md" ><i> Pre-Requisites</i></a>
 
 # Contributing
 

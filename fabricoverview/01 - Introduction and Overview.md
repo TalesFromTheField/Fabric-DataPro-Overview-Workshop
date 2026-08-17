@@ -12,7 +12,7 @@ In this workshop you'll cover using The Microsoft Fabric Platform to implement a
 
 In each module you'll get more references, which you should follow up on to learn more. Also watch for links within the text - click on each one to explore that topic.
 
-(<a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/00%20-%20Pre-Requisites.md" >Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items mentioned there to be completed before you can proceed with the workshop.)
+(<a href="00%20-%20Pre-Requisites.md" >Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items mentioned there to be completed before you can proceed with the workshop.)
 
 You'll cover these topics in this Module:
 <dl>
@@ -393,7 +393,7 @@ Workspaces reside within capacities and are used as containers for Microsoft Fab
 
 <br>
 
-In order to complete any exercises required in this class you should have followed the [Pre-Requisites](https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/00%20-%20Pre-Requisites.md) outlined in the README file at the start of this Workshop. 
+In order to complete any exercises required in this class you should have followed the [Pre-Requisites](00%20-%20Pre-Requisites.md) outlined in the README file at the start of this Workshop. 
 
 > Before conintuing with this Workshop, you must validate that you have created a Workspace from the previous module. If not, stop the Workshop now and execute the following steps.
 
@@ -414,7 +414,7 @@ If you have a Power BI License, a Microsoft Fabric Capacity, but have not yet cr
 - Click Show all
 - Validate that you have a Microsoft Fabric Enabled Workspace
 
-If you cannot complete these steps, open and follow the  [Pre-Requisites that you find here.](https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/00%20-%20Pre-Requisites.md)
+If you cannot complete these steps, open and follow the  [Pre-Requisites that you find here.](00%20-%20Pre-Requisites.md)
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 
@@ -430,4 +430,4 @@ If you cannot complete these steps, open and follow the  [Pre-Requisites that yo
 
 
 
-Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/02%20-%20Desktop%20Tools%20to%20use%20with%20Microsoft%20Fabric.md).
+Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](02%20-%20Desktop%20Tools%20to%20use%20with%20Microsoft%20Fabric.md).

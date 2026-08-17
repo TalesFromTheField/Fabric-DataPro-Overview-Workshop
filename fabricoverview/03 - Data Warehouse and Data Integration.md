@@ -12,7 +12,7 @@ In this workshop we will cover using Microsoft Fabric to implement a complete An
 
 In each module you'll get more references, which you should follow up on to learn more. Also watch for links within the text - click on each one to explore that topic.
 
-(<a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/00%20-%20Pre-Requisites.md" >Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.)
+(<a href="00%20-%20Pre-Requisites.md" >Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.)
 
 You'll cover these topics in this module:
 
@@ -41,7 +41,7 @@ Data warehouse customers benefit from:
 - Reduced time to insights with an easily consumable, always connected semantic model that is integrated with Power BI in Direct Lake mode. Reports always have the most recent data for analysis and reporting.
 - Built for any skill level, from the citizen developer to DBA or data engineer.
 
-<p><img src="https://github.com/sqlballs/MicrosoftFabricPre-Con/assets/45181391/761b96fa-4e30-43d1-8ffe-d34650599be2" height = 400>
+<p><img src="../graphics/fabric-data-warehouse-overview.png" height = 400>
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Creating your first data warehouse</b></p>
 
@@ -226,11 +226,11 @@ EXEC [dbo].[populate_aggregate_sale_by_city];
 
 Microsoft Fabric is designed with user-friendliness in mind, catering to individuals who may not be proficient in writing SQL queries. You have the option to utilize the Visual Query Builder, a graphical interface that simplifies the process of building queries. By merely dragging and dropping fields, the query builder will seamlessly generate the necessary SQL query in the background. This feature makes data retrieval and manipulation more accessible for a broader range of users.
 
-<p><img src="https://github.com/sqlballs/MicrosoftFabricPre-Con/assets/45181391/d39a994d-815b-44c3-bef5-4a24d5ab0ab6" height = 60>
+<p><img src="../graphics/visual-query-builder-menu.png" height = 60>
 
 <br> 
 
-<p><img src="https://github.com/sqlballs/MicrosoftFabricPre-Con/assets/45181391/5b87b205-64c8-4293-b063-9bbcb49ecc24" height = 400>
+<p><img src="../graphics/visual-query-builder.png" height = 400>
 
 <br> 
 
@@ -266,4 +266,4 @@ In this activity, you will follow the data warehouse tutorial to create and load
  <li><a href="https://learn.microsoft.com/en-us/fabric/data-warehouse/monitor-using-dmv">Data Warehouse Monitoring using DMVs</a></li>
 </ul>
 
-Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/04%20-%20The%20Lakehouse.md).
+Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](04%20-%20The%20Lakehouse.md).
