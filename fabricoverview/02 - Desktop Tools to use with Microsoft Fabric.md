@@ -314,7 +314,7 @@ Azure Storage Explorer allows you to view and manage your cloud storage accountâ
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
-- [Open this reference and follow the steps you see there](hhttps://learn.microsoft.com/en-us/fabric/onelake/onelake-azure-storage-explorer) 
+- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/onelake/onelake-azure-storage-explorer) 
 
 You can also right-click this link to open it in another tab and review this video that demonstrates this topic:
 
