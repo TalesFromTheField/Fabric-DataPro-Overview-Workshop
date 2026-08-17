@@ -12,7 +12,7 @@ In this workshop you'll cover using The Microsoft Fabric Platform to implement a
 
 In each module you'll get more references, which you should follow up on to learn more. Also watch for links within the text - click on each one to explore that topic.
 
-(<a href="https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/00%20-%20Pre-Requisites.md" >Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.) *Note in this section you will need an F2 and higher or a P-SKU in order to test or access Copilot or Data Agents, formerly known in preview as AI Skills.
+(<a href="00%20-%20Pre-Requisites.md" >Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.) *Note in this section you will need an F2 and higher or a P-SKU in order to test or access Copilot or Data Agents, formerly known in preview as AI Skills.
 
 In this section you will learn about Copilots and Data Agents in Microsoft Fabric.  
 
@@ -180,7 +180,7 @@ In this Activity you will execute code from the following exercises to create  A
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](https://github.com/sqlballs/MicrosoftFabricPre-Con/blob/main/fabricoverview/08%20-%20OLTP%20Databases%20in%20Fabric.md).
+Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](08%20-%20OLTP%20Databases%20in%20Fabric.md).
 
 
 
