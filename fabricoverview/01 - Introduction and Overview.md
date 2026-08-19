@@ -27,17 +27,19 @@ You'll cover these topics in this Module:
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="1-1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.1 Introduction of the Workshop</h2>
+<h2 id="1-1">../graphics/pencil2.png1.1 Introduction of the Workshop</h2>
 
-Data is a valuable asset for many organizations that want to make better business decisions. Microsoft Fabric is a Service that enables data collection, storage, processing, analysis, and visualization in one place. It offers a secure, flexible, and user-friendly solution for data management and transformation. Microsoft Fabric is a new solution that allows doing everything with data, from ingesting it to deriving insights from it. It provides different services for different purposes.
+Data is a valuable asset for organizations that want to make better business decisions. Microsoft Fabric is a unified Software-as-a-Service (SaaS) data platform that enables data collection, storage, processing, analysis, and visualization within a single environment. It provides a secure, flexible, and integrated solution for building modern analytics workloads.
 
-Microsoft Fabric leverages cloud technology, which eliminates the need for setting up or managing any infrastructure. It also integrates and secures data across different experiences and clouds, enabling seamless data workflows. Microsoft Fabric is currently in preview, which means it is under development and improvement. It combines new and existing features from Power BI, Azure Synapse, and Azure Data Factory into one environment. These features can be accessed through different user interfaces, depending on the data task.
+Microsoft Fabric brings together multiple analytics experiences on a common platform, allowing organizations to work with data throughout its lifecycle—from ingestion and storage, to transformation, analytics, reporting, and AI-assisted insights. Rather than requiring separate platforms for different data tasks, Fabric provides a shared foundation that enables teams to collaborate using the tools and experiences best suited to their roles.
 
-Microsoft Fabric introduces OneLake, the OneDrive of the Data world. OneLake is not only a storage place for data, but also a logical layer that organizes and governs data.
+Because Microsoft Fabric is delivered as a cloud service, organizations can focus on building data solutions instead of managing infrastructure. Fabric provides integrated security, governance, and administration capabilities while supporting a broad range of analytics workloads including data engineering, data warehousing, data integration, real-time intelligence, business intelligence, and AI-assisted analytics.
 
-OneLake is the storage layer behind all of Fabric. It offers the shortcut feature to access data from other workspace or tenants, or from other cloud services like Azure Storage without needing to move or duplicate data. This way, it ensures one copy of data for consistent and reliable insights.
+At the foundation of Microsoft Fabric is OneLake, a unified logical data lake designed to support all Fabric workloads. OneLake serves as the storage layer behind the Fabric platform, providing a common data foundation that can be accessed by multiple analytics engines and experiences.
 
-Microsoft Fabric is designed to help turn large and complex data into actionable workloads and analytics. It is a powerful and easy-to-use tool that can help achieve business goals and growth.
+OneLake also supports shortcuts, allowing organizations to reference data located in other Fabric workspaces, Azure Storage accounts, and other supported data sources without requiring unnecessary data duplication. This enables teams to work from a common source of data while simplifying governance and data management.
+
+Microsoft Fabric is designed to help organizations transform large volumes of data into actionable insights. By combining storage, compute, analytics, governance, and AI capabilities into a single platform, Fabric helps data professionals design, build, operate, and scale modern analytics solutions.
 
 In this Workshop, you will learn:
 - The <b>basic</b> concepts, services, roles, and benchmarks of Microsoft Fabric
