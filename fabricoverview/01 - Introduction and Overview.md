@@ -53,39 +53,52 @@ In this Workshop, you will learn:
 
 <h2 id="1.2"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.2 Basic Concepts in Microsoft Fabric</h2>
 
-Actionable intelligence requires data integration from diverse sources and environments. This involves various data professionals across the organization using different data sources, tools, and processes. Microsoft Fabric unifies these experiences into a single platform that provides the industry’s most comprehensive big data analytics solution.
+*Actionable intelligence requires data integration from diverse sources and environments. This involves various data professionals across the organization using different data sources, tools, and processes. Microsoft Fabric is an end-to-end analytics platform which unifies data movement, data engineering, data science, real-time analytics, data warehousing, databases, and business intelligence in a single Software-as-a-Service (SaaS) experience built on OneLake.
 
 Microsoft Fabric enables organizations and individuals to turn large and complex data repositories into actionable workloads and analytics, and is an implementation of a *[data mesh](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh)* architecture. It provides various systems with associated tools and aspects to the data professionals in their day-to-day work:
 
 - **Power BI**  
-  Power BI lets you easily connect to your data sources, visualize, and discover what's important, and share that with anyone or everyone you want. This integrated experience allows business owners to access all data in Fabric quickly and intuitively and to make better decisions with data.  
+  Power BI in Fabric enables organizations to create semantic models, reports, dashboards, and Direct Lake solutions that can query OneLake data with minimal latency and reduced data movement. Power BI lets you easily connect to your data sources, visualize, and discover what's important, and share that with anyone or everyone you want. This integrated experience allows business owners to access all data in Fabric quickly and intuitively and to make better decisions with data.  
   _For more information, see_ https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview
 
 - **Databases**  
-  Databases in Microsoft Fabric are developer-friendly transactional databases such as Azure SQL Database, which allow you to easily create your operational database in Fabric. Using the mirroring capability, you can bring data from various systems together into OneLake. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from Azure SQL Database, Azure Cosmos DB, Azure Databricks, Snowflake, and Fabric SQL database.  
+  SQL database in Microsoft Fabric is a developer-friendly transactional database built on the same SQL Database Engine used by Azure SQL Database. It supports operational workloads while automatically replicating data into OneLake in an analytics-ready format, allowing the data to be used across Fabric workloads. You can continuously replicate your existing data estate directly into Fabric's OneLake, including data from Azure SQL Database, Azure Cosmos DB, Azure Databricks, Snowflake, and Fabric SQL database.  
   _For more information, see_ https://learn.microsoft.com/en-us/fabric/data-engineering/sql-database-overview _and_ https://learn.microsoft.com/en-us/fabric/data-engineering/mirroring-overview
 
 - **Data Factory**  
-  Data Factory provides a modern data integration experience to ingest, prepare, and transform data from a rich set of data sources. It incorporates the simplicity of Power Query, and you can use more than 200 native connectors to connect to data sources on-premises and in the cloud.  
-  _For more information, see_ [What is Data Factory in Microsoft Fabric?](https://learn.microsoft.com/en-us- **Industry Solutions**  
+  Data Factory provides data integration, orchestration, transformation, dataflows, copy activities, and data pipelines for moving and preparing data from cloud and on-premises sources. Data Factory incorporates the simplicity of Power Query, where native connectors allow users to connect to data sources on-premises and in the cloud. 
+  _For more information, see_ [What is Data Factory in Microsoft Fabric?] https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview
+  
+  **Industry Solutions**  
   Fabric provides industry-specific data solutions that address unique industry needs and challenges, and include data management, analytics, and decision-making.  
-  _For more information, see_ [Industry Solutions in Microsoft Fabric](https://learn.microsoftview
+  _For more information, see_ [Industry Solutions in Microsoft Fabric] https://learn.microsoft.com/en-us/industry/industry-data-solutions-fabric
 
 - **Real-Time Intelligence**  
-  Real-time Intelligence is an end-to-end solution for event-driven scenarios, streaming data, and data logs. It enables the extraction of insights, visualization, and action on data in motion by handling data ingestion, transformation, storage, modeling, analytics, visualization, tracking, AI, and real-time actions. The Real-Time hub in Real-Time Intelligence provides a wide variety of no-code connectors, converging into a catalog of organizational data that is protected, governed, and integrated across Fabric.  
+  Real-time Intelligence is an end-to-end solution for event-driven scenarios, streaming data, and data logs. It enables the extraction of insights, visualization, and action on data in motion by handling data ingestion, transformation, storage, modeling, analytics, visualization, tracking, AI, and real-time actions. Core components include Eventstreams, Eventhouses, Real-Time Dashboards, and the Real-Time Hub. The Real-Time hub in Real-Time Intelligence provides a wide variety of no-code connectors, converging into a catalog of organizational data that is protected, governed, and integrated across Fabric.  
   _For more information, see_ https://learn.microsoft.com/en-us/fabric/real-time-intelligence/overview
 
 - **Data Engineering**  
-  Fabric Data Engineering provides a Spark platform with great authoring experiences. It enables you to create, manage, and optimize infrastructures for collecting, storing, processing, and analyzing vast data volumes. Fabric Spark's integration with Data Factory allows you to schedule and orchestrate notebooks and Spark jobs.  
-  _For more information, see_ [What is Data engineering in Microsoft Fabric?](https://learn.microsoft.com/en-us/fabric/data-engineering/data-engineeringData Science enables you to build, deploy, and operationalize machine learning models from Fabric. It integrates with Azure Machine Learning to provide built-in experiment tracking and model registry. Data scientists can enrich organizational data with predictions and business analysts can integrate those predictions into their BI reports, allowing a shift from descriptive to predictive insights.  
+  Fabric Data Engineering provides a Spark platform with great authoring experiences. It enables you to create, manage, and optimize infrastructures for collecting, storing, processing, and analyzing vast data volumes. Data Engineering uses Apache Spark and Lakehouses to build scalable data pipelines and supports notebooks, Spark jobs, and Delta Lake-based architectures.
+  _For more information, see_ [What is Data engineering in Microsoft Fabric?]https://learn.microsoft.com/en-us/fabric/data-engineering/data-engineering
+  
+  **Data Science** 
+  Data Science enables Data Scientists to build, deploy, and operationalize machine learning models from Fabric. It integrates with Azure Machine Learning to provide built-in experiment tracking and model registry. Data scientists can enrich organizational data with predictions and business analysts can integrate those predictions into their BI reports, allowing a shift from descriptive to predictive insights.  
   _For more information, see_ https://learn.microsoft.com/en-us/fabric/data-science/data-science-overview
 
 - **Fabric Data Warehouse**  
-  Fabric Data Warehouse provides industry-leading SQL performance and scale. It separates compute from storage, enabling independent scaling of both components. Additionally, it natively stores data in the open Delta Lake format.  
+  Fabric Data Warehouse is a fully managed SQL analytics engine optimized for enterprise-scale reporting and analytics. Warehouse data is stored in OneLake using open Delta format, enabling interoperability with other Fabric workloads while providing a familiar T-SQL experience.  
   _For more information, see_ https://learn.microsoft.com/en-us/fabric/data-warehouse/data-warehouse-overview
  
+- **Lakehouse**
+  A Lakehouse combines the flexibility of a data lake with the performance and management capabilities of a data warehouse. Lakehouses store data in OneLake using Delta tables and provide both file-based and SQL-based access to data.
+  _For more information, see_ https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-overview
 
-- *OneLake* - [*OneLake*](https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview)  is a single, unified, logical data lake for the whole organization. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. 
+- **OneLake** - [*OneLake*](https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview) 
+  OneLake is the unified logical data lake for Microsoft Fabric. Every Fabric tenant includes a single OneLake instance that serves as the foundation for analytics and AI workloads. OneLake supports shortcuts, centralized governance, distributed ownership through domains and workspaces, and open data formats such as Delta Parquet and Iceberg.
+
+- **OneLake Catalog**
+  The OneLake Catalog provides a centralized experience for discovering, understanding, and governing data assets across the organization. 
+  _For more information, see_ https://learn.microsoft.com/en-us/fabric/governance/onelake-catalog-overview
 
 <p><img src="https://learn.microsoft.com/en-us/fabric/fundamentals/media/microsoft-fabric-overview/fabric-architecture.png#lightbox" height = 400>
 
@@ -105,318 +118,385 @@ You can also right-click this link to open it in another tab and review this vid
 
 <h2 id="1.3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.3 OneLake & Microsoft Fabric Architecture</h2>
 
-OneLake is a SaaS service that provides a single, unified, logical data lake for the entire organization. 
+OneLake is the unified, logical data lake that serves as the foundation of Microsoft Fabric. Every Microsoft Fabric tenant includes a single OneLake instance, providing a centralized location for storing, managing, and accessing data across analytics and AI workloads. 
 
 <p><img src="https://learn.microsoft.com/en-us/fabric/fundamentals/media/microsoft-fabric-overview/hierarchy-within-tenant.png" height = 400>
 
-OneLake is the foundation of Microsoft Fabric, a cloud-native data platform that enables customers to build and manage data solutions at scale. OneLake simplifies data storage, access, security, governance, and discovery by offering the following features:
+Unlike traditional architectures that require separate storage platforms for data engineering, warehousing, reporting, and data science, Microsoft Fabric uses a shared architecture in which all workloads operate on a common storage foundation. This approach reduces data duplication, simplifies governance, and allows multiple personas to collaborate using the same underlying data.
+
+Microsoft Fabric experiences such as Data Engineering, Data Factory, Data Science, Data Warehouse, Databases, Real-Time Intelligence, and Power BI all use OneLake as their underlying storage platform.
 <p>
 
-- One data lake for the entire organization: OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. You don’t need to set up or manage any infrastructure or resources to use OneLake.
-- One copy of data for use with multiple analytical engines: OneLake stores all tabular data in delta parquet format, which is compatible with various analytical engines such as Spark, SQL, and Synapse. You can use different data items such as lakehouses, warehouses, and cubes to access and analyze the same data in OneLake without creating redundant copies.
-- One security model living natively with the data in the lake (coming soon): OneLake will support a unified security model that lives with the data in the lake, enabling fine-grained access control and encryption at rest and in transit. You will be able to manage security policies at the tenant, workspace, or data item level.
-- A centralized OneLake data hub for data discovery and management: OneLake provides a data hub where you can discover, browse, and manage all the data items in your tenant. You can also use the data hub to create new data items, import or export data, monitor usage and performance, and troubleshoot issues.
+#### Core OneLake Architecture Principles
+##### One Data Lake for the Entire Organization
+OneLake is automatically provisioned with every Microsoft Fabric tenant and is designed to serve as the single data lake for an organization. There is no infrastructure to deploy, configure, or manage. Data can be organized through domains, workspaces, and data items while remaining part of a unified data estate.
+ 
+##### One Copy of Data
+OneLake enables multiple analytics engines and workloads to access the same data without creating redundant copies. Data engineers can use Spark, analysts can use SQL or Power BI, and real-time analysts can use KQL while all working from a shared data foundation.
+
+This "one copy of data" approach reduces storage costs, improves consistency, and helps ensure that all users are working from trusted data sources.
+
+##### Open Data Formats
+OneLake stores and exposes data using open industry standards, including Delta Parquet and Iceberg formats. These formats allow organizations to work with their data using Microsoft Fabric and other compatible analytics tools while avoiding vendor lock-in.
+ 
+##### Data Virtualization with Shortcuts and Mirroring
+OneLake provides several mechanisms for accessing data without unnecessary movement or duplication:
+- **Shortcuts** allow users to reference data stored in other Fabric workspaces, Azure Data Lake Storage Gen2, Amazon S3, and other supported sources while maintaining a single copy of the data.
+- **Mirroring** continuously replicates data from supported operational systems into OneLake, making it available for analytics with minimal latency.
+  
+These capabilities simplify data integration and help organizations build analytics solutions without complex ETL processes.
+ 
+##### Distributed Ownership and Governance
+OneLake supports distributed ownership through domains and workspaces. Business units can maintain ownership of their data while still participating in a governed enterprise-wide data ecosystem.
+
+This architecture aligns with modern data mesh principles by combining centralized governance with decentralized data ownership.
+
+##### OneLake Catalog
+The OneLake Catalog provides a centralized experience for discovering, understanding, and governing data assets across the organization. Users can search for data, identify ownership, understand lineage, and locate trusted analytics assets more efficiently.
+ 
+#### OneLake and Fabric Storage Experiences
+Many Microsoft Fabric items store their data within OneLake, including:
+
+- Lakehouses
+- Warehouses
+- SQL Databases
+- Eventhouses
+- KQL Databases
+- Semantic Models
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <h2 id="1.4"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.4 - Microsoft Fabric Compute Engines</h2>
 
-All Microsoft Fabric compute experiences come preconfigured with OneLake, much like Office apps automatically use organizational OneDrive. The experiences such as Data Engineering, Data Warehouse, Data Factory, Power BI, and Real-Time Intelligence etc. use OneLake as their native store without extra setup.
+Microsoft Fabric provides multiple compute engines that are optimized for different analytical workloads while sharing a common storage foundation in OneLake.
 
-A graphical list of these services are shown in this diagram:
+This architecture allows data professionals to use the tools and languages most appropriate for their tasks without moving or duplicating data. A data engineer might use Spark to transform data, a database developer might use T-SQL to query a warehouse, and a business analyst might use Power BI to create reports, all against the same underlying data stored in OneLake.
 
-<p><img src="https://learn.microsoft.com/en-us/fabric/fundamentals/media/microsoft-fabric-overview/onelake-architecture.png#lightbox" height = 400>
+#### Common Fabric Architecture
+Microsoft Fabric separates storage and compute responsibilities:
+- **OneLake** provides the unified storage layer.
+- **Compute engines** provide workload-specific processing capabilities.
+- **Fabric Capacity** supplies the compute resources used by all workloads.
 
-OneLake lets you instantly mount your existing PaaS storage accounts using the Shortcut feature. You don't have to migrate your existing data. Shortcuts provide direct access to data in Azure Data Lake Storage. They also enable easy data sharing between users and applications without duplicating files. Additionally, you can create shortcuts to other storage systems, allowing you to analyze cross-cloud data with intelligent caching that reduces egress costs and brings data closer to compute.
+This approach allows multiple workloads to access the same data using different technologies and programming models.
+
+#### Spark Engine
+The Spark engine powers Data Engineering and many Data Science workloads.
+
+Apache Spark in Microsoft Fabric enables:
+- Large-scale data transformation
+- Data preparation and cleansing
+- Notebook execution
+- Machine learning workflows
+- Distributed processing of large datasets
+
+Spark workloads typically operate against Lakehouse data stored in OneLake.
+
+#### SQL Engine
+The SQL engine powers Warehouses, SQL Databases, SQL Analytics Endpoints, and many reporting workloads.
+
+The SQL experience supports:
+- T-SQL queries
+- Views
+- Stored procedures
+- Analytical workloads
+- Relational data modeling
+
+Users familiar with SQL Server, Azure SQL Database, or Azure Synapse Analytics can use many of the same SQL skills within Microsoft Fabric.
+
+#### KQL Engine
+The Kusto Query Language (KQL) engine powers Real-Time Intelligence workloads.
+
+KQL is designed for:
+- Streaming analytics
+- Log analysis
+- Telemetry data
+- Time-series analysis
+- Operational monitoring
+
+This engine is optimized for high-volume, near real-time data scenarios.
+
+#### Power BI Engine
+The Power BI engine provides semantic modeling, reporting, dashboarding, and business intelligence capabilities.
+
+Power BI enables:
+- Semantic models
+- Interactive reports
+- Dashboards
+- Self-service analytics
+- Direct Lake access to OneLake data
+
+Business users can consume insights without requiring direct access to the underlying data platforms.
+
+#### AI and Machine Learning Capabilities
+Microsoft Fabric includes built-in AI capabilities that assist with data preparation, code generation, analytics, and machine learning workflows. These capabilities are integrated across multiple Fabric experiences and help accelerate solution development.
+
+#### Unified Capacity Model
+All Fabric workloads consume resources from a Fabric Capacity.
+
+Rather than managing separate compute environments for data integration, warehousing, reporting, and analytics, organizations allocate capacity that can be shared across Fabric workloads. This unified model simplifies administration and helps organizations scale resources according to business needs.
+
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <h2 id="1.5"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.5 - Microsoft Fabric Roles</h2>
+Microsoft Fabric uses a layered security and governance model that enables organizations to manage access at the tenant, capacity, workspace, and item levels.
 
-Microsoft Fabric has different admin roles such as Microsoft 365 admin roles, Power Platform and Power BI admin roles, and Capacity admin roles. 
+This approach allows organizations to balance centralized governance with distributed ownership, ensuring that users have the appropriate level of access to perform their responsibilities while protecting organizational data assets.
 
-<h3>Admin roles related to Microsoft Fabric</h3>
+#### Administrative Roles
+Administrative roles manage Fabric settings, governance, licensing, and capacity resources across the organization.
 
+The most common administrative roles include:
+- **Fabric Administrator** – Manages tenant-wide Fabric settings, governance policies, usage monitoring, and feature enablement.
+- **Power Platform Administrator** – Has many of the same Fabric administrative capabilities and can manage tenant-level settings.
+- **Capacity Administrator** – Manages Fabric capacities, assigns workspaces to capacities, and monitors capacity utilization and performance.
 
-| Role Type                        | Role Name                  | Responsibilities                                                                                   | Where to Assign                          |
-|----------------------------------|----------------------------|----------------------------------------------------------------------------------------------------|------------------------------------------|
-| **Microsoft 365 Admin Roles**    | Global Administrator       | Full access to all management features; can assign roles to others                                | Microsoft 365 Admin Portal or PowerShell |
-|                                  | Billing Administrator      | Manage subscriptions and purchase licenses                                                        | Microsoft 365 Admin Portal or PowerShell |
-|                                  | License Administrator      | Assign or remove licenses for users                                                               | Microsoft 365 Admin Portal or PowerShell |
-|                                  | User Administrator         | Create/manage users and groups; reset passwords                                                   | Microsoft 365 Admin Portal or PowerShell |
-| **Power Platform & Fabric Roles**| Power Platform Administrator<br>Fabric Administrator | Enable/disable Fabric features; report on usage; manage auditing                                  | Microsoft 365 Admin Portal or PowerShell |
-| **Capacity Admin Roles**         | Capacity Administrator     | Assign workspaces to capacity; manage user permissions and memory usage for workloads             | Assigned when capacity is created        |
+Administrative roles are typically assigned through Microsoft 365 or Power Platform administration tools and are generally limited to platform administrators.
 
+For more information, see:
+- https://learn.microsoft.com/en-us/fabric/admin/roles
+- https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin
 
+#### Workspace Roles
+Workspaces are the primary collaboration boundary within Microsoft Fabric. Workspace roles determine what actions users can perform within a workspace and on the items it contains.
 
+##### Admin
+Workspace Admins have full control over the workspace.
 
+They can:
+- Manage workspace settings
+- Assign workspace roles
+- Create, modify, and delete items
+- Manage access permissions
+- Configure sharing and governance settings
 
-You can find more detail on this topic here:
+##### Member
+Members can create, edit, publish, and share content within the workspace.
 
-- [Administration Roles are described here](https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin)
+They are typically solution owners, lead developers, or team members responsible for building and maintaining Fabric solutions.
 
+##### Contributor
+Contributors can create and modify items but have more limited management permissions than Members.
 
-<h3>Microsoft Fabric admin roles</h3>
+This role is commonly assigned to developers, data engineers, and analysts who need to build content but do not need to manage workspace access.
 
-| Role                        | Description                                                                                                                  | How to Assign                                                                                     | Access Level                                                                                   |
-|-----------------------------|------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
-| **Fabric Administrator**    | Grants full control over organization-wide Microsoft Fabric settings and admin features (excluding licensing).              | Assign via Microsoft 365 admin portal or PowerShell. https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/add-users?view=o365-worldwide | Full access to Fabric admin portal, usage metrics, and feature controls.                      |
-| **Power Platform Administrator** | Also grants full control over Microsoft Fabric settings and admin features (excluding licensing).                          | Assign via Microsoft 365 admin portal or PowerShell. https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote?view=powershell-7.3 | Full access to Fabric admin portal, usage metrics, and feature controls.                      |
+##### Viewer
+Viewers have read-only access to workspace content.
 
-You can find more detail on this topic here:
-- [Learn more about Microsoft Fabric admin roles](https://learn.microsoft.com/en-us/fabric/admin/roles)
+This role is commonly assigned to consumers who need to view reports, dashboards, notebooks, or other shared assets without modifying them.
 
+#### Item-Level Permissions
+In addition to workspace roles, Microsoft Fabric supports item-level permissions that allow access to specific assets.
 
+Examples include:
+- Warehouses
+- SQL Databases
+- Lakehouses
+- Semantic Models
+- Reports and Dashboards
 
-<h3>Microsoft Fabric workspace roles</h3>
+Item-level permissions provide greater flexibility by allowing users to access specific resources without receiving broader workspace permissions.
 
-Workspace roles define what user can do with Microsoft Fabric items. Roles can be assigned to individuals or security groups from workspace view. Workspace roles in Microsoft Fabric extend the Power BI workspace roles by associating new Microsoft Fabric capabilities such as data integration and data exploration with existing workspace roles. 
+#### Governance and Data Ownership
+Microsoft Fabric supports distributed ownership through domains, workspaces, and data products. This model allows business units and project teams to own and manage their data while operating within organizational governance policies.
 
-
-| Capability                                                                                                     | Admin | Member | Contributor | Viewer |
-|---------------------------------------------------------------------------------------------------------------|:-----:|:------:|:-----------:|:------:|
-| Update and delete the workspace                                                                               | ✅    |        |             |        |
-| Add or remove people, including other admins                                                                  | ✅    |        |             |        |
-| Add members or others with lower permissions                                                                  | ✅    | ✅     |             |        |
-| Allow others to reshare items¹                                                                                | ✅    | ✅     |             |        |
-| Create or modify database mirroring items                                                                     | ✅    | ✅     | ✅          |        |
-| Create or modify warehouse items                                                                              | ✅    | ✅     | ✅          |        |
-| Create or modify SQL database items                                                                           | ✅    | ✅     | ✅          |        |
-| View and read content of pipelines, notebooks, Spark jobs, ML models, experiments, and eventstreams          | ✅    | ✅     | ✅          | ✅     |
-| View and read KQL databases, query-sets, digital twin builder items, and real-time dashboards                 | ✅    | ✅     | ✅          | ✅     |
-| Connect to SQL analytics endpoint of Lakehouse or Warehouse                                                  | ✅    | ✅     | ✅          | ✅     |
-| Read Lakehouse and Data Warehouse data via TDS endpoint (ReadData)                                           | ✅    | ✅     | ✅          | ✅     |
-| Read Lakehouse and Data Warehouse data via OneLake APIs and Spark (ReadAll)                                  | ✅    | ✅     | ✅          |        |
-| Read Lakehouse data through Lakehouse explorer (ReadAll)                                                     | ✅    | ✅     | ✅          |        |
-|
-
-You can find more detail on these topics here:
-
-- [Roles in workspaces are described here](https://learn.microsoft.com/en-us/fabric/fundamentals/roles-workspaces)
-- [Understand more about Workspace roles and permissions in lakehouse](https://learn.microsoft.com/en-us/fabric/data-engineering/workspace-roles-lakehouse)
-
-Data sharing is essential to fostering a data-driven culture within an organization. Sharing a Warehouse allows you to provide read access to enable downstream users within the organization to consume this data to make data-driven decisions, without having to make copies of data.
-
-An Admin or Member within a workspace can share a Warehouse with another recipient (AAD user or AAD groups) within your organization. You can also grant these permissions using the “Manage permissions” experience.
-
-To understand more about Data Sharing see these references:
-
-- [Data Warehouse sharing](https://learn.microsoft.com/en-us/fabric/admin/microsoft-fabric-admin)
-- [Share your warehouse and manage permissions](https://learn.microsoft.com/en-us/fabric/data-warehouse/share-warehouse-manage-permissions)
-- [Share items in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/fundamentals/share-items)
-
-
-You can also right-click this link to open it in another tab and review this video that introduces you to these concepts:
-
-<p><a href="https://www.youtube.com/watch?v=Z4_yY8axMsc"><img src="https://img.youtube.com/vi/Z4_yY8axMsc/0.jpg" height = 200></a> 
+Combined with OneLake, workspace roles and item-level permissions help organizations implement secure, scalable, and collaborative analytics solutions.
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="1.6"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.6 - Understanding Microsoft Fabric Benchmarks</h2>
+<h2 id="1.6"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.6 - Understanding Microsoft Fabric Capacity</h2>
 
-There are several basic concepts in setting up the benchmarks for your Microsoft Fabric deployments.
+Microsoft Fabric uses a capacity-based consumption model to provide compute resources across all workloads. Rather than provisioning separate servers or clusters for individual services, organizations purchase or assign Fabric Capacity that can be shared by Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, Power BI, and other Fabric experiences.
 
-## What are Capacities?
-Microsoft Fabric is a unified data platform that offers shared experiences, architecture, governance, compliance, and billing. Capacities provide the computing power that drives all of these experiences. They offer a simple and unified way to scale resources to meet customer demand and can be easily increased with a SKU upgrade.
+Understanding capacity is essential because every Fabric workload consumes Capacity Units (CUs) when processing data, running queries, refreshing reports, executing notebooks, or performing other computational tasks.
 
-<p>
+#### What Is a Fabric Capacity?
+A Fabric Capacity is a dedicated pool of compute resources available to Microsoft Fabric workloads.
 
-| SKU     | Capacity Units (CU) | Power BI SKU | Power BI v-cores |
-|---------|---------------------|--------------|------------------|
-| F2      | 2                   | –            | 0.25             |
-| F4      | 4                   | –            | 0.5              |
-| F8      | 8                   | EM/A1        | 1                |
-| F16     | 16                  | EM2/A2       | 2                |
-| F32     | 32                  | EM3/A3       | 4                |
-| F64     | 64                  | P1/A4        | 8                |
-| Trial   | 64                  | –            | 8                |
-| F128    | 128                 | P2/A5        | 16               |
-| F256    | 256                 | P3/A6        | 32               |
-| F512    | 512                 | P4/A7        | 64               |
-| F1024   | 1024                | P5/A8        | 128              |
-| F2048   | 2048                | –            | 256              |
+Capacities provide:
+- Compute resources for workload execution
+- Performance isolation
+- Centralized administration
+- Flexible scaling
+- Unified billing across Fabric workloads
 
+Workspaces can be assigned to a Fabric Capacity, allowing the users and workloads within those workspaces to consume capacity resources as needed.
 
-<p>
+#### Capacity Units (CUs)
+Microsoft Fabric measures compute consumption using Capacity Units (CUs).
 
-### Bursting & Smoothing
+A Capacity Unit represents a standardized measure of compute resources that can be used by different Fabric workloads. Because all workloads consume the same capacity pool, organizations can monitor and manage utilization consistently across the platform.
 
-Bursting allows you to consume extra compute resources beyond what have been purchased to speed the execution of a workload. For example, instead of running a job on 64 CU and completing in 60 seconds, bursting could use 256 CUs to complete the job in 15 seconds.
+Example Fabric SKUs include:
 
-- Bursting is a SaaS feature and requires no user management. Behind the scenes, the capacity platform is pre-provisioning Microsoft managed virtualized compute resources to optimize for maximum performance.
-- Compute spikes generated from bursting will not cause throttling due to smoothing policies outlined in the next section.
+| SKU | Capacity Units |
+|------|------|
+| F2 | 2 |
+| F4 | 4 |
+| F8 | 8 |
+| F16 | 16 |
+| F32 | 32 |
+| F64 | 64 |
+| F128 | 128 |
+| F256 | 256 |
+| F512 | 512 |
+| F1024 | 1024 |
+| F2048 | 2048 |
 
-<p>
+> Note: Microsoft periodically updates capacity offerings and pricing. Always consult current Microsoft documentation for the latest SKU information.
 
+#### Understanding Capacity Consumption
+Different Fabric workloads consume Capacity Units in different ways.
 
+Examples include:
+- Running Spark notebooks
+- Executing SQL queries
+- Refreshing semantic models
+- Loading data through Data Factory
+- Processing Real-Time Intelligence workloads
+- Executing machine learning workloads
 
+The amount of capacity consumed depends on workload complexity, concurrency, and execution duration.
 
-<img src="https://learn.microsoft.com/en-us/fabric/enterprise/media/fabric-cross-filter.gif#lightbox">
+#### Bursting
+Fabric supports bursting, which allows workloads to temporarily consume more compute resources than the baseline capacity allocation.
 
+Bursting helps workloads complete more quickly without requiring administrators to permanently provision additional capacity.
 
+For example, a workload that normally runs using a smaller amount of compute may temporarily consume additional resources during a period of high demand.
 
+Bursting is managed automatically by Microsoft Fabric and requires no manual configuration.
 
+#### Smoothing
+Capacity usage is evaluated using smoothing algorithms that help distribute capacity utilization over time.
 
+Smoothing helps:
+- Reduce the impact of short-term workload spikes
+- Improve workload stability
+- Simplify capacity planning
+- Minimize unnecessary throttling
 
+Administrators can therefore focus on average utilization patterns rather than sizing capacities solely for peak usage periods.
 
-When a capacity is running multiple jobs, a sudden spike in compute demand may be generated that exceeds the limits of a purchased capacity. Smoothing simplifies capacity management here by spreading the evaluation of compute to ensure that your jobs run smoothly and efficiently. Two places to expect to see this in place is:
+#### Throttling and Capacity Protection
+When demand consistently exceeds available capacity resources, Fabric may apply throttling policies to protect overall platform performance.
 
-- <b>For interactive jobs run by users:</b> capacity demand is typically smoothed over 5 minutes to reduce short-term temporal spikes.  
-- <B>For scheduled, or background jobs:</b> capacity demand is spread over 24 hours, eliminating the concern of job scheduling or contention.
+The purpose of throttling is to:
 
-Smoothing will not impact execution time, that is always at peak performance! Smoothing simply also allows you to size your capacity based on average, not peak usage.
+- Prevent resource exhaustion
+- Maintain system stability
+- Prioritize interactive workloads
+- Ensure fair resource allocation
 
-### OneLake Storage Reporting in Capacity Metrics
+Administrators should monitor capacity consumption regularly to identify workloads that may require optimization or additional capacity resources.
 
-With this feature, you can easily analyze your storage consumption by selecting your Capacity, choosing the date range, and viewing usage by workspace. This will provide you with valuable insights into your overall storage spend and enable you to monitor daily or hourly trends with usage of drill-through. 
+#### Monitoring Capacity Usage
+Microsoft Fabric provides Capacity Metrics and monitoring tools that help administrators understand how capacity resources are being consumed.
 
-<p><img src="https://learn.microsoft.com/en-us/fabric/onelake/media/onelake-capacity-consumption/onelake-storage.png#lightbox" >
+These tools can help answer questions such as:
+- Which workspaces consume the most capacity?
+- Which workloads are generating the highest utilization?
+- Are users experiencing throttling?
+- How much storage is being consumed?
+- When should a capacity be scaled?
 
+Monitoring capacity utilization is an important part of operating production Fabric environments.
 
-### Capacity Long Running Workloads
+#### Power BI and Fabric Capacity
+Microsoft Fabric and Power BI share a common capacity model.
 
-Fabric contains an optimization for long-running jobs. Historically, if a job’s reported usage exceeded capacity limits, the following jobs would be throttled. Now, if a job’s reported usage exceeds capacity limits, throttling will not be immediately applied to following jobs. Instead, any overage will be automatically balanced against future capacity when the system has unutilized capacity. This feature to “borrow from the future” is in addition to smoothing and is also seamless to customers and supported by the following new analytics experience in Capacity Metrics.
+This unified approach allows organizations to manage analytics workloads, reporting workloads, and data workloads using a consistent capacity framework. Capacity Units provide a common measurement across both Fabric and Power BI experiences.
 
-<p><img src="https://learn.microsoft.com/en-us/fabric/enterprise/media/fabric-cross-filter-overages.gif#lightbox" >
-
-After the October 1st platform update, capacity throttling policies will now be based on the amount of future capacity consumption that resulted from smoothing policies, this offers increased Overage protection for when future use is less than 10 minutes and richer queue management features to prevent excessive overload when usage exceeds an hour. The 4 new policies are outlined in Table 1
-
-<table style="height: 327px" width="1110">
-<tbody>
-<tr>
-<td><strong>Future Smoothed Consumption – Policy Limits</strong></td>
-<td>
-<p><strong>Platform Policy</strong></p>
-</td>
-<td>
-<p><strong>Experience Impact</strong></p>
-</td>
-</tr>
-<tr>
-<td>Usage &lt;= 10 minutes</td>
-<td>
-<p>Overage protection</p>
-</td>
-<td>
-<p>Jobs can consume 10 minutes of future capacity use without throttling.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>10 minutes &lt; Usage &lt;= 60 minutes</p>
-</td>
-<td>
-<p>Interactive Delay</p>
-</td>
-<td>
-<p>User requested interactive type jobs will be throttled.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>60 minutes &lt; Usage &lt;= 24 hours</p>
-</td>
-<td>
-<p>Interactive Rejection</p>
-</td>
-<td>
-<p>User requested interactive type jobs will be rejected.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p>Usage &gt; 24 hours</p>
-</td>
-<td>
-<p>Background Rejection</p>
-</td>
-<td>
-<p>User Scheduled background jobs will be rejected from execution.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p>
-To help you monitor and analyze the policies, Microsoft Fabric has a  throttling tab in the utilization section of the Capacity Metrics. You can now easily observe future usage as a percentage of each limit, and even drill down to specific workloads that contributed to an overage.
-
-<p><img src="https://learn.microsoft.com/en-us/fabric/enterprise/media/fabric-drill-through.gif#lightbox" >
-
-### Power BI & Microsoft Fabric - One Capacity Model
-Capacity Units offer more granularity than the previously used v-cores and let us offer smaller sized capacities to Fabric customers with a very low entry point for pricing. As of 10/1/2024 all Power BI premium SKU’s (EM, P and A) to report in capacity units. Key takeaways for this change:
-<p>
-
-- This update will not result in any change to the throughput of a capacity.
-- Power BI Premium SKU’s EM / A and P now report usage using CUs.
-- There will be one version of the Capacity Metrics app that supports all Power BI and Fabric capacity SKUs
-
-<p>
-
-<p>
-For more information about the Microsoft Fabric Capacity app see the following references:
-
--  [Capacity metrics in Microsoft Fabric Announcement](https://blog.fabric.microsoft.com/en-us/blog/capacity-metrics-in-microsoft-fabric)
--  [Understand the metrics app storage page](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-storage-page)
--  [Fabric Capacities – Everything you need to know about what’s new and what’s coming](https://blog.fabric.microsoft.com/en-us/blog/fabric-capacities-everything-you-need-to-know-about-whats-new-and-whats-coming?ft=All)
--  [What is the utilization and metrics app?](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app)
--  [Install the Microsoft Fabric capacity metrics app](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-install?tabs=1st)
--  [Understand the metrics app overview page](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app)
--  [Understand the metrics app timepoint page](https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-timepoint-page)
-
-You can also right-click this link to open it in another tab and review this video that introduces you to these concepts:
-
-<p><a href="https://www.youtube.com/watch?v=TZnZob8B_Xk&?t=2196"><img src="https://img.youtube.com/vi/TZnZob8B_Xk/0.jpg" height = 200></a> 
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <h2 id="1.7"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.7 Understanding and creating Workspaces</h2>
 
-Microsoft Fabric is a comprehensive platform that offers a variety of tools designed for the creation and administration of data pipelines. Within Microsoft Fabric, a Workspace serves as a fundamental element, facilitating collaboration among users on different projects, including dashboards, reports, and various other content. Each individual using Microsoft Fabric is allocated a personal workspace called *My workspace*, providing them with a dedicated area to work on their own content and projects.
+Workspaces are the primary collaboration containers in Microsoft Fabric. A workspace provides a secure location where individuals and teams can create, manage, and share Fabric items such as Lakehouses, Warehouses, SQL Databases, Data Pipelines, Notebooks, Reports, and Semantic Models.
 
-<p><img src="https://learn.microsoft.com/en-us/fabric/enterprise/media/licenses/tenants-capacities.png#lightbox" height = 400>
+Most development work performed in Fabric occurs within a workspace. Permissions assigned through workspace roles determine who can create, modify, share, and administer content.
 
-#### Microsoft Fabric components
+#### Workspaces in the Fabric Architecture
+Microsoft Fabric organizes resources using several layers:
 
-This section describes tenants, capacities, and workspaces, which are the main building blocks of a Microsoft Fabric subscription.
+- **Tenant** – Represents the organization's Microsoft Fabric environment.
+- **Capacity** – Provides the compute resources used by Fabric workloads.
+- **Workspace** – Provides a collaborative container for Fabric items and projects.
+- **Items** – Individual Fabric assets such as Lakehouses, Warehouses, Reports, Notebooks, Data Pipelines, and SQL Databases.
 
-### Tenant
-The foundation of a Microsoft Fabric subscription is the tenant. Each tenant is tied to a specific Domain Name System (DNS). Your tenant is created when you buy a capacity, and after it's created, you can add more capacities. Usually, an organization has one tenant. In such cases, the tenant is synonymous with the organization. Some companies may want to have several tenants, each with their own capacities.
+A workspace belongs to a tenant and is assigned to a capacity. The items within that workspace consume the capacity resources assigned to it.
 
-### Capacity
-A Microsoft Fabric capacity resides on a tenant. Each capacity that sits under a specific tenant is a distinct pool of resources allocated to Microsoft Fabric. The size of the capacity determines the amount of computation power your organization gets. Before you purchase Microsoft Fabric, review the capacity and SKUs section, to establish which capacity is right for your organization.
+#### Personal and Shared Workspaces
+Every Fabric user has access to a personal workspace called **My Workspace**. This workspace is intended primarily for individual experimentation and personal content.
 
-### Workspace
-Workspaces reside within capacities and are used as containers for Microsoft Fabric items. Each Microsoft Fabric user has a personal workspace known as *My Workspace*. More workspaces can be created to enable collaboration. By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces - including My Workspaces - can be assigned to any capacity in your organization.
+Organizations typically create shared workspaces for:
+- Development environments
+- Test environments
+- Production environments
+- Departmental analytics projects
+- Data engineering solutions
+- Business intelligence initiatives
 
-[You can read more about deployment layouts in this document](https://learn.microsoft.com/en-us/azure/architecture/analytics/architecture/fabric-deployment-patterns).
+Shared workspaces provide better collaboration, governance, and lifecycle management than personal workspaces.
+
+#### Workspace Roles
+Workspace access is controlled using workspace roles:
+
+- **Admin** – Full control over the workspace and its permissions.
+- **Member** – Can create, modify, publish, and share content.
+- **Contributor** – Can create and edit content but cannot manage workspace access.
+- **Viewer** – Read-only access to workspace content.
+
+Selecting the appropriate role helps organizations balance collaboration and security.
+
+#### Common Workspace Items
+A Fabric workspace can contain many different item types, including:
+
+- Lakehouses
+- Warehouses
+- SQL Databases
+- Data Pipelines
+- Dataflows
+- Notebooks
+- Semantic Models
+- Reports
+- Dashboards
+- Eventhouses
+- Real-Time Dashboards
+
+These items can work together to create complete end-to-end analytics solutions.
+
+### Activity: Verify Your Microsoft Fabric Workspace
+Before continuing with the workshop, verify that you have access to a Fabric-enabled workspace.
+
+#### Validate an Existing Workspace
+1. Navigate to https://app.fabric.microsoft.com
+2. Select **Workspaces** from the left navigation menu.
+3. Open your assigned workshop workspace.
+4. Select **+ New item**.
+5. Verify that Fabric item types such as Lakehouse, Warehouse, Notebook, and Data Pipeline are available.
+
+If these options appear, your workspace is Fabric-enabled and ready for the workshop activities.
+
+#### Create a New Workspace (If Required)
+If you have the necessary permissions and do not already have a workspace:
+
+1. Navigate to https://app.fabric.microsoft.com
+2. Select **Workspaces**.
+3. Select **New Workspace**.
+4. Provide a workspace name and description.
+5. Assign the workspace to an appropriate Fabric Capacity if required.
+6. Create the workspace.
+7. Verify that Fabric item types are available through **+ New item**.
+
+For detailed instructions, review:
+
+- https://learn.microsoft.com/en-us/fabric/fundamentals/workspaces
+- https://learn.microsoft.com/en-us/fabric/data-warehouse/tutorial-create-workspace
+
 
 <br>
-
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Creating your first Workspace</b></p>
-
-<br>
-
-In order to complete any exercises required in this class you should have followed the [Pre-Requisites](00%20-%20Pre-Requisites.md) outlined in the README file at the start of this Workshop. 
-
-> Before conintuing with this Workshop, you must validate that you have created a Workspace from the previous module. If not, stop the Workshop now and execute the following steps.
-
-To ensure that you have a Microsoft Fabric Enabled Workspace:
-
-- Navigate to [Power BI.com](https://www.powerbi.com)
-- Click on Workspaces
-- Navigate to your Microsoft Fabric enabled workspace
-- Click +New
-- Click Show all
-- Validate that you have a Microsoft Fabric Enabled Workspace
-
-If you have a Power BI License, a Microsoft Fabric Capacity, but have not yet created a workspace:
-
-- Navigate to [Tutorial: Create a Microsoft Fabric workspace](https://learn.microsoft.com/en-us/fabric/data-warehouse/tutorial-create-workspace)
-- Navigate to your Microsoft Fabric enabled workspace
-- Click +New
-- Click Show all
-- Validate that you have a Microsoft Fabric Enabled Workspace
-
-If you cannot complete these steps, open and follow the  [Pre-Requisites that you find here.](00%20-%20Pre-Requisites.md)
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 
@@ -429,7 +509,5 @@ If you cannot complete these steps, open and follow the  [Pre-Requisites that yo
     <li><a href="https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-install">Installing the Fabric Metrics app</a></li>
   <li><a href="https://erwindekreuk.com/microsoft-fabric-content-hub/">Microsoft Fabric Content Hub from Erwin de Kreuk</a></li>
 </ul>
-
-
 
 Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](02%20-%20Desktop%20Tools%20to%20use%20with%20Microsoft%20Fabric.md).
