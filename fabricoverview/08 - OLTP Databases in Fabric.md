@@ -6,34 +6,81 @@
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2> 08 - OLTP Databases In Microsoft Fabric </h2>
+<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2> 08 - Databases In Microsoft Fabric </h2>
 
-In this workshop you'll cover using The Microsoft Fabric Platform to implement a complete Analytics solution.
+In this module you will learn how Microsoft Fabric supports operational data workloads through the Databases workload. You will explore both SQL database in Microsoft Fabric and Cosmos DB database in Microsoft Fabric, and learn how operational data integrates with OneLake, analytics, reporting, and AI-powered applications.
 
 In each module you'll get more references, which you should follow up on to learn more. Also watch for links within the text - click on each one to explore that topic.
 
 
 (<a href="00%20-%20Pre-Requisites.md" >Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.) 
 
-In this section you will learn about Fabric SQL Database & Cosmos DB in Microsoft Fabric 
-
-
-
-You'll cover these topics in this Module on OLTP Databases in Microsoft Fabric:
+You'll cover these topics in this Module on Databases in Microsoft Fabric:
 
 <dl>
 
-  <dt><a href="#8-1" >8.1 - Fabric SQL Database (preview)</a></dt>
-  <dt><a href="#8-2" >8.2 - Cosmos DB in Microsoft Fabric (preview)</a></dt>
-
-
+  <dt><a href="#8-1" >8.0 - Database Hub</a></dt>
+  <dt><a href="#8-1" >8.1 - SQL Database in Microsoft Fabric</a></dt>
+  <dt><a href="#8-2" >8.2 - Cosmos DB in Microsoft Fabric </a></dt>
 
 </dl>
 
+## Databases in Fabric Architecture
 
-<h2 id="8.1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">8.1 Fabric SQL Database (preview)</h2>
+Microsoft Fabric now includes a dedicated Databases workload that supports both relational and NoSQL operational databases.
 
-The Fabric SQL Database is a core component of Microsoft Fabric that provides a fully managed, scalable, and performant SQL engine for analytics workloads. It enables users to query structured data using familiar T-SQL syntax while integrating seamlessly with other Fabric components like Lakehouse, Pipelines, and Power BI.
+The Databases workload includes:
+
+- SQL Database in Microsoft Fabric
+- Cosmos DB Database in Microsoft Fabric
+
+Both database types automatically integrate with OneLake, making operational data immediately available for analytics, reporting, AI, and machine learning workloads.
+
+This allows organizations to build translytical solutions that combine operational and analytical processing within a unified platform.
+
+<h2 id="8.0"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">8.0 Database Hub</h2>
+
+## Database Hub
+
+Database Hub is the centralized experience for working with databases in Microsoft Fabric. It provides a single location where developers, database administrators, and data professionals can discover, create, connect to, and manage database resources across the Fabric environment.
+
+The Database Hub supports the Fabric Databases workload and provides access to both SQL Database and Cosmos DB Database experiences.
+
+### Key Capabilities
+
+Database Hub enables users to:
+
+- Create new SQL Databases and Cosmos DB Databases
+- Discover existing database assets
+- Access database management tools
+- Monitor database activity
+- Launch development experiences
+- Access database documentation and resources
+- Manage operational data assets alongside analytics workloads
+
+Database Hub also provides access to Copilot-enabled experiences that help developers generate queries, write code, and explore database objects using natural language.
+
+### Benefits of Database Hub
+
+Database Hub helps organizations:
+
+- Reduce complexity by providing a single entry point for database workloads
+- Simplify database discovery and management
+- Improve collaboration between developers and data professionals
+- Connect operational and analytical workloads within a unified platform
+- Accelerate application development through integrated Fabric experiences
+
+### Database Hub and OneLake
+
+Databases created through the Fabric Databases workload integrate directly with OneLake. This integration enables operational data to become available for analytics, reporting, machine learning, and AI workloads without requiring complex ETL processes.
+
+As a result, organizations can build solutions that combine operational processing and analytics within a single platform.
+
+<h2 id="8.1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">8.1 SQL Database in Microsoft Fabric</h2>
+
+SQL database in Microsoft Fabric is a developer-friendly transactional database built on the same SQL Database Engine used by Azure SQL Database. It is designed for operational applications while remaining tightly integrated with the Fabric analytics platform.
+ 
+Unlike traditional operational databases, data stored in SQL database is automatically replicated into OneLake in an analytics-ready format, allowing it to be used by Power BI, notebooks, Lakehouses, Data Warehouses, and AI workloads without requiring separate ETL processes.
 
 
 <img src="https://data-mozart.com/wp-content/uploads/2024/11/image-7-1024x501.png">
@@ -42,40 +89,30 @@ The Fabric SQL Database is a core component of Microsoft Fabric that provides a 
 ## Key Concepts
 
 | Concept | Description |
-|--------|-------------|
-| **SQL Endpoint** | A TDS-compatible endpoint that allows external tools to connect via the SQL engine to the Fabric SQL Database. Fabric SQL database requires the endpoint connection and a specific database name|
-| **SQL Analytics Endpoint** | A TDS-compatible endpoint that allows external tools to connect via the Polaris Engine to Fabric Warehouses, Lakehouses, and Database Mirrors. |
-| **Fabric SQL database Mirror** | A mirrored replicated copy stored in delta lake accessable via the SQL Analytics Endpoint, automatically created when a Fabric SQL Database is created. |
-| **Direct Lake Mode** | Enables Power BI to query Fabric SQL Database directly without data movement. |
-| **Security** | Supports role-based access control, row-level security, and integration with Microsoft Entra ID. |
+|----------|-------------|
+| SQL Database | A fully managed transactional database for operational workloads. |
+| OneLake Integration | Operational data is automatically replicated into OneLake in near real time. |
+| SQL Analytics Endpoint | Enables analytical querying of replicated data stored in OneLake. |
+| Mirroring | Makes operational data available for analytics across Fabric workloads. |
+| TDS Connectivity | Allows connectivity through standard SQL Server compatible clients and drivers. |
+| Security | Supports Microsoft Entra ID authentication, authorization, auditing, and governance controls. |
+| Copilot | Assists developers with query generation, code completion, and database development tasks. |
 
-### Why use SQL database in Fabric?
+### Common Use Cases
 
-SQL database in Fabric is part of the Database workload, and the data is accessible from other items in Fabric. Your SQL database data is also kept up-to-date in a queryable format in OneLake, so you can use all the different services in Fabric, such as running analytics with Spark, executing notebooks, data engineering, visualizing through Power BI Reports, and more.
+SQL database in Microsoft Fabric is commonly used for:
+
+- Line-of-business applications
+- Transaction processing systems
+- Application backends
+- Metadata repositories
+- Write-back scenarios from analytics applications
+- AI-powered operational applications
+
+Because SQL database is integrated with OneLake, transactional and analytical workloads can operate within a unified data platform.
 
 
 <img src="https://learn.microsoft.com/en-us/fabric/database/sql/media/mirroring-overview/sql-database-in-fabric-mirroring.svg">
-
-### Regional Availability
-| Americas             | Europe                 | Middle East | Africa              | Asia Pacific         |
-|----------------------|------------------------|-------------|---------------------|----------------------|
-| Brazil South         | North Europe          | UAE North   | South Africa North  | Australia East       |
-| Canada Central       | West Europe            |             |                     | Australia Southeast  |
-| Canada East         | France Central         |             |                     | Central India        |
-| Central US           | Germany West Central   |             |                     | East Asia            |
-| East US              | Italy North           |             |                     | Japan East          |
-| East US 2            | Norway East            |             |                     | Japan West          |
-| North Central US     | Poland Central        |             |                     | Southeast Asia       |
-| South Central US   | Sweden Central         |             |                     | South India          |
-| West US              | Switzerland North      |             |                     | Korea Central        |
-| West US 2            | Switzerland West      |             |                     |                      |
-| West US 3           | UK South               |             |                     |                      |
-|                      | UK West¹               |             |                     |                      |
-
-¹ Fabric SQL database isn't available in this region  
-
-
-
 
 
 ### Connecting to Fabric SQL Database
@@ -126,7 +163,7 @@ For more detailed information on connecting or migrating data to Fabric SQL Data
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Work through the Data Catalog Tutorial</b></p>
 
-In this activity, you will follow the basic training tutorial for a full life cycle tutorial for Fabric SQL Database.
+In this activity, you will follow the basic training tutorial for a full life cycle tutorial for SQL Database in Microsoft Fabric.
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
@@ -139,24 +176,51 @@ In this activity, you will follow the basic training tutorial for a full life cy
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="8-2"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">8.2 - Cosmos DB in Microsoft Fabric (preview)</h2>
+<h2 id="8-2"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">8.2 - Cosmos DB in Microsoft Fabric</h2>
 
-Cosmos DB in Microsoft Fabric is now in preview. Cosmos DB in Fabric makes it easy to build agentic AI apps, offering an AI-optimized database that is automatically configured to meet your application’s needs. It’s built on the high availability, dynamic scaling, and AI-ready capabilities of Azure Cosmos DB.
+Cosmos DB database in Microsoft Fabric is an AI-optimized NoSQL database that enables organizations to store and query semi-structured and unstructured application data while remaining fully integrated with the Fabric platform.
 
-Building on the momentum from the launch of SQL database in Fabric, we are expanding databases workload in Fabric with this new addition. You can now store semi-structured NoSQL data in Cosmos DB in Fabric, alongside your relational data in SQL databases, enabling a unified data platform for your applications. This further positions Fabric as a complete data platform to handle all your organizational needs, from operational to analytics and BI.
+Built on the same technology as Azure Cosmos DB for NoSQL, Cosmos DB in Fabric provides automatic scaling, low-latency access, built-in high availability, and seamless integration with OneLake.
 
-<img src="https://dataplatformblogwebfd-d3h9cbawf0h8ecgf.b01.azurefd.net/wp-content/uploads/2025/05/image-of-cosmos-db-in-fabric-item.png">
+Cosmos DB and SQL database can be used together within the same Fabric environment, enabling organizations to support both relational and NoSQL application requirements while maintaining a unified analytics platform.
+
+### Key Concepts
+
+| Concept | Description |
+|----------|-------------|
+| NoSQL Database | Designed for semi-structured and evolving data models. |
+| JSON Documents | Stores data in flexible document structures. |
+| OneLake Integration | Data is automatically available within OneLake for analytics. |
+| Vector Search | Supports vector indexing and similarity search for AI applications. |
+| Full Text Search | Supports text-based search and retrieval. |
+| Hybrid Search | Combines vector and text search techniques. |
+| Automatic Scaling | Dynamically scales to meet workload demands. |
+
+### AI and Modern Application Development
+ 
+Cosmos DB in Microsoft Fabric is designed to support modern AI applications.
+
+Capabilities include:
+
+- Vector storage
+- Vector indexing
+- Similarity search
+- Full text search
+- Hybrid search
+- Retrieval-Augmented Generation (RAG) scenarios
+
+These features enable developers to build intelligent applications that combine operational data, analytics, and AI capabilities within a single platform.
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 <ul>
-  <li><a href="https://learn.microsoft.com/en-us/fabric/database/sql/overview">SQL database in Microsoft Fabric (Preview)</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/fabric/database/sql/faq">Frequently asked questions for SQL database in Microsoft Fabric (preview)</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/fabric/database/sql/feature-comparison-sql-database-fabric" >Features comparison: Azure SQL Database and SQL database in Microsoft Fabric (preview)</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/database/sql/overview">SQL database in Microsoft Fabric</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/database/sql/faq">Frequently asked questions for SQL database in Microsoft Fabric</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/database/sql/feature-comparison-sql-database-fabric" >Features comparison: Azure SQL Database and SQL database in Microsoft Fabric</a></li>
   <li><a href="https://learn.microsoft.com/en-us/fabric/database/sql/decision-guide" >Microsoft Fabric decision guide: choose a SQL database</a></li>
     <li><a href="https://learn.microsoft.com/en-us/fabric/fundamentals/decision-guide-data-store?toc=%2Ffabric%2Fdatabase%2Ftoc.json&bc=%2Ffabric%2Fdatabase%2Ftoc.json" >Microsoft Fabric decision guide: choose a data store</a></li>
-  <li><a href="https://blog.fabric.microsoft.com/en-us/blog/22987?ft=All" >Announcing Cosmos DB in Microsoft Fabric (Preview)</a></li>
+  <li><a href="https://blog.fabric.microsoft.com/en-us/blog/22987?ft=All" >Announcing Cosmos DB in Microsoft Fabric</a></li>
 </ul>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
