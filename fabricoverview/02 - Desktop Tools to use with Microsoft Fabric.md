@@ -90,6 +90,8 @@ Install the extensions you need from the **Extensions** view in VS Code:
 
 The Fabric Data Engineering extension was previously named the Synapse VS Code extension, so you may still see that name in older articles and videos.
 
+Some extensions have their own prerequisites. For example, the Fabric Data Engineering extension uses the Jupyter extension, and User data functions need Python and the Azure Functions Core Tools. The setup articles linked in this section list everything you need.
+
 <h3>Browse and manage your workspace</h3>
 
 The Microsoft Fabric extension adds a Fabric view to VS Code. After you sign in with your Microsoft Entra ID account, you can:
@@ -112,7 +114,7 @@ The Fabric Data Engineering extension brings Spark development into VS Code:
 - **Lakehouse explorer**: Browse Lakehouse tables and files, preview table data, and copy paths to use in your code.
 - **Local mode and VFS mode**: In Local mode, you download items to your computer and sync your changes back. In VFS (Virtual File System) mode, you open and edit workspace items directly, without downloading them.
 
-You can also open a notebook from the Fabric portal by selecting **Open in VS Code**. VS Code for the Web (preview) lets you edit and run notebooks in your browser without installing anything.
+You can also open a notebook from the Fabric portal by selecting **Open in VS Code**. VS Code for the Web lets you edit and run notebooks in your browser without installing anything.
 
 <img src="https://learn.microsoft.com/en-us/fabric/data-engineering/media/vs-code/list-notebook.png" alt="The Fabric Data Engineering extension in VS Code listing the notebooks in a workspace" height = 400>
 
@@ -135,12 +137,12 @@ User data functions let you write reusable Python business logic that runs in Fa
 The Model Context Protocol (MCP) is an open standard that lets AI assistants call external tools. The Fabric MCP servers give GitHub Copilot Chat in VS Code tools for working with Microsoft Fabric, so you can ask Copilot to do things like list your workspaces or create an item.
 
 - **Fabric Core MCP Server** (remote): Works with workspaces, items, folders, role assignments, OneLake catalog search, and capacities. It uses your Microsoft Entra ID sign-in and your existing Fabric permissions.
-- **Local Fabric MCP server**: Runs on your computer through the Microsoft Fabric MCP Server extension or the `@microsoft/fabric-mcp` package. It provides Fabric API specifications, item schemas, and best-practice guidance, and can also work with OneLake files and Fabric items.
+- **Fabric MCP Server (local)**: Runs on your computer through the Microsoft Fabric MCP Server extension or the `@microsoft/fabric-mcp` package. It provides Fabric API specifications, item schemas, and best-practice guidance, and can also work with OneLake files and Fabric items.
 - **Workload servers**: Servers for specific workloads, such as Warehouse and Eventhouse, are in preview.
 
 For the full list, see [Choose a Fabric MCP server](https://learn.microsoft.com/en-us/rest/api/fabric/articles/mcp-servers/fabric-mcp-servers-list).
 
-This workshop repository is already set up for these servers. When you open the repository in VS Code, the `.vscode/mcp.json` file registers the Fabric Core and local Fabric MCP servers. For setup steps, see the **AI-Assisted Development with MCP Servers** section of the [workshop README](../README.md).
+This workshop repository is already set up for these servers. When you open the repository in VS Code, the `.vscode/mcp.json` file registers both servers as `fabric-core` and `fabric-local`. For setup steps, see the **AI-Assisted Development with MCP Servers** section of the [workshop README](../README.md).
 
 Keep these points in mind:
 
@@ -151,8 +153,9 @@ Keep these points in mind:
 
 - Sign in with your Microsoft Entra ID account. SQL authentication isn't supported for Fabric SQL endpoints.
 - SQL connections use the TDS protocol over TCP port 1433, which some networks block.
-- To create items, you need the Contributor role or higher in the workspace.
-- Some experiences are in preview, including VS Code for the Web notebooks, Warehouse projects, and some MCP servers.
+- Multiple Active Result Sets (MARS) isn't supported for Fabric Warehouse. If a connection string includes `MultipleActiveResultSets`, remove it or set it to `false`. For other connection limits, see [Warehouse connectivity: Considerations and limitations](https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity#considerations-and-limitations).
+- To create items, you need the Contributor role or higher in the workspace. Creating a SQL database from the MSSQL extension requires the Admin or Member role.
+- Some experiences are in preview, including Warehouse projects and some MCP servers.
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Connect VS Code to your Fabric workspace</b></p>
 
