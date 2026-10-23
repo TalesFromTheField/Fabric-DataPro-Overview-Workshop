@@ -18,107 +18,16 @@ You'll cover these topics in this Module on the Developer Experience:
 
 <dl>
 
-  <dt><a href="#2.1" >2.1 - Using Co-Pilot</a></dt>
-  <dt><a href="#2.2" >2.2 - Using SQL Server Management Studio</a></dt>
-  <dt><a href="#2.3" >2.3 - Using Microsoft Excel</a></dt>
-  <dt><a href="#2.4" >2.4 - Using OneLake File Explorer</a></dt>
-  <dt><a href="#2.5" >2.5 - Using Kusto Explorer</a></dt>
-  <dt><a href="#2.6" >2.6 - Using Visual Studio Code</a></dt>
-  <dt><a href="#2.7" >2.7 - Using Power BI</a></dt>
-  <dt><a href="#2.8" >2.8 - Using Storage Explorer</a></dt>
+  <dt><a href="#2.1" >2.1 - Using SQL Server Management Studio</a></dt>
+  <dt><a href="#2.2" >2.2 - Using Visual Studio Code</a></dt>
+  <dt><a href="#2.3" >2.3 - Using Power BI</a></dt>
+  <dt><a href="#2.4" >2.4 - Using Azure Storage Explorer</a></dt>
 
 </dl>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="2.1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.1 Using Co-Pilot</h2>
-
-Copilot in Power BI that harnesses the power of large language models to help users create value from their data using natural language. Users can simply describe their desired visuals and insights, and Copilot will generate them automatically, without requiring any manual input.
-
-Copilot also enables users to easily and quickly create and customize reports, write and edit DAX formulas, produce narrative summaries, and query their data in a conversational way. Users can tailor the tone, scope, and style of the narratives and integrate them into their reports for more effective data communication through clear and concise text.
-
-
-
-
-
-Microsoft has released *quick measure* suggestions for DAX capability that helps analysts quickly create the code they need. 
-
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Learn more about how Copilot works with Power BI </b></p>
-
-## Start Copilot in Power BI Desktop
-
-To get started with Copilot in Power BI Desktop, follow these steps:
-
-1. **Open a Power BI report** and select **Copilot** in the ribbon.  
-   The Copilot pane appears and prompts you to select a workspace.  
-   link-to-copilot-pane-image
-
-   <img src="https://learn.microsoft.com/en-us/power-bi/create-reports/media/copilot-enable-power-bi/copilot-button-ribbon.png#lightbox">
-
-2. **Select the workspace** you’d like to associate this report with for Copilot use.  
-   Only workspaces that support Copilot will appear.  
-   link-to-workspace-picker-image
-
-      <img src="https://learn.microsoft.com/en-us/power-bi/create-reports/media/copilot-enable-power-bi/copilot-workspace-selection.png">
-
-3. Use the **Settings gear** in the bottom-right corner of Power BI to:
-   - Switch the associated workspace
-   - Check which workspace your report is associated with  
-   link-to-workspace-settings-image
-
-      <img src="https://learn.microsoft.com/en-us/power-bi/create-reports/media/copilot-enable-power-bi/report-settings-gear.png">
-
-
-4. This opens the **Options** window.  
-   Navigate to the **Copilot (preview)** settings to:
-   - See which workspace you’re currently working with
-   - Select a new workspace  
-   link-to-options-window-image
-
-  <img src="https://learn.microsoft.com/en-us/power-bi/create-reports/media/copilot-enable-power-bi/copilot-settings.png#lightbox">
-
-
-5. Select the workspace you’d like to associate this report with for Copilot use. Only workspaces that support Copilot appear.
-
-<img src="https://learn.microsoft.com/en-us/power-bi/create-reports/media/copilot-enable-power-bi/copilot-workspace-selection.png">
-
-
-Use the Settings gear in the bottom-right corner of Power BI to switch the associated workspace or check which workspace your report is associated with.
-
-
-<img src="https://learn.microsoft.com/en-us/power-bi/create-reports/media/copilot-enable-power-bi/report-settings-gear.png">
-
-
-This opens the Options window, where you can navigate to the Copilot (preview) settings to see which workspace you’re currently working with and select a new workspace.
-
-<img src="https://learn.microsoft.com/en-us/power-bi/create-reports/media/copilot-enable-power-bi/copilot-settings.png#lightbox">
-
-
-
-### ⚠️ Error Message
-
-If you don’t have access to any workspaces that are in the correct capacity to use Copilot, you’ll see this message in the Copilot (preview) settings:
-
-> _"Either none of your workspaces have the right capacity to use Copilot, or you don't have the right permission to use them."_
-
-
-
----
-
-Now you're ready to create a report with Copilot in Power BI Desktop!
-
-
-To learn more about how Copilot works with Power BI, please select the link below. This link will take you to a video demonstration of Copilot in action, as well as a tutorial on how to get started with Copilot & Power BI. 
-
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-- Open this reference to see how to access Copilot in Power BI Desktop
-
-<p><a href="https://www.youtube.com/watch?v=4fJq8qessuM"><img src="https://img.youtube.com/vi/4fJq8qessuM/0.jpg" height = 200></a> 
-
-<p style="border-bottom: 1px solid lightgrey;"></p>
-
-<h2 id="2.2"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.2 Using SQL Server Management Studio</h2>
+<h2 id="2.1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.1 Using SQL Server Management Studio</h2>
 
 
 SSMS (SQL Server Management Studio) is a graphical tool that allows you to manage and query data from SQL Server databases. Fabric is a cloud-based data platform that enables you to create and manage data warehouses and lakehouses. A lakehouse is a hybrid of a data warehouse and a data lake, which combines the best features of both. SSMS can connect to Fabric lakehouse SQL endpoints, which are interfaces that allow you to run SQL queries on the data stored in Fabric.
@@ -160,121 +69,126 @@ You can also right-click this link to open it in another tab and review this vid
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="2.3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.3 Using Microsoft Excel</h2>
+<h2 id="2.2"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.2 Using Visual Studio Code</h2>
 
-Microsoft Excel is a software program that allows you to create, edit, and analyze spreadsheets and data. It is part of the Microsoft 365 suite of productivity tools, or it can be purchased separately. You can use Excel to organize your data in rows and columns, perform calculations with formulas and functions, create charts and graphs to visualize your data, and share your work with others. Excel also supports various languages and data types, such as SQL, Python, KQL, and Power BI.
+Visual Studio Code (VS Code) is a free, lightweight code editor that runs on Windows, macOS, and Linux. With a set of Microsoft extensions, you can work with Microsoft Fabric from your desktop: browse workspaces, author notebooks and Spark job definitions, explore Lakehouses, run T-SQL queries, build User data functions, and keep your work in Git source control. Many Fabric items also include an **Open in VS Code** option in the Fabric portal.
 
-In the menu bar at the top of the page, select the Data tab, select Get Data, select From Azure, and then select From Azure SQL Database.
+VS Code is also the cross-platform choice for T-SQL. SQL Server Management Studio runs only on Windows, and Azure Data Studio was [retired on February 28, 2026](https://learn.microsoft.com/en-us/sql/tools/whats-happening-azure-data-studio?view=sql-server-ver17). Microsoft recommends VS Code with the MSSQL extension instead.
 
-<img src="https://learn.microsoft.com/en-us/azure/azure-sql/database/media/connect-excel/excel_data_source.png?view=azuresql" height = 400> 
+<h3>The Fabric extensions for VS Code</h3>
 
-In the SQL Server database dialog box, type the Server name you want to connect to in the form xxxxxxxxxx-xxxxxxxxxx.xxxx-datawarehouse.pbidedicated.windows.net. Enter in the name of your data warehouse. Select OK to open the credentials window.
+Install the extensions you need from the **Extensions** view in VS Code:
 
-<img src="https://learn.microsoft.com/en-us/azure/azure-sql/database/media/connect-excel/server-name.png?view=azuresql" height = 400> 
+| Extension | Marketplace ID | Use it to |
+|---|---|---|
+| Microsoft Fabric | `fabric.vscode-fabric` | Sign in, browse workspaces, and create and manage items |
+| Fabric Data Engineering | `SynapseVSCode.synapse` | Author notebooks and Spark job definitions, and explore Lakehouses |
+| Fabric User data functions | `fabric.vscode-fabric-functions` | Create, debug, and publish User data functions |
+| SQL Server (mssql) | `ms-mssql.mssql` | Connect to SQL databases, SQL analytics endpoints, and Warehouses, and run T-SQL |
+| SQL Database Projects | `ms-mssql.sql-database-projects-vscode` | Develop Warehouse projects (preview) |
+| Microsoft Fabric MCP Server | `fabric.vscode-fabric-mcp-server` | Give GitHub Copilot access to Fabric tools |
 
-In the SQL Server database dialog box, select Microsoft Account on the left side, and then login with your Microsoft Credentials which have access to Microsoft Fabric. Select Connect to open the Navigator.
+The Fabric Data Engineering extension was previously named the Synapse VS Code extension, so you may still see that name in older articles and videos.
 
-<img src="https://learn.microsoft.com/en-us/azure/azure-sql/database/media/connect-excel/connect-to-server.png?view=azuresql" height = 400> 
+<h3>Browse and manage your workspace</h3>
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Using Microsoft Excel to access Microsoft Fabric.</b></p>
+The Microsoft Fabric extension adds a Fabric view to VS Code. After you sign in with your Microsoft Entra ID account, you can:
 
-In this Activity you will use Microsoft Excel to access Microsoft Fabric. 
+- Browse and filter your workspaces and folders, and switch between tenants
+- Create, rename, and delete items
+- Open an item's definition files to see how the item is configured
+- Clone workspaces that are connected to Git
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+<img src="https://learn.microsoft.com/en-us/fabric/data-engineering/media/vs-code/manage-workspace.png" alt="The Microsoft Fabric extension in VS Code showing a filtered list of workspaces" height = 400>
 
-- For an example of how to connect to Microsoft Fabric with Microsoft Excel click the following link:
+To install the extension and sign in, see [Microsoft Fabric extensions for Visual Studio Code](https://learn.microsoft.com/en-us/fabric/data-engineering/set-up-fabric-vs-code-extension).
 
-<p><a href="https://www.youtube.com/watch?v=iDLTj-tCLdY&t=279s"><img src="https://img.youtube.com/vi/iDLTj-tCLdY/0.jpg" height = 200></a> 
+<h3>Notebooks, Spark job definitions, and Lakehouses</h3>
 
-<p style="border-bottom: 1px solid lightgrey;"></p>
+The Fabric Data Engineering extension brings Spark development into VS Code:
 
-<h2 id="2.4"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.4 Using OneLake File Explorer</h2> 
-  
-The OneLake file explorer application enables a seamless integration of OneLake with Windows File Explorer. It synchronizes all OneLake items that you have access to in Windows File Explorer automatically. Synchronization means updating the metadata of files and folders to reflect the latest changes, and uploading the local modifications to the OneLake service.
+- **Notebooks**: Create, edit, and run Fabric notebooks. Code runs on the **Microsoft Fabric Runtime** kernel, which uses the remote Spark compute in your workspace, so you don't need to install Spark on your computer.
+- **Spark job definitions**: Create, edit, and run Spark job definitions.
+- **Lakehouse explorer**: Browse Lakehouse tables and files, preview table data, and copy paths to use in your code.
+- **Local mode and VFS mode**: In Local mode, you download items to your computer and sync your changes back. In VFS (Virtual File System) mode, you open and edit workspace items directly, without downloading them.
 
-- To stop OneLake from launching on Windows startup, go to Task Manager > Startup apps, right-click OneLake and choose Disable
-- To launch OneLake manually, use Windows search (Windows+S) and click on OneLake. The app will refresh your synced folders automatically.
-- To exit OneLake, right-click the OneLake icon on the taskbar, and choose Exit. The sync will pause, and you won't be able to access placeholders. You will still see the blue cloud icon for placeholders that were not downloaded.
+You can also open a notebook from the Fabric portal by selecting **Open in VS Code**. VS Code for the Web (preview) lets you edit and run notebooks in your browser without installing anything.
 
-<img src="https://learn.microsoft.com/en-us/fabric/onelake/media/onelake-file-explorer/onelake-file-explorer-screen-v-2.png" height = 400> 
+<img src="https://learn.microsoft.com/en-us/fabric/data-engineering/media/vs-code/list-notebook.png" alt="The Fabric Data Engineering extension in VS Code listing the notebooks in a workspace" height = 400>
 
-When you create, update, or delete a file via Windows File Explorer, it automatically syncs the changes to OneLake service. Updates to your item made outside of your File Explorer aren't automatically synced. To pull these updates, you need to right-click on the item or subfolder in Windows File Explorer and select Sync from OneLake.
+<h3>T-SQL with the MSSQL extension</h3>
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Use OneLake file explorer to access Fabrc data.</b></p>
+The SQL Server (mssql) extension connects VS Code to the SQL experiences in Fabric:
 
-In this Activity you will use OneLake file explorer to access, edit, and upload to Fabric data.
+- **Browse Fabric**: In the connection dialog, sign in, browse your workspaces, and connect to SQL databases and SQL analytics endpoints without copying a connection string. You can also create a SQL database in Fabric from VS Code.
+- **Warehouses**: Connect by using the Warehouse's SQL connection string and Microsoft Entra ID authentication.
+- **Open in VS Code**: For a SQL database in the Fabric portal, select **Open in** > **Visual Studio Code** to connect directly.
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+You'll use SSMS or this extension again in Module 05, to prepare an Azure SQL Database for Mirroring, and in Module 08, to connect to SQL database in Microsoft Fabric. For details, see [MSSQL extension: Fabric integration](https://learn.microsoft.com/en-us/sql/tools/visual-studio-code-extensions/mssql/mssql-fabric-integration?view=sql-server-ver17).
 
-- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/onelake/onelake-file-explorer)
+<h3>User data functions</h3>
 
-You can also right-click this link to open it in another tab and review this video that demonstrates this topic:
+User data functions let you write reusable Python business logic that runs in Fabric. With the Fabric User data functions extension, you can write functions on your computer, debug them with breakpoints, and publish them to your workspace. To get started, see [Create a User data functions item in VS Code](https://learn.microsoft.com/en-us/fabric/data-engineering/user-data-functions/create-user-data-functions-vs-code).
 
-<p><a href="https://www.youtube.com/watch?v=4NbuG1JBq60"><img src="https://img.youtube.com/vi/4NbuG1JBq60/0.jpg" height = 200></a> 
+<h3>GitHub Copilot and the Fabric MCP servers</h3>
 
-<p style="border-bottom: 1px solid lightgrey;"></p>
+The Model Context Protocol (MCP) is an open standard that lets AI assistants call external tools. The Fabric MCP servers give GitHub Copilot Chat in VS Code tools for working with Microsoft Fabric, so you can ask Copilot to do things like list your workspaces or create an item.
 
-<h2 id="2.5"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.5 Using Kusto Explorer</h2>
+- **Fabric Core MCP Server** (remote): Works with workspaces, items, folders, role assignments, OneLake catalog search, and capacities. It uses your Microsoft Entra ID sign-in and your existing Fabric permissions.
+- **Local Fabric MCP server**: Runs on your computer through the Microsoft Fabric MCP Server extension or the `@microsoft/fabric-mcp` package. It provides Fabric API specifications, item schemas, and best-practice guidance, and can also work with OneLake files and Fabric items.
+- **Workload servers**: Servers for specific workloads, such as Warehouse and Eventhouse, are in preview.
 
-A Desktop Application for Data Exploration with Kusto Query Language. Kusto.Explorer is a robust Windows desktop application that empowers users to delve into their data using the Kusto Query Language, all within an intuitive and user-friendly interface.
+For the full list, see [Choose a Fabric MCP server](https://learn.microsoft.com/en-us/rest/api/fabric/articles/mcp-servers/fabric-mcp-servers-list).
 
--   Use search mode to quickly find data in your tables and visualize the results.
--   Use query mode to write and execute complex queries using the Kusto Query Language syntax and features.
--   Share your queries with others by copying or exporting them as files or URLs.
--   Manage your clusters, databases, and tables by viewing their properties, creating new ones, or deleting existing ones.
+This workshop repository is already set up for these servers. When you open the repository in VS Code, the `.vscode/mcp.json` file registers the Fabric Core and local Fabric MCP servers. For setup steps, see the **AI-Assisted Development with MCP Servers** section of the [workshop README](../README.md).
 
-<img src="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/tools/images/kusto-explorer/ke-start.png" height = 400> 
+Keep these points in mind:
 
-The Connections pane shows all the configured cluster connections. For each cluster the databases, tables, and attributes (columns) that they store are shown. Select items (which sets an implicit context for the search/query in the main panel), or double-click items to copy the name to the search/query panel.
+- GitHub Copilot is a separate product from Copilot in Microsoft Fabric, which you'll explore in Module 07. You need a GitHub Copilot plan to use it.
+- Review each tool call before you approve it. Microsoft warns that autonomous or misconfigured clients may perform destructive actions. For guidance, see the [Fabric Core MCP Server overview](https://learn.microsoft.com/en-us/rest/api/fabric/articles/mcp-servers/core-remote/overview-core-mcp-server).
 
-<img src="https://learn.microsoft.com/en-us/azure/data-explorer/kusto/tools/images/kusto-explorer/connections-panel.png" height = 400> 
+<h3>Considerations</h3>
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Installation and using Kusto.Explorer.</b></p>
+- Sign in with your Microsoft Entra ID account. SQL authentication isn't supported for Fabric SQL endpoints.
+- SQL connections use the TDS protocol over TCP port 1433, which some networks block.
+- To create items, you need the Contributor role or higher in the workspace.
+- Some experiences are in preview, including VS Code for the Web notebooks, Warehouse projects, and some MCP servers.
 
-In this Activity you will observe the installation and use of Kusto.Explorer Desktop Application.
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Connect VS Code to your Fabric workspace</b></p>
 
-<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
-
-- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/tools/kusto-explorer#connections-panel) 
-- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/tools/kusto-explorer-using) 
-
-You can also right-click this link to open it in another tab and review this video that demonstrates this topic:
-
-<p><a href="https://youtu.be/iDLTj-tCLdY?t=186"><img src="https://img.youtube.com/vi/iDLTj-tCLdY/0.jpg" height = 200></a> 
-
-<p style="border-bottom: 1px solid lightgrey;"></p>
-
-<h2 id="2.6"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.6 Using Visual Studio Code</h2>
-
-Using Visual Studio Code with Microsoft Fabric is a great way to develop and deploy applications for the cloud. Visual Studio Code is a free, open source, and cross-platform code editor that supports multiple languages and runtimes, such as C#, Java, Python, and .NET. Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place.
-
-The Synapse VS Code extension enables a seamless and productive developer experience for exploring Microsoft Fabric lakehouses, and creating Fabric notebooks and Spark job definitions
-
-Visual Studio Code is a widely used and lightweight source code editor that runs on your desktop and supports Windows, macOS, and Linux platforms. With the Synapse VS Code extension, you can create, execute, and debug your notebook and Spark job definition locally in VS Code. You can also submit the code to the remote Spark compute in your Fabric workspace for running or debugging. Moreover, the extension enables you to browse your lakehouse data, including tables and raw files, in VS Code.
-
-<img src="https://learn.microsoft.com/en-us/fabric/data-engineering/media/vscode/list-notebook.png" height = 400> 
-
-**Considerations and limitations**
-
-- SQL Authentication is not supported.
-- Multiple Active Result Sets (MARS) is unsupported for Microsoft Fabric Warehouse. MARS is disabled by default, however if MultipleActiveResultSets is included in the connection string, it should be removed or set to false.
-- On connection to a warehouse, you may receive an error that "The token size exceeded the maximum allowed payload size". This may be due to having a large number of warehouses within the workspace or being a member of a large number of Azure AD groups. For most users, the error typically would not occur until approaching beyond 80 warehouses in the workspace. In event of this error, work with the Workspace admin to clean up unused Warehouses and retry the connection, or contact support if the problem persists.
-
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Connect to Microsoft Fabric using Visual Studio Code.</b></p>
-
-In this Activity you will learn how to connect VS Code to Microsoft Fabric.
+In this Activity you will install the Microsoft Fabric extension, sign in, browse your workspace, and create an item from VS Code.
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
-- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/data-engineering/setup-vs-code-extension) 
+- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/data-engineering/set-up-fabric-vs-code-extension)
+- Optional: install the SQL Server (mssql) extension, then use **Browse Fabric** to connect to a SQL analytics endpoint and run a query. [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/sql/tools/visual-studio-code-extensions/mssql/mssql-fabric-integration?view=sql-server-ver17)
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Develop Fabric notebooks in VS Code</b></p>
+
+In this Activity you will set up the Fabric Data Engineering extension, then create and run a notebook and explore a Lakehouse from VS Code.
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+
+- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/data-engineering/setup-vs-code-extension)
+- [Create and run a notebook in VS Code](https://learn.microsoft.com/en-us/fabric/data-engineering/author-notebook-with-vs-code)
+- [Explore a Lakehouse in VS Code](https://learn.microsoft.com/en-us/fabric/data-engineering/explore-lakehouse-with-vs-code)
 
 You can also right-click this link to open it in another tab and review this video that demonstrates this topic:
 
 <p><a href="https://www.youtube.com/watch?v=0tODoHLXhMc&ab"><img src="https://img.youtube.com/vi/0tODoHLXhMc/0.jpg" height = 200></a> 
 
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Use GitHub Copilot with the Fabric MCP servers</b></p>
+
+In this Activity you will connect GitHub Copilot in VS Code to the Fabric Core MCP Server and ask Copilot about your Fabric workspaces. You need access to GitHub Copilot to complete this Activity.
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+
+- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/rest/api/fabric/articles/mcp-servers/core-remote/get-started-core)
+- Or open this workshop repository in VS Code, where the Fabric MCP servers are already configured, and ask Copilot Chat: *List all my Fabric workspaces*
+
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="2.7"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.7 Using Power BI</h2>
+<h2 id="2.3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.3 Using Power BI</h2>
 
 Microsoft Fabric lets you create reusable and default Power BI datasets to create reports in various ways in Power BI. This article describes the various ways you can use your Warehouse or SQL Endpoint, and their default Power BI datasets, to create reports.
 
@@ -300,9 +214,9 @@ You can also right-click this link to open it in another tab and review this vid
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="2.9"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.9 Using Azure Storage Explorer</h2>
+<h2 id="2.4"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.4 Using Azure Storage Explorer</h2>
 
-Another tool that allows you to navigate and manage OneLake like OneLake File Explorer is Microsoft Azure Storage Explorer. Microsoft Azure Storage Explorer is a standalone app that makes it easy to work with Azure Storage accounts and their data, through desktop clients that run on Windows, macOS, and Linux.
+Microsoft Azure Storage Explorer is another tool that you can use to navigate and manage OneLake. It is a standalone app that makes it easy to work with Azure Storage accounts and their data, through desktop clients that run on Windows, macOS, and Linux.
 
 Once Azure Storage Explorer is connected to your OneLake, this is another client tool that allows you to view, upload, and download files from your OneLake, but also to move files between your OneLake and another Azure Storage location or type like Blob, Azure Data Lake, or even Azure File Shares.
 
@@ -320,14 +234,23 @@ You can also right-click this link to open it in another tab and review this vid
 
 <p><a href="https://www.youtube.com/watch?v=xingcILHkc0"><img src="https://img.youtube.com/vi/xingcILHkc0/0.jpg" height = 200></a> 
 
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 
 <ul>
-    <li><a href="https://learn.microsoft.com/en-us/fabric/release-plan/">Microsoft Fabric release plan documentation</a></li>
+    <li><a href="https://roadmap.fabric.microsoft.com/">Microsoft Fabric Roadmap</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/set-up-fabric-vs-code-extension">Microsoft Fabric extensions for Visual Studio Code</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/setup-vs-code-extension">Get started with the Fabric Data Engineering VS Code extension</a></li>
     <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/author-notebook-with-vs-code" >Microsoft Fabric notebook experience in VS Code</a></li>
     <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/author-notebook-resource-with-vs-code" >Microsoft Fabric notebook resource in VS Code</a></li>
     <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/author-sjd-with-vs-code" >Spark job definition experience in VS Code</a></li>
     <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/explore-lakehouse-with-vs-code" >Explore Microsoft Fabric lakehouses in VS Code</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/manage-workspace-with-vs-code-vfs-mode">Manage Fabric workspaces in VS Code under VFS mode</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/user-data-functions/create-user-data-functions-vs-code">Create a User data functions item in VS Code</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/sql/tools/visual-studio-code-extensions/mssql/mssql-fabric-integration?view=sql-server-ver17">MSSQL extension: Fabric integration</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/rest/api/fabric/articles/mcp-servers/what-is-fabric-mcp-server">What are Fabric MCP servers?</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/rest/api/fabric/articles/mcp-servers/core-remote/get-started-core">Get started with Fabric Core MCP Server</a></li>
    <li><a href="https://www.youtube.com/watch?v=0tODoHLXhMc&ab" > Microsoft Fabric, VS Code, Notebooks, & Spark! Set it up, connect to a Workspace, EDIT, & Upload</a></li>
 </ul>
 
