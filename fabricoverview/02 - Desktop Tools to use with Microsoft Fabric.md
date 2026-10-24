@@ -2,13 +2,24 @@
 
 # Workshop: Microsoft Fabric Overview for the Data Professional
 
-#### <i>A Microsoft Workshop </i>
+#### <i>A Microsoft Workshop</i>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2>02 - Desktop Tools to use with Microsoft Fabric</h2>
 
-In this workshop you'll cover using The Microsoft Fabric Platform to implement a complete Analytics solution using the Microsoft Fabric platform.
+In this module you'll learn how to work with Microsoft Fabric from tools that you install on your own computer. You'll query Warehouses and SQL analytics endpoints with SQL Server Management Studio, develop notebooks, functions, and T-SQL in Visual Studio Code, build reports with Power BI Desktop, and work with OneLake files in Azure Storage Explorer. All of the Activities in this module are self-guided, so you can try each tool after class.
+
+All four tools are free:
+
+| Tool | Runs on | Use it with Fabric to |
+|---|---|---|
+| SQL Server Management Studio (SSMS) | Windows | Query and manage Warehouses, SQL analytics endpoints, and SQL databases with T-SQL |
+| Visual Studio Code | Windows, macOS, Linux | Manage workspace items, develop notebooks and User data functions, run T-SQL, and use GitHub Copilot with Fabric |
+| Power BI Desktop | Windows | Build semantic models and reports on your Fabric data |
+| Azure Storage Explorer | Windows, macOS, Linux | Browse, upload, download, and copy files in OneLake |
+
+If you use a Mac, use Visual Studio Code for T-SQL, and build Power BI reports in your browser.
 
 In each module you'll get more references, which you should follow up on to learn more. Also watch for links within the text - click on each one to explore that topic.
 
@@ -20,7 +31,7 @@ You'll cover these topics in this Module on the Developer Experience:
 
   <dt><a href="#2.1" >2.1 - Using SQL Server Management Studio</a></dt>
   <dt><a href="#2.2" >2.2 - Using Visual Studio Code</a></dt>
-  <dt><a href="#2.3" >2.3 - Using Power BI</a></dt>
+  <dt><a href="#2.3" >2.3 - Using Power BI Desktop</a></dt>
   <dt><a href="#2.4" >2.4 - Using Azure Storage Explorer</a></dt>
 
 </dl>
@@ -30,41 +41,44 @@ You'll cover these topics in this Module on the Developer Experience:
 <h2 id="2.1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.1 Using SQL Server Management Studio</h2>
 
 
-SSMS (SQL Server Management Studio) is a graphical tool that allows you to manage and query data from SQL Server databases. Fabric is a cloud-based data platform that enables you to create and manage data warehouses and lakehouses. A lakehouse is a hybrid of a data warehouse and a data lake, which combines the best features of both. SSMS can connect to Fabric lakehouse SQL endpoints, which are interfaces that allow you to run SQL queries on the data stored in Fabric.
+SQL Server Management Studio (SSMS) is a free tool for managing and querying SQL Server and Azure SQL databases. It also connects to Microsoft Fabric, where you can use it with a Warehouse, the SQL analytics endpoint of a Lakehouse, and SQL database in Fabric. The current release, [SSMS 22](https://learn.microsoft.com/en-us/ssms/install/install), runs only on Windows. On macOS or Linux, use VS Code and its MSSQL extension instead (see section 2.2).
 
-The following paragraphs describe how to use SQL Server Management Studio (SSMS) to connect to a warehouse from the Microsoft Fabric workspace.
+SSMS helps when you outgrow the query editor that's built into the Fabric portal. For example, you can set session options with `SET` statements and run transactions that span several batches. Keep in mind that the tables in a SQL analytics endpoint are read-only. You can query them and create views, functions, and stored procedures, but you change the data in the Lakehouse itself, as you'll see in Module 04 - The Lakehouse.
 
-First, you need to obtain your connection string, which is a sequence of characters that specifies how to connect to the warehouse. To do this, go to your workspace, select the Warehouse, and click on More options. Then, choose Copy SQL connection string and paste it somewhere convenient.
+To connect SSMS to a Warehouse or SQL analytics endpoint:
 
-<img src="https://learn.microsoft.com/en-us/fabric/data-warehouse/media/connectivity/warehouse-copy-sql-connection-string.png" height = 400> 
+1. In the Fabric portal, open the item's **Settings**, go to the **SQL connection string** page, and copy the value shown there. It looks like `<unique-identifier>.datawarehouse.fabric.microsoft.com`. All the Warehouses and SQL analytics endpoints in a workspace share the same value.
+2. In SSMS, open the **Connect to Server** dialog and paste the value into **Server name**.
+3. For **Authentication**, select **Microsoft Entra MFA**, and sign in with the account that you use for Fabric. SQL authentication isn't supported.
+4. Enter the name of the Warehouse or Lakehouse as the database name. If you leave it blank, you connect to the `master` database instead.
 
-Next, you need to launch SSMS and enter the connection string in the Connect to Server dialog box. Click on Connect to establish the connection. After that, you can query and manage your warehouse data using SSMS. This is a simple and efficient way to access your warehouse data from the Microsoft Fabric workspace.
+<img src="https://learn.microsoft.com/en-us/fabric/data-warehouse/media/connectivity/connect-server-window.png" alt="The SSMS Connect to Server dialog with a Fabric server name and Microsoft Entra MFA authentication" height = 400>
 
-<p><img src="https://learn.microsoft.com/en-us/fabric/data-warehouse/media/connectivity/object-explorer-connect-menu.png" height = 400>
+After you connect, Object Explorer shows your Warehouse or SQL analytics endpoint with its tables and views, ready to query.
 
-In the *Connect to Server* dialog box, paste the SQL connection string from the Fabric user interface into the Server name box. The connection string should look something like this: fabric://<fabric-name>.sql.<region>.azure.com:1433/<database-name>.
+<img src="https://learn.microsoft.com/en-us/fabric/data-warehouse/media/connectivity/object-explorer-example.png" alt="SSMS Object Explorer connected to Fabric, showing the tables of a SQL analytics endpoint" height = 400>
 
-Once the Connect to Server window is open, paste the connection string copied from the previous section of this article into the Server name box. Select Connect and proceed with the appropriate credentials for authentication. Remember that only Azure Active Directory - MFA authentication is supported.
+SSMS lists Warehouses and SQL analytics endpoints the same way, so it can be hard to tell them apart. Use a naming convention that shows each item's type, such as a prefix or suffix in the item name.
 
-<img src="https://learn.microsoft.com/en-us/fabric/data-warehouse/media/connectivity/connect-server-window.png" height = 400> 
+Keep these points in mind:
 
-Once that  connection is established, Object Explorer displays the connected warehouse from the workspace and its respective tables and views, all of which are ready to be queried.
+- SSMS connects over TCP port 1433, which some networks block.
+- For a SQL database in Fabric, select **Open in** > **SQL Server Management Studio** in the Fabric portal, and SSMS opens with the connection details filled in. You'll work with SQL database in Fabric in Module 08 - Databases in Microsoft Fabric.
+- SSMS 22 includes [GitHub Copilot](https://learn.microsoft.com/en-us/ssms/github-copilot/overview), which can answer questions and help you write T-SQL for databases such as SQL database in Fabric. To turn it on, include the **AI Assistance** workload in your SSMS installation, then connect your GitHub account. Any GitHub Copilot plan works, including Copilot Free.
 
-<img src="https://learn.microsoft.com/en-us/fabric/data-warehouse/media/connectivity/object-explorer-example.png" height = 400> 
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Connect to a Warehouse with SSMS</b></p>
 
-When connecting via SSMS (or Azure Data Studio), you see both a SQL Endpoint and Warehouse listed as warehouses, and it's difficult to differentiate between the two item types and their functionality. For this reason, we strongly encourage you to adopt a naming convention that allows you to easily distinguish between the two item types when you work in tools outside of the Microsoft Fabric portal experience.
-
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Connecting to your Fabric Workspace using SSMS.</b></p>
-
-In this Activity you will learn how to get SQL connection string from workspace and connect SSMS. Learn how to query and explore data objects in Microsoft Fabric with SSMS. 
+In this Activity you will copy the SQL connection string of a Warehouse, connect to it from SSMS, and query its tables.
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
-- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity#get-started-with-sql-server-management-studio-ssms)
+- If you don't have a Warehouse yet, [create a sample Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-warehouse-sample), or come back to this Activity after you create a Warehouse in Module 03 - Data Warehouse and Data Integration.
+- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/data-warehouse/how-to-connect#connect-using-sql-server-management-studio-ssms)
+- Open a new query window and run a `SELECT` query against one of the tables.
 
 You can also right-click this link to open it in another tab and review this video that demonstrates this topic:
 
-<p><a href="https://www.youtube.com/watch?v=iDLTj-tCLdY&t=63s"><img src="https://img.youtube.com/vi/iDLTj-tCLdY/0.jpg" height = 200></a> 
+<p><a href="https://www.youtube.com/watch?v=iDLTj-tCLdY&t=63s"><img src="https://img.youtube.com/vi/iDLTj-tCLdY/0.jpg" alt="Tales From The Field video: Connect to Microsoft Fabric with five tools, starting at the SSMS demo" height = 200></a> 
 
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
@@ -94,7 +108,7 @@ Some extensions have their own prerequisites. For example, the Fabric Data Engin
 
 <h3>Browse and manage your workspace</h3>
 
-The Microsoft Fabric extension adds a Fabric view to VS Code. After you sign in with your Microsoft Entra ID account, you can:
+The Microsoft Fabric extension adds a Fabric view to VS Code. Once you've signed in with your Microsoft Entra ID, you can:
 
 - Browse and filter your workspaces and folders, and switch between tenants
 - Create, rename, and delete items
@@ -112,9 +126,9 @@ The Fabric Data Engineering extension brings Spark development into VS Code:
 - **Notebooks**: Create, edit, and run Fabric notebooks. Code runs on the **Microsoft Fabric Runtime** kernel, which uses the remote Spark compute in your workspace, so you don't need to install Spark on your computer.
 - **Spark job definitions**: Create, edit, and run Spark job definitions.
 - **Lakehouse explorer**: Browse Lakehouse tables and files, preview table data, and copy paths to use in your code.
-- **Local mode and VFS mode**: In Local mode, you download items to your computer and sync your changes back. In VFS (Virtual File System) mode, you open and edit workspace items directly, without downloading them.
+- **Local mode and VFS mode**: Local mode copies items to your computer, and you sync your edits back to the workspace when you're done. VFS (Virtual File System) mode skips the download, so you work on the items where they live in the workspace.
 
-You can also open a notebook from the Fabric portal by selecting **Open in VS Code**. VS Code for the Web lets you edit and run notebooks in your browser without installing anything.
+Notebooks in the Fabric portal also have an **Open in VS Code** button. If you'd rather not install anything, VS Code for the Web lets you edit and run notebooks in your browser.
 
 <img src="https://learn.microsoft.com/en-us/fabric/data-engineering/media/vs-code/list-notebook.png" alt="The Fabric Data Engineering extension in VS Code listing the notebooks in a workspace" height = 400>
 
@@ -126,7 +140,7 @@ The SQL Server (mssql) extension connects VS Code to the SQL experiences in Fabr
 - **Warehouses**: Connect by using the Warehouse's SQL connection string and Microsoft Entra ID authentication.
 - **Open in VS Code**: For a SQL database in the Fabric portal, select **Open in** > **Visual Studio Code** to connect directly.
 
-You'll use SSMS or this extension again in Module 05, to prepare an Azure SQL Database for Mirroring, and in Module 08, to connect to SQL database in Microsoft Fabric. For details, see [MSSQL extension: Fabric integration](https://learn.microsoft.com/en-us/sql/tools/visual-studio-code-extensions/mssql/mssql-fabric-integration?view=sql-server-ver17).
+You'll use SSMS or this extension again in two later modules. In Module 05 - Mirroring in Fabric, you prepare an Azure SQL Database for Mirroring, and in Module 08 - Databases in Microsoft Fabric, you connect to the SQL database that you create there. For details, see [MSSQL extension: Fabric integration](https://learn.microsoft.com/en-us/sql/tools/visual-studio-code-extensions/mssql/mssql-fabric-integration?view=sql-server-ver17).
 
 <h3>User data functions</h3>
 
@@ -134,7 +148,7 @@ User data functions let you write reusable Python business logic that runs in Fa
 
 <h3>GitHub Copilot and the Fabric MCP servers</h3>
 
-The Model Context Protocol (MCP) is an open standard that lets AI assistants call external tools. The Fabric MCP servers give GitHub Copilot Chat in VS Code tools for working with Microsoft Fabric, so you can ask Copilot to do things like list your workspaces or create an item.
+AI assistants use the Model Context Protocol (MCP), an open standard, to call tools outside the assistant. The Fabric MCP servers give GitHub Copilot Chat in VS Code tools for working with Microsoft Fabric, so you can ask Copilot to do things like list your workspaces or create an item.
 
 - **Fabric Core MCP Server** (remote): Works with workspaces, items, folders, role assignments, OneLake catalog search, and capacities. It uses your Microsoft Entra ID sign-in and your existing Fabric permissions.
 - **Fabric MCP Server (local)**: Runs on your computer through the Microsoft Fabric MCP Server extension or the `@microsoft/fabric-mcp` package. It provides Fabric API specifications, item schemas, and best-practice guidance, and can also work with OneLake files and Fabric items.
@@ -146,14 +160,14 @@ This workshop repository is already set up for these servers. When you open the 
 
 Keep these points in mind:
 
-- GitHub Copilot is a separate product from Copilot in Microsoft Fabric, which you'll explore in Module 07. You need a GitHub Copilot plan to use it.
-- Review each tool call before you approve it. Microsoft warns that autonomous or misconfigured clients may perform destructive actions. For guidance, see the [Fabric Core MCP Server overview](https://learn.microsoft.com/en-us/rest/api/fabric/articles/mcp-servers/core-remote/overview-core-mcp-server).
+- GitHub Copilot is a separate product from Copilot in Microsoft Fabric, which you'll explore in Module 07 - Copilots & Data Agents. You need a GitHub Copilot plan to use it.
+- Review each tool call before you approve it. Copilot acts with your Fabric permissions, so a mistaken or unattended request could change or delete items in your workspace. For guidance, see the [Fabric Core MCP Server overview](https://learn.microsoft.com/en-us/rest/api/fabric/articles/mcp-servers/core-remote/overview-core-mcp-server).
 
 <h3>Considerations</h3>
 
-- Sign in with your Microsoft Entra ID account. SQL authentication isn't supported for Fabric SQL endpoints.
-- SQL connections use the TDS protocol over TCP port 1433, which some networks block.
-- Multiple Active Result Sets (MARS) isn't supported for Fabric Warehouse. If a connection string includes `MultipleActiveResultSets`, remove it or set it to `false`. For other connection limits, see [Warehouse connectivity: Considerations and limitations](https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity#considerations-and-limitations).
+- Connect with your Microsoft Entra ID. Warehouses and SQL analytics endpoints don't accept SQL authentication.
+- SQL connections use TCP port 1433, which some networks block.
+- Fabric Warehouse doesn't support Multiple Active Result Sets (MARS). If a connection string includes `MultipleActiveResultSets`, remove it or set it to `false`. For other connection limits, see [Warehouse connectivity: Considerations and limitations](https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity#considerations-and-limitations).
 - To create items, you need the Contributor role or higher in the workspace. Creating a SQL database from the MSSQL extension requires the Admin or Member role.
 - Some experiences are in preview, including Warehouse projects and some MCP servers.
 
@@ -178,7 +192,7 @@ In this Activity you will set up the Fabric Data Engineering extension, then cre
 
 You can also right-click this link to open it in another tab and review this video that demonstrates this topic:
 
-<p><a href="https://www.youtube.com/watch?v=0tODoHLXhMc&ab"><img src="https://img.youtube.com/vi/0tODoHLXhMc/0.jpg" height = 200></a> 
+<p><a href="https://www.youtube.com/watch?v=0tODoHLXhMc"><img src="https://img.youtube.com/vi/0tODoHLXhMc/0.jpg" alt="Tales From The Field video: Microsoft Fabric, VS Code, notebooks, and Spark" height = 200></a> 
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Use GitHub Copilot with the Fabric MCP servers</b></p>
 
@@ -191,51 +205,74 @@ In this Activity you will connect GitHub Copilot in VS Code to the Fabric Core M
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="2.3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.3 Using Power BI</h2>
+<h2 id="2.3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.3 Using Power BI Desktop</h2>
 
-Microsoft Fabric lets you create reusable and default Power BI datasets to create reports in various ways in Power BI. This article describes the various ways you can use your Warehouse or SQL Endpoint, and their default Power BI datasets, to create reports.
+Power BI Desktop is Microsoft's free tool for building semantic models and reports on your own computer. With Microsoft Fabric, you can use it to report on the data in your Lakehouses, Warehouses, and other Fabric items, and then share your reports from a Fabric workspace.
 
-For example, you can establish a live connection to a shared dataset in the Power BI service and create many different reports from the same dataset. You can create a data model in Power BI Desktop and publish to the Power BI service. Then, you and others can create multiple reports in separate .pbix files from that common data model and save them to different workspaces.
+To find Fabric data, select **OneLake catalog** on the **Home** ribbon. The [OneLake catalog](https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-data-sources#onelake-catalog) lists the Fabric items that you have access to, and what you get depends on what you select:
 
-Advanced users can build reports from a warehouse using a composite model or using the SQL connection string.
+| Select | Then select | You get |
+|---|---|---|
+| A Lakehouse or Warehouse | **Connect** | A [Direct Lake](https://learn.microsoft.com/en-us/fabric/fundamentals/direct-lake-power-bi-desktop) semantic model that's stored in your workspace. Power BI Desktop edits it live, so there's nothing to publish. |
+| A Lakehouse or Warehouse | **Connect to SQL endpoint** | An Import or DirectQuery semantic model that stays in your .pbix file until you publish it |
+| A semantic model | **Connect** | A [live connection](https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-report-lifecycle-datasets), so you can build reports on a shared semantic model without changing it |
 
-Power BI natively and fully supports a Warehouse or Lakehouse SQL Endpoint as a data source, eliminating the need for the SQL Connection string. The Data Hub provides direct access to all of the warehouses that you have permissions for.
+With Direct Lake, the semantic model reads the Delta tables in OneLake directly, so you don't have to import and refresh a copy of the data. For more control, such as filtering the data with a SQL statement, you can also connect with the **SQL Server** connector and the SQL connection string from section 2.1. To combine Fabric data with other sources, see [composite models](https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-composite-models).
 
-<img src="https://learn.microsoft.com/en-us/power-bi/fundamentals/media/fabric-get-started/configure-connection.png" height = 400> 
+<img src="https://learn.microsoft.com/en-us/power-bi/connect-data/media/desktop-data-sources/new-get-data-onelake-connectivity-mode.png" alt="The OneLake catalog in Power BI Desktop, showing Fabric items and the Connect and Edit options for a semantic model" height = 400>
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Create reports using Power BI Desktop.</b></p>
+If you've seen older Fabric content, note two changes:
 
-You can build reports from datasets with Power BI Desktop using a Live connection to the default dataset. For information on how to make the connection, see connect to datasets from Power BI Desktop.
+- *Datasets* are now called *semantic models*.
+- Warehouses, Lakehouses, and mirrored databases no longer get a default semantic model. Fabric stopped creating them in September 2025 and turned the existing ones into independent semantic models. For details, see [Power BI semantic models in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-warehouse/semantic-models).
+
+Power BI Desktop runs only on Windows. If you use macOS, you can [create semantic models and reports in your browser](https://learn.microsoft.com/en-us/power-bi/create-reports/power-bi-reports-overview#create-reports-in-the-power-bi-service) in the Power BI service.
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Create reports using Power BI Desktop</b></p>
+
+In this Activity you will connect Power BI Desktop to a Warehouse and build a report. Use the Warehouse you create in Module 03 - Data Warehouse and Data Integration, or a [sample Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-warehouse-sample).
+
+Some steps in the reference use older names. The ribbon button is now named **OneLake catalog**, and Warehouses no longer have a default semantic model, so selecting **Connect** creates a new Direct Lake semantic model. To follow the reference's steps, select **Connect to SQL endpoint**.
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
-- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-reports#create-reports-using-power-bi-desktop) 
+- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-reports#create-reports-using-power-bi-desktop)
 
 You can also right-click this link to open it in another tab and review this video that demonstrates this topic:
 
-<p><a href="https://www.youtube.com/watch?v=iDLTj-tCLdY&t=329s"><img src="https://img.youtube.com/vi/iDLTj-tCLdY/0.jpg" height = 200></a> 
+<p><a href="https://www.youtube.com/watch?v=iDLTj-tCLdY&t=329s"><img src="https://img.youtube.com/vi/iDLTj-tCLdY/0.jpg" alt="Tales From The Field video: Connect to Microsoft Fabric with five tools, starting at the Power BI demo" height = 200></a> 
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <h2 id="2.4"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">2.4 Using Azure Storage Explorer</h2>
 
-Microsoft Azure Storage Explorer is another tool that you can use to navigate and manage OneLake. It is a standalone app that makes it easy to work with Azure Storage accounts and their data, through desktop clients that run on Windows, macOS, and Linux.
+Azure Storage Explorer is a free app for Windows, macOS, and Linux that you use to work with files in Azure Storage. Storage Explorer also works with OneLake, because OneLake understands the same APIs that tools use for Blob Storage and Azure Data Lake Storage (ADLS) Gen2. You can browse the folders and files in your Fabric items, upload and download files, and copy files between OneLake and Azure Storage accounts.
 
-Once Azure Storage Explorer is connected to your OneLake, this is another client tool that allows you to view, upload, and download files from your OneLake, but also to move files between your OneLake and another Azure Storage location or type like Blob, Azure Data Lake, or even Azure File Shares.
+To connect, you give Storage Explorer the URL of a workspace or item. The URL looks like `https://onelake.dfs.fabric.microsoft.com/<workspace>/<item>.<itemtype>/`, for example `https://onelake.dfs.fabric.microsoft.com/myworkspace/mylakehouse.Lakehouse/`. To find it, open the **Properties** of a file or folder in the Fabric portal. Storage Explorer doesn't list your workspaces for you.
 
-<img src="https://learn.microsoft.com/en-us/azure/storage/storage-explorer/media/vs-azure-tools-storage-manage-with-storage-explorer/vs-storage-explorer-overview.png" height = 400>
+<img src="https://learn.microsoft.com/en-us/fabric/onelake/media/onelake-azure-storage-explorer/select-onelake-folder.png" alt="Azure Storage Explorer connected to OneLake, showing the Files and Tables folders of a Fabric item" height = 300>
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Connecting Microsoft Azure Storage Explorer to OneLake</b></p>
+Keep these points in mind:
 
-Azure Storage Explorer allows you to view and manage your cloud storage account’s contents. You can upload, download, or move files from one location to another. This article demonstrates OneLake integration with Azure Storage Explorer. 
+- You manage workspaces, items, and permissions in Fabric. In Storage Explorer, you work with the folders and files inside an item.
+- In a Lakehouse, put your own files in the **Files** folder. The **Tables** folder holds the Lakehouse's managed Delta tables.
+- To upload or delete files, you need the Contributor role or higher in the workspace. Your Fabric admin must also allow apps outside Fabric to access OneLake.
+- If your workspace name contains capital letters, deleting files from Storage Explorer fails. Use a lowercase workspace name if you plan to delete files.
+- On macOS, and on Linux if you use the .tar.gz package, install the .NET 10 runtime before you install Storage Explorer.
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Connect Azure Storage Explorer to OneLake</b></p>
+
+In this Activity you will install Azure Storage Explorer, connect it to a Lakehouse in OneLake, and upload, download, and copy files.
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
-- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/onelake/onelake-azure-storage-explorer) 
+- If you don't have a Lakehouse with files yet, complete the first sections of [Quickstart: Get data into OneLake](https://learn.microsoft.com/en-us/fabric/onelake/quickstart-get-data) to create a Lakehouse and upload a sample file. Skip the clean-up section, so that you can use the Lakehouse in this Activity. You'll also create a Lakehouse in Module 04 - The Lakehouse.
+- Download and install the newest release of [Azure Storage Explorer](https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer). The reference below lists version 1.29.0 as the minimum, but that version is no longer supported.
+- [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/onelake/onelake-azure-storage-explorer)
 
 You can also right-click this link to open it in another tab and review this video that demonstrates this topic:
 
-<p><a href="https://www.youtube.com/watch?v=xingcILHkc0"><img src="https://img.youtube.com/vi/xingcILHkc0/0.jpg" height = 200></a> 
+<p><a href="https://www.youtube.com/watch?v=xingcILHkc0"><img src="https://img.youtube.com/vi/xingcILHkc0/0.jpg" alt="Tales From The Field video: How to connect Azure Storage Explorer to OneLake" height = 200></a> 
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
@@ -243,18 +280,19 @@ You can also right-click this link to open it in another tab and review this vid
 
 <ul>
     <li><a href="https://roadmap.fabric.microsoft.com/">Microsoft Fabric Roadmap</a></li>
-    <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/set-up-fabric-vs-code-extension">Microsoft Fabric extensions for Visual Studio Code</a></li>
-    <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/setup-vs-code-extension">Get started with the Fabric Data Engineering VS Code extension</a></li>
-    <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/author-notebook-with-vs-code" >Microsoft Fabric notebook experience in VS Code</a></li>
-    <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/author-notebook-resource-with-vs-code" >Microsoft Fabric notebook resource in VS Code</a></li>
-    <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/author-sjd-with-vs-code" >Spark job definition experience in VS Code</a></li>
-    <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/explore-lakehouse-with-vs-code" >Explore Microsoft Fabric lakehouses in VS Code</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/data-warehouse/connectivity">Warehouse connectivity</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/data-warehouse/entra-id-authentication">Microsoft Entra authentication as an alternative to SQL authentication</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/data-warehouse/tsql-surface-area">T-SQL surface area in Fabric Data Warehouse</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/author-notebook-resource-with-vs-code" >Access and manage Fabric notebook resources in VS Code</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/author-sjd-with-vs-code" >Create and manage Apache Spark job definitions in VS Code</a></li>
     <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/manage-workspace-with-vs-code-vfs-mode">Manage Fabric workspaces in VS Code under VFS mode</a></li>
-    <li><a href="https://learn.microsoft.com/en-us/fabric/data-engineering/user-data-functions/create-user-data-functions-vs-code">Create a User data functions item in VS Code</a></li>
-    <li><a href="https://learn.microsoft.com/en-us/sql/tools/visual-studio-code-extensions/mssql/mssql-fabric-integration?view=sql-server-ver17">MSSQL extension: Fabric integration</a></li>
     <li><a href="https://learn.microsoft.com/en-us/rest/api/fabric/articles/mcp-servers/what-is-fabric-mcp-server">What are Fabric MCP servers?</a></li>
-    <li><a href="https://learn.microsoft.com/en-us/rest/api/fabric/articles/mcp-servers/core-remote/get-started-core">Get started with Fabric Core MCP Server</a></li>
-   <li><a href="https://www.youtube.com/watch?v=0tODoHLXhMc&ab" > Microsoft Fabric, VS Code, Notebooks, & Spark! Set it up, connect to a Workspace, EDIT, & Upload</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/fundamentals/direct-lake-overview">Direct Lake overview</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/governance/onelake-catalog-overview">OneLake catalog overview</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-overview">Power BI Desktop projects (PBIP)</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-access-api">Connecting to Microsoft OneLake</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-api-parity">OneLake API parity with Azure Storage</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-azcopy">Use AzCopy with OneLake</a></li>
 </ul>
 
 Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](03%20-%20Data%20Warehouse%20and%20Data%20Integration.md).
