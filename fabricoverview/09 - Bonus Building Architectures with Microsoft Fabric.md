@@ -2,7 +2,7 @@
 
 # Workshop: Microsoft Fabric Overview for the Data Professional
 
-#### <i>A Microsoft Workshop from Azure Data and the Fasttrack Team</i>
+#### <i>A workshop from the Tales from the Field team</i>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 

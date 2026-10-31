@@ -26,7 +26,7 @@ Every module file must contain these five parts in order:
 1. **Header block**
    - `![](../graphics/microsoftlogo.png)` (Microsoft logo)
    - `# Workshop: Microsoft Fabric Overview for the Data Professional`
-   - `#### <i>A Microsoft Workshop</i>`
+   - `#### <i>A workshop from the Tales from the Field team</i>`
    - Grey separator line
 
 2. **Module overview**

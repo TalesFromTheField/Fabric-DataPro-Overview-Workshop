@@ -3,7 +3,7 @@
 ## About This Repository
 
 This is a **Microsoft Fabric workshop** for data professionals, published by
-Microsoft's Azure Data and FastTrack teams. The content teaches how to design,
+the Tales from the Field team. The content teaches how to design,
 implement, use, and manage Microsoft Fabric analytics solutions covering
 OneLake, Data Factory, Synapse, Power BI, Lakehouses, Data Warehouses,
 Real-Time Intelligence, Mirroring, Copilots & AI Skills, and OLTP databases.
@@ -33,7 +33,7 @@ Each module file (`XX - Title.md`) follows this top-to-bottom structure:
 1. **Header block** (required)
    - Microsoft logo: `![](../graphics/microsoftlogo.png)`
    - Workshop title: `# Workshop: Microsoft Fabric Overview for the Data Professional`
-   - Workshop subtitle: `#### <i>A Microsoft Workshop</i>`
+   - Workshop subtitle: `#### <i>A workshop from the Tales from the Field team</i>`
    - Grey separator line
 
 2. **Module overview** (required)
