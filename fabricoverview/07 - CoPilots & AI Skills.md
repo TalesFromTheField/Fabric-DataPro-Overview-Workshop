@@ -2,7 +2,7 @@
 
 # Workshop: Microsoft Fabric Overview for the Data Professional
 
-#### <i>A Microsoft Workshop</i>
+#### <i>A workshop from the Tales from the Field team</i>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 

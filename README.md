@@ -2,7 +2,7 @@
 
 # Workshop: Microsoft Fabric Overview for the Data Professional
 
-#### <i>A Microsoft Workshop</i>
+#### <i>A workshop from the Tales from the Field team</i>
 
 
 ### https://aka.ms/fabricdata
@@ -11,7 +11,7 @@
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="https://raw.githubusercontent.com/microsoft/sqlworkshops/master/graphics/textbubble.png"> <h2>About this Workshop</h2>
 
-Welcome to this Microsoft solutions workshop on Microsoft Fabric for the Data Professional. Microsoft Fabric is an end-to-end analytics solution with full-service capabilities including data movement, data lakes, data engineering, data integration, data science, real-time analytics, and business intelligence—all backed by a shared platform providing robust data security, governance, and compliance.
+Welcome to this workshop on Microsoft Fabric for the Data Professional. Microsoft Fabric is an end-to-end analytics solution with full-service capabilities including data movement, data lakes, data engineering, data integration, data science, real-time analytics, and business intelligence—all backed by a shared platform providing robust data security, governance, and compliance.
 
 In this workshop, you'll learn what the Microsoft Fabric platform is, the various services and components it contains, how to create, use and manage a deployment, from the point of view of the data professional.
 
@@ -21,7 +21,7 @@ You'll start with an introduction to Microsoft Fabric, move on to understanding 
 
 This github README.MD file explains how the workshop is laid out, what you will learn, and the technologies you will use in this solution. To download this Lab to your local computer, click the **Clone or Download** button you see at the top right side of this page. [More about that process is here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). 
 
-You can view all of the [Workshops and other workshops our team has created at this link - open in a new tab to find out more.](https://microsoft.github.io/sqlworkshops/)
+You can find more workshops on SQL Server and other Microsoft data technologies at the [SQL Server Workshops](https://microsoft.github.io/sqlworkshops/) site - open it in a new tab to find out more.
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
