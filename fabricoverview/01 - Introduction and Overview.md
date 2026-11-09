@@ -8,7 +8,7 @@
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2>01 - Introduction and Overview</h2>
 
-In this workshop you'll cover using The Microsoft Fabric Platform to implement a complete Analytics solution using the Microsoft Fabric platform.
+In this module you'll learn the core concepts of Microsoft Fabric that the rest of the workshop builds on.
 
 In each module you'll get more references, which you should follow up on to learn more. Also watch for links within the text - click on each one to explore that topic.
 
@@ -16,19 +16,19 @@ In each module you'll get more references, which you should follow up on to lear
 
 You'll cover these topics in this Module:
 <dl>
-  <dt><a href="#1.1" >1.1 - Introduction of the Workshop</a><dt>
-  <dt><a href="#1.2" >1.2 - Basic Concepts in Microsoft Fabric</a><dt>
-  <dt><a href="#1.3" >1.3 - OneLake & Microsoft Fabric Architecture</a><dt>
-  <dt><a href="#1.4" >1.4 - Microsoft Fabric Compute Engines</a><dt>
-  <dt><a href="#1.5" >1.5 - Microsoft Fabric Roles</a><dt>
-  <dt><a href="#1.6" >1.6 - Understanding Microsoft Fabric Capacity</a><dt>
-  <dt><a href="#1.7" >1.7 - AI and Copilot in Microsoft Fabric</a><dt>
-  <dt><a href="#1.8" >1.8 - Understanding and creating Workspaces</a><dt>
+  <dt><a href="#1.1" >1.1 - Introduction of the Workshop</a></dt>
+  <dt><a href="#1.2" >1.2 - Basic Concepts in Microsoft Fabric</a></dt>
+  <dt><a href="#1.3" >1.3 - OneLake & Microsoft Fabric Architecture</a></dt>
+  <dt><a href="#1.4" >1.4 - Microsoft Fabric Compute Engines</a></dt>
+  <dt><a href="#1.5" >1.5 - Microsoft Fabric Roles</a></dt>
+  <dt><a href="#1.6" >1.6 - Understanding Microsoft Fabric Capacity</a></dt>
+  <dt><a href="#1.7" >1.7 - AI and Copilot in Microsoft Fabric</a></dt>
+  <dt><a href="#1.8" >1.8 - Understanding and creating Workspaces</a></dt>
 </dl>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="1-1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png"> Introduction of the Workshop</h2>
+<h2 id="1.1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.1 - Introduction of the Workshop</h2>
 
 Data is a valuable asset for organizations that want to make better business decisions. Microsoft Fabric is a unified Software-as-a-Service (SaaS) data platform that enables data collection, storage, processing, analysis, and visualization within a single environment. It provides a secure, flexible, and integrated solution for building modern analytics workloads.
 
@@ -36,18 +36,16 @@ Microsoft Fabric brings together multiple analytics experiences on a common plat
 
 Because Microsoft Fabric is delivered as a cloud service, organizations can focus on building data solutions instead of managing infrastructure. Fabric provides integrated security, governance, and administration capabilities while supporting a broad range of analytics workloads including data engineering, data warehousing, data integration, real-time intelligence, business intelligence, and AI-assisted analytics.
 
-At the foundation of Microsoft Fabric is OneLake, a unified logical data lake designed to support all Fabric workloads. OneLake serves as the storage layer behind the Fabric platform, providing a common data foundation that can be accessed by multiple analytics engines and experiences.
-
-OneLake also supports shortcuts, allowing organizations to reference data located in other Fabric workspaces, Azure Storage accounts, and other supported data sources without requiring unnecessary data duplication. This enables teams to work from a common source of data while simplifying governance and data management.
+OneLake provides the shared storage foundation for Fabric workloads. You'll explore its architecture and shortcuts in [section 1.3](#1.3).
 
 Microsoft Fabric is designed to help organizations transform large volumes of data into actionable insights. By combining storage, compute, analytics, governance, and AI capabilities into a single platform, Fabric helps data professionals design, build, operate, and scale modern analytics solutions.
 
 In this Workshop, you will learn:
-- The <b>basic</b> concepts, services, roles, and benchmarks of Microsoft Fabric
+- The <b>basic</b> concepts, services, and roles of Microsoft Fabric
 - <b>How to create and manage</b> workspaces, data warehouses, and data integration pipelines and data flows
-- <b>How to Secure and govern</b> your data with distributed ownership and collaboration
+- <b>How to secure and govern</b> your data with distributed ownership and collaboration
 - <b>How the different analytical engines</b> can be used to run T-SQL, Python, or KQL queries in order to load, transform, query, and visualize your data
-- <b>How to use various developer tools</b>, such as Co-Pilot, SSMS, VS Code, and command-line tools, to develop and test your data applications
+- <b>How to use various developer tools</b>, such as Copilot, SSMS, VS Code, and command-line tools, to develop and test your data applications
 - <b>How</b> Microsoft Fabric integrates with DevOps
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
@@ -68,11 +66,11 @@ Microsoft Fabric enables organizations and individuals to turn large and complex
 
 - **Data Factory**  
   Data Factory provides data integration, orchestration, transformation, dataflows, copy activities, and data pipelines for moving and preparing data from cloud and on-premises sources. Data Factory incorporates the simplicity of Power Query, where native connectors allow users to connect to data sources on-premises and in the cloud. 
-  _For more information, see_ [What is Data Factory in Microsoft Fabric?] https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview
+  _For more information, see_ [What is Data Factory in Microsoft Fabric?](https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview)
   
-  **Industry Solutions**  
+- **Industry Solutions**\
   Fabric provides industry-specific data solutions that address unique industry needs and challenges, and include data management, analytics, and decision-making.  
-  _For more information, see_ [Industry Solutions in Microsoft Fabric] https://learn.microsoft.com/en-us/industry/industry-data-solutions-fabric
+  _For more information, see_ [Industry Solutions in Microsoft Fabric](https://learn.microsoft.com/en-us/industry/industry-data-solutions-fabric)
 
 - **Real-Time Intelligence**  
   Real-time Intelligence is an end-to-end solution for event-driven scenarios, streaming data, and data logs. It enables the extraction of insights, visualization, and action on data in motion by handling data ingestion, transformation, storage, modeling, analytics, visualization, tracking, AI, and real-time actions. Core components include Eventstreams, Eventhouses, Real-Time Dashboards, and the Real-Time Hub. The Real-Time hub in Real-Time Intelligence provides a wide variety of no-code connectors, converging into a catalog of organizational data that is protected, governed, and integrated across Fabric.  
@@ -80,9 +78,9 @@ Microsoft Fabric enables organizations and individuals to turn large and complex
 
 - **Data Engineering**  
   Fabric Data Engineering provides a Spark platform with great authoring experiences. It enables you to create, manage, and optimize infrastructures for collecting, storing, processing, and analyzing vast data volumes. Data Engineering uses Apache Spark and Lakehouses to build scalable data pipelines and supports notebooks, Spark jobs, and Delta Lake-based architectures.
-  _For more information, see_ [What is Data engineering in Microsoft Fabric?]https://learn.microsoft.com/en-us/fabric/data-engineering/data-engineering
+  _For more information, see_ [What is Data Engineering in Microsoft Fabric?](https://learn.microsoft.com/en-us/fabric/data-engineering/data-engineering-overview)
   
-  **Data Science** 
+- **Data Science**\
   Data Science enables Data Scientists to build, deploy, and operationalize machine learning models from Fabric. It integrates with Azure Machine Learning to provide built-in experiment tracking and model registry. Data scientists can enrich organizational data with predictions and business analysts can integrate those predictions into their BI reports, allowing a shift from descriptive to predictive insights.  
   _For more information, see_ https://learn.microsoft.com/en-us/fabric/data-science/data-science-overview
 
@@ -94,14 +92,15 @@ Microsoft Fabric enables organizations and individuals to turn large and complex
   A Lakehouse combines the flexibility of a data lake with the performance and management capabilities of a data warehouse. Lakehouses store data in OneLake using Delta tables and provide both file-based and SQL-based access to data.
   _For more information, see_ https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-overview
 
-- **OneLake** - [*OneLake*](https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview) 
-  OneLake is the unified logical data lake for Microsoft Fabric. Every Fabric tenant includes a single OneLake instance that serves as the foundation for analytics and AI workloads. OneLake supports shortcuts, centralized governance, distributed ownership through domains and workspaces, and open data formats such as Delta Parquet and Iceberg.
+- **OneLake**\
+  OneLake is the unified logical data lake shared by Fabric workloads. See [section 1.3](#1.3) for its architecture and capabilities.\
+  _For more information, see_ [What is OneLake?](https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview)
 
 - **OneLake Catalog**
   The OneLake Catalog provides a centralized experience for discovering, understanding, and governing data assets across the organization. 
   _For more information, see_ https://learn.microsoft.com/en-us/fabric/governance/onelake-catalog-overview
 
-<p><img src="https://learn.microsoft.com/en-us/fabric/fundamentals/media/microsoft-fabric-overview/fabric-architecture.png#lightbox" height = 400>
+<p><img src="https://learn.microsoft.com/en-us/fabric/fundamentals/media/microsoft-fabric-overview/fabric-architecture.png#lightbox" alt="Fabric workloads share OneLake, Copilot, and governance on a software-as-a-service platform" height = 400>
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Review Exercise for this Workshop</b></p>
 
@@ -113,7 +112,7 @@ In this exercise, you will review the exercise we will use throughout the Worksh
 
 You can also right-click this link to open it in another tab and review this video that introduces you to Microsoft Fabric and shows the results of the tutorial you will use in the Workshop:
 
-<p><a href="https://www.youtube.com/watch?v=TSTeoeCNh7c"><img src="https://img.youtube.com/vi/TSTeoeCNh7c/0.jpg" height = 200></a> 
+<p><a href="https://www.youtube.com/watch?v=TSTeoeCNh7c"><img src="https://img.youtube.com/vi/TSTeoeCNh7c/0.jpg" alt="Watch an introduction to Microsoft Fabric and the workshop tutorial results" height = 200></a>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
@@ -121,7 +120,7 @@ You can also right-click this link to open it in another tab and review this vid
 
 OneLake is the unified, logical data lake that serves as the foundation of Microsoft Fabric. Every Microsoft Fabric tenant includes a single OneLake instance, providing a centralized location for storing, managing, and accessing data across analytics and AI workloads. 
 
-<p><img src="https://learn.microsoft.com/en-us/fabric/fundamentals/media/microsoft-fabric-overview/hierarchy-within-tenant.png" height = 400>
+<p><img src="https://learn.microsoft.com/en-us/fabric/fundamentals/media/microsoft-fabric-overview/hierarchy-within-tenant.png" alt="OneLake hierarchy with multiple workspaces in a tenant and Lakehouses and other items in each workspace" height = 400>
 
 Unlike traditional architectures that require separate storage platforms for data engineering, warehousing, reporting, and data science, Microsoft Fabric uses a shared architecture in which all workloads operate on a common storage foundation. This approach reduces data duplication, simplifies governance, and allows multiple personas to collaborate using the same underlying data.
 
@@ -412,7 +411,7 @@ This unified approach allows organizations to manage analytics workloads, report
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="1.7"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">AI and Copilot in Microsoft Fabric</h2>
+<h2 id="1.7"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">1.7 - AI and Copilot in Microsoft Fabric</h2>
 Artificial intelligence is integrated throughout Microsoft Fabric, helping data professionals accelerate development, improve productivity, and generate insights more quickly. Fabric includes AI-powered experiences that assist users across data engineering, data integration, data warehousing, real-time analytics, and business intelligence workloads. 
 
 One of the most visible AI capabilities in Fabric is Copilot, which uses generative AI to help users create code, generate queries, build reports, summarize data, and perform common development tasks using natural language. 
@@ -449,7 +448,7 @@ To use Copilot features in Microsoft Fabric, organizations must:
 
 Because Copilot relies on Fabric compute resources, availability and features may vary based on capacity and tenant configuration. Always consult current Microsoft documentation for the latest requirements and supported experiences.
 
-### Responsible
+### Responsible use of Copilot
 Copilot is designed to assist users, not replace human expertise. AI-generated content should always be reviewed and validated before being used in production environments.
 
 When using Copilot:
@@ -493,14 +492,7 @@ Organizations typically create shared workspaces for:
 Shared workspaces provide better collaboration, governance, and lifecycle management than personal workspaces.
 
 ### Workspace Roles
-Workspace access is controlled using workspace roles:
-
-- **Admin** – Full control over the workspace and its permissions.
-- **Member** – Can create, modify, publish, and share content.
-- **Contributor** – Can create and edit content but cannot manage workspace access.
-- **Viewer** – Read-only access to workspace content.
-
-Selecting the appropriate role helps organizations balance collaboration and security.
+Workspace roles control what you can do in a workspace. Review the role descriptions in [section 1.5 - Microsoft Fabric Roles](#1.5) when selecting the appropriate access for collaboration and security.
 
 ### Common Workspace Items
 A Fabric workspace can contain many different item types, including:
@@ -519,10 +511,14 @@ A Fabric workspace can contain many different item types, including:
 
 These items can work together to create complete end-to-end analytics solutions.
 
-## Activity: Verify Your Microsoft Fabric Workspace
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Verify Your Microsoft Fabric Workspace</b></p>
+
 Before continuing with the workshop, verify that you have access to a Fabric-enabled workspace.
 
-### Validate an Existing Workspace
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+
+**Validate an Existing Workspace**
+
 1. Navigate to https://app.fabric.microsoft.com
 2. Select **Workspaces** from the left navigation menu.
 3. Open your assigned workshop workspace.
@@ -531,7 +527,8 @@ Before continuing with the workshop, verify that you have access to a Fabric-ena
 
 If these options appear, your workspace is Fabric-enabled and ready for the workshop activities.
 
-### Create a New Workspace (If Required)
+**Create a New Workspace (If Required)**
+
 If you have the necessary permissions and do not already have a workspace:
 
 1. Navigate to https://app.fabric.microsoft.com
@@ -547,8 +544,7 @@ For detailed instructions, review:
 - https://learn.microsoft.com/en-us/fabric/fundamentals/workspaces
 - https://learn.microsoft.com/en-us/fabric/data-warehouse/tutorial-create-workspace
 
-
-<br>
+<p style="border-bottom: 1px solid lightgrey;"></p>
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 
@@ -556,7 +552,7 @@ For detailed instructions, review:
 <li><a href="https://learn.microsoft.com/en-us/fabric/onelake/security/get-started-security">OneLake security overview</a></li>
  <li><a href="https://learn.microsoft.com/en-us/fabric/release-plan/">Microsoft Fabric release plan documentation</a></li>
     <li><a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview">OneLake, the OneDrive for data</a></li>
-    <li><a href="https://learn.microsoft.com/en-us/fabric/get-started/microsoft-fabric-overview " >The primary page for documentation on Microsoft Fabric is here</a></li>
+    <li><a href="https://learn.microsoft.com/en-us/fabric/fundamentals/microsoft-fabric-overview" >The primary page for documentation on Microsoft Fabric is here</a></li>
     <li><a href="https://learn.microsoft.com/en-us/training/paths/get-started-fabric/?WT.mc_id=DP-MVP-5004032">Microsoft Learn Pathway on Fabric</a></li>
     <li><a href="https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app-install">Installing the Fabric Metrics app</a></li>
   <li><a href="https://erwindekreuk.com/microsoft-fabric-content-hub/">Microsoft Fabric Content Hub from Erwin de Kreuk</a></li>
