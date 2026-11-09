@@ -17,9 +17,9 @@ In this workshop, you'll learn what the Microsoft Fabric platform is, the variou
 
 The focus of this workshop is to understand how to use Microsoft Fabric in a solution, focusing on the data aspects of the platform. 
 
-You'll start with an introduction to Microsoft Fabric, move on to understanding Workspaces, user security, and data governance. From there you'll learn about the Data Lakehouse, and then understand the developer and user experience of Microsoft Fabric. You'll end with a section on the DevOps of a Microsoft Fabric solution, with a focus on how to extrapolate what you have learned to create other solutions for your organization.
+You'll start with an introduction to Microsoft Fabric, then explore the desktop tools used to connect to the platform. Next, you'll learn about Data Warehouse and data integration, the Lakehouse, Mirroring, and Real-Time Intelligence. The main workshop concludes with Copilots and Fabric data agents, followed by SQL database and Cosmos DB in Fabric for operational workloads. An optional bonus module covers designing and sizing solutions, data governance, source control, monitoring, and management.
 
-This github README.MD file explains how the workshop is laid out, what you will learn, and the technologies you will use in this solution. To download this Lab to your local computer, click the **Clone or Download** button you see at the top right side of this page. [More about that process is here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). 
+This GitHub README.md file explains how the workshop is laid out, what you will learn, and the technologies you will use in this solution. To clone or download this workshop to your local computer, click the **Code** button above the repository's file list. [More about cloning a repository is here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
 You can find more workshops on SQL Server and other Microsoft data technologies at the [SQL Server Workshops](https://microsoft.github.io/sqlworkshops/) site - open it in a new tab to find out more.
 
@@ -29,16 +29,19 @@ You can find more workshops on SQL Server and other Microsoft data technologies 
 
 In this workshop you'll cover these topics:
 
-- Introduction and Overview:	Introduction of the Workshop, Basic Concepts, Services, Roles, Benchmarks. Verification of pre-requisites
-- Data Warehouse and Data Integration:	Understanding and creating Workspaces, creating a Data Warehouse, connecting and managing, ingesting data with pipelines and data flows
-- The Data Lakehouse:	Creating a Lakehouse, Linking data, using Spark to create new data sets in the Lakehouse
-- The Fabric Developer Experience:	Using Co-Pilot, SSMS, VS Code, and development best-practices
-- Real-Time Analytics with Microsoft Fabric: Working with Azure Data Explorer in Microsoft Fabric, Working with Fabric and Streaming / Event Data, and Working with Fabric and the Kusto Query Language (KQL)
-- Microsoft Fabric DevOps: Design, Sizing, Monitoring and Management, Source Control, and the EXPLAIN command.
+- 01 - Introduction and Overview: Understand Fabric concepts, OneLake architecture, compute engines, roles, capacity, AI capabilities, and Workspaces.
+- 02 - Desktop Tools to use with Microsoft Fabric: Connect to Fabric using SQL Server Management Studio (SSMS), Visual Studio Code, Power BI Desktop, and Azure Storage Explorer.
+- 03 - Data Warehouse and Data Integration: Create and query a Data Warehouse, ingest and transform data with Data Factory pipelines and Dataflow Gen2, and use T-SQL for data engineering.
+- 04 - The Lakehouse: Create a Lakehouse, load data and use shortcuts, transform data with Spark and Data Wrangler, and enrich data with AI functions.
+- 05 - Mirroring in Microsoft Fabric: Understand when to use Mirroring, configure replication, and monitor and troubleshoot mirrored databases.
+- 06 - Real-Time Intelligence: Ingest streaming data with Eventstreams, store and query it in Eventhouses and KQL databases, and explore Real-Time Dashboards, Activator, and Fabric Maps.
+- 07 - Copilots & Data Agents: Understand the differences and requirements, use Copilot across Fabric workloads, and configure Fabric data agents to answer natural-language questions about data.
+- 08 - OLTP Databases in Fabric: Explore Database Hub, SQL database, and Cosmos DB in Fabric, and understand how operational data connects to analytics in OneLake.
+- 09 - Bonus Building Architectures with Microsoft Fabric (optional): Design and size solutions, discover and govern data, integrate source control, and monitor and manage deployments.
 
 The goal of this workshop is to train the data professional to get an overview on how to determine when to implement a Microsoft Fabric solution, how to design the solution, implement it, use it, and manage, monitor and maintain it.
 
-In each *Module*, you will find *Sections* that have topics, concepts and technologies that you will cover throughout the Workshop. You will also find various *Activities* where you willwork through hands-on steps to learn the material. You will also see *Self-Guided Activities* that you should complete after an in-person experience, or along the way if you are taking this Workshop directly from this GitHub repository. 
+In each *Module*, you will find *Sections* that have topics, concepts and technologies that you will cover throughout the Workshop. You will also find various *Activities* where you will work through hands-on steps to learn the material. You will also see *Self-Guided Activities* that you should complete after an in-person experience, or along the way if you are taking this Workshop directly from this GitHub repository.
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
@@ -50,10 +53,19 @@ The solution includes the following technologies - although you are not limited 
 
   <tr><th style="background-color: #1b20a1; color: white;">Technology</th> <th style="background-color: #1b20a1; color: white;">Description</th></tr>
 
-  <tr><td>OneLake</td><td>Serves as the foundation storage layer for all other services, and as a Data Lake.</td></tr>
-  <tr><td>Data Factory</td><td>A fully scheduled cloud service for data pipelines.</td></tr>
-  <tr><td>Synapse</td><td>The primary Data Lake, Data Warehouse, Data Science, and Data Analytics distributed processing system for the platform.</td></tr>
-  <tr><td>Microsoft Power BI</td><td>Closest-to-user interface for data analysis.</td></tr>
+  <tr><td>OneLake</td><td>The unified logical data lake for sharing data across Fabric workloads.</td></tr>
+  <tr><td>Data Factory</td><td>Ingests, orchestrates, and transforms data using pipelines and Dataflow Gen2.</td></tr>
+  <tr><td>Data Engineering</td><td>Provides Apache Spark, notebooks, and tools for processing and transforming data.</td></tr>
+  <tr><td>Data Science</td><td>Provides tools for exploring data and developing machine learning models; introduced at an overview level in this workshop.</td></tr>
+  <tr><td>Lakehouse</td><td>Organizes files and tables in OneLake for Spark processing and SQL analytics, with shortcuts to reuse data.</td></tr>
+  <tr><td>Data Warehouse</td><td>Provides SQL-based data warehousing and analytics over data stored in Delta Lake format.</td></tr>
+  <tr><td>Mirroring</td><td>Continuously replicates data from supported sources into OneLake for analytics.</td></tr>
+  <tr><td>Real-Time Intelligence</td><td>Ingests streaming data with Eventstreams, analyzes it in Eventhouses and KQL databases, and supports dashboards and event-driven actions.</td></tr>
+  <tr><td>SQL database in Fabric</td><td>A managed relational database for transactional applications, with data replicated to OneLake for analytics.</td></tr>
+  <tr><td>Cosmos DB in Fabric</td><td>A NoSQL database for application data, integrated with OneLake for analytics.</td></tr>
+  <tr><td>Copilot in Fabric</td><td>Assists with authoring code, queries, data transformations, and reports across Fabric workloads.</td></tr>
+  <tr><td>Fabric data agents</td><td>Answer natural-language questions by generating and executing queries over configured data sources.</td></tr>
+  <tr><td>Microsoft Power BI</td><td>Creates semantic models, interactive reports, and dashboards to analyze and share insights.</td></tr>
 
 </table>
 
@@ -77,7 +89,7 @@ If you are new to these, here are a few references you can complete prior to cla
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="https://raw.githubusercontent.com/microsoft/sqlworkshops/master/graphics/bulletlist.png"> <h3>Setup</h3>
 
-<a href="fabricoverview/00%20-%20Pre-Requisites.md" >A full pre-requisites document is located here</a>. These instructions should be completed before the workshop starts, since you will not have time to cover these in class. <i>Remember to turn off any Virtual Machines from the Azure Portal when not taking the class so that you do incur charges (shutting down the machine in the VM itself is not sufficient)</i>.
+<a href="fabricoverview/00%20-%20Pre-Requisites.md" >A full pre-requisites document is located here</a>. These instructions should be completed before the workshop starts, since you will not have time to cover these in class. <i>Remember to stop and deallocate any workshop Virtual Machines from the Azure Portal when not taking the class so that you do not incur compute charges. Verify that the status is Stopped (Deallocated); shutting down the guest operating system alone is not sufficient. Storage and networking resources may still incur charges. See <a href="https://learn.microsoft.com/en-us/azure/virtual-machines/states-billing">Azure VM states and billing</a> for details.</i>
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="https://raw.githubusercontent.com/microsoft/sqlworkshops/master/graphics/clipboardcheck.png"> <h3>AI-Assisted Development with MCP Servers</h3>
 
@@ -118,23 +130,24 @@ This is a modular workshop, and in each section, you'll learn concepts, technolo
 
   <tr><td style="background-color: AliceBlue; color: black;"><b>Module</b></td><td style="background-color: AliceBlue; color: black;"><b>Topics</b></td></tr>
 
-  <tr><td><a href="fabricoverview/01%20-%20Introduction%20and%20Overview.md" >01 - Introduction and Overview </a></td><td> Introduction of the Workshop, Basic Concepts, Services, Roles, Benchmarks. Verification of prerequisites.</td></tr>
+  <tr><td><a href="fabricoverview/01%20-%20Introduction%20and%20Overview.md" >01 - Introduction and Overview</a></td><td> Fabric concepts, OneLake architecture, compute engines, roles, capacity, AI capabilities, and Workspaces.</td></tr>
   
-  <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/02%20-%20Desktop%20Tools%20to%20use%20with%20Microsoft%20Fabric.md" >02 - Desktop Tools to use with Microsoft Fabric</a> </td><td td style="background-color: AliceBlue; color: black;"> Understanding what desktop tools interface with Microsoft Fabric and how to use them.</td></tr>
+  <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/02%20-%20Desktop%20Tools%20to%20use%20with%20Microsoft%20Fabric.md" >02 - Desktop Tools to use with Microsoft Fabric</a> </td><td style="background-color: AliceBlue; color: black;"> SSMS, Visual Studio Code, Power BI Desktop, and Azure Storage Explorer for connecting to and working with Fabric.</td></tr>
   
 
-   <tr><td><a href="fabricoverview/03%20-%20Data%20Warehouse%20and%20Data%20Integration.md" >03 - Data Warehouse and Data Integration </a></td><td>  Understanding and creating Workspaces, creating a Data Warehouse, connecting and managing, ingesting data with pipelines and data flows</td></tr>
+   <tr><td><a href="fabricoverview/03%20-%20Data%20Warehouse%20and%20Data%20Integration.md" >03 - Data Warehouse and Data Integration</a></td><td> Creating and querying a Data Warehouse, ingesting and transforming data with Data Factory pipelines and Dataflow Gen2, and data engineering with T-SQL.</td></tr>
 
-  <tr><td><a href="fabricoverview/04%20-%20The%20Lakehouse.md" >04 - The Lakehouse </a></td><td>  Creating a Lakehouse, Linking data, using Spark to create new data sets in the Lakehouse</td></tr>
+  <tr><td><a href="fabricoverview/04%20-%20The%20Lakehouse.md" >04 - The Lakehouse</a></td><td> Lakehouse concepts, loading data and shortcuts, Spark transformations, Data Wrangler, and AI functions.</td></tr>
 
-  <tr><td><a href="fabricoverview/05%20-%20Introduction%20to%20Mirroring%20in%20Fabric.md" >05 - Database Mirroring </a></td><td> Introduction to Mirroring in Microsoft Fabric and how to utilize Mirroring as a Data Integration tool</td></tr>
+  <tr><td><a href="fabricoverview/05%20-%20Introduction%20to%20Mirroring%20in%20Fabric.md" >05 - Mirroring in Microsoft Fabric</a></td><td> When to use Mirroring, configuring replication, and monitoring and troubleshooting mirrored databases.</td></tr>
    
-  <tr><td><a href="fabricoverview/06%20-%20Real-Time%20Intelligence.md" >06 - Real-Time Analytics with Microsoft Fabric </a></td><td> Azure Data Explorer, Fabric and Streaming / Event Data, the Kusto Query Language (KQL)</td></tr>
+  <tr><td><a href="fabricoverview/06%20-%20Real-Time%20Intelligence.md" >06 - Real-Time Intelligence</a></td><td> Eventstreams, Eventhouses, KQL databases and queries, Real-Time Dashboards, Activator, and Fabric Maps.</td></tr>
   
-  <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/07%20-%20CoPilots%20%26%20AI%20Skills.md" >07 - Copilots & Data Agents</a> </td><td td style="background-color: AliceBlue; color: black;"> Microsoft Fabric integrates AI and LLM capabilities to assist you in creating your data workloads.  Additionally you can use AI Skills to create RAG patterns off of your data to produce additional insights.</td></tr>
+  <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/07%20-%20CoPilots%20%26%20AI%20Skills.md" >07 - Copilots & Data Agents</a> </td><td style="background-color: AliceBlue; color: black;"> Copilot capabilities across Fabric workloads and configuring Fabric data agents to answer natural-language questions about your data.</td></tr>
 
-  <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/08%20-%20OLTP%20Databases%20in%20Fabric.md" >08 - OLTP Databases In Microsoft Fabric</a> </td><td td style="background-color: AliceBlue; color: black;"> Microsoft Fabric integrates SQL database and Cosmos DB into your Fabric environment to provide a full end to end development OLTP to Analytics driven scenarios.</td></tr>
+  <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/08%20-%20OLTP%20Databases%20in%20Fabric.md" >08 - OLTP Databases in Fabric</a> </td><td style="background-color: AliceBlue; color: black;"> Database Hub, SQL database, Cosmos DB, and connecting operational workloads to analytics in OneLake.</td></tr>
 
+  <tr><td><a href="fabricoverview/09%20-%20Bonus%20Building%20Architectures%20with%20Microsoft%20Fabric.md" >09 - Bonus Building Architectures with Microsoft Fabric (optional)</a></td><td> Designing and sizing solutions, data discovery and governance, source control integration, monitoring, and management.</td></tr>
 
 
 </table>
