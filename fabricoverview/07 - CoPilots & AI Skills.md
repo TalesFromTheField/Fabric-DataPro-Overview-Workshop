@@ -298,35 +298,196 @@ Learn more: <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/overvi
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <h2 id="7-5"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.5 - Fabric Data Agents</h2>
+<br></br>
 
-With the Microsoft Fabric Data Agents, you can make data more accessible to your colleagues. You can configure a generative AI system to generate queries that answer questions about your data. After you configure the Data Agents, you can share it with your colleagues, who can then ask their questions in plain English. Based on their questions, the AI generates queries over your data that answer those questions.
+A **Fabric data agent** is a Fabric item you build and configure so people can ask questions about your data in plain English and get answers back. You choose the data, teach the agent your business context, test it, and then publish and share it, much like building and sharing a Power BI report. Microsoft Learn lists the data agent as generally available; some newer capabilities covered below are still in preview and are marked as such.
 
-## How the Data Agents works
-The Data Agents relies on generative AI, specifically, large language models (LLMs). These LLMs can generate queries, for example, T-SQL queries, based on a specific schema and a question. The system sends a question in the Data Agents, information about the selected data (including the table and column names, and the data types found in the tables) to the LLM. Next, it requests generation of a T-SQL query that answers the question. Parse the generated query to first ensure that it doesn't change the data in any way. Then execute that query. Finally, show the query execution results. An Data Agents is intended to access specific database resources, and then generate and execute relevant T-SQL queries.
+Data agents are **read-only**. They only generate SQL, DAX, and KQL *read* queries and never create, update, or delete data.
 
-## Data Agents configuration
-Think of the Data Agents as you might think about Power BI reports. You first build the report, and then you share the report with your colleagues who can consume it to get their data insights. The Data Agents works in a similar way. You need to first create and configure the Data Agents. Then, you can share it with your colleagues.
+### How a data agent works
 
-You should expect to handle some necessary configuration steps before the Data Agents works properly. An Data Agents can often provide out-of-the-box answers to reasonable questions, but it could provide incorrect answers for your specific situation. Incorrect answers typically occur because the AI is missing context about your company, setup, or definition of key terms. To solve the problem, provide the AI with instructions and example question-query pairs. You can use these powerful techniques to guide the AI to the right answers.
+When someone asks a question, the data agent:
 
-Microsoft Fabric: Data Agents Preview! Build RAG Patterns Simple and Easy!
+1. **Checks the question** against security, responsible AI policies, and the user's permissions.
+2. **Picks the right data source** from the ones you added (up to five, in any combination): lakehouses, warehouses, Power BI semantic models, KQL databases, mirrored databases, ontologies (see <a href="#7-4">7.4</a>), and Microsoft Graph.
+3. **Generates a query** with the matching tool: natural language to SQL for lakehouses and warehouses, to DAX for semantic models, to KQL for KQL databases, or a Microsoft Graph query.
+4. **Validates and runs the query** as the user asking the question, then returns a readable answer, often with a table or summary.
 
+Because the agent runs with the requesting user's identity, each person only sees data they're already allowed to see. Anything you mirrored in <a href="05%20-%20Introduction%20to%20Mirroring%20in%20Fabric.md">Module 05</a> can be a data agent source.
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided or in Class Activity: Create an Data Agents</b></p>
+### Teaching the agent: instructions and example queries
 
-In this Activity you will execute code from the following exercises to create  AdventureWorks tables in a Microsoft Fabric Lakehouse.  You will then provision an Data Agents and follow the steps in the tutorial to publish the skill and access it in a Microsoft Fabric Notebook.
+Out of the box, a data agent can answer reasonable questions, but it doesn't know your business. Wrong answers usually come from missing context: your terminology, which table to use, or how a metric is calculated. **This is the most important part of building a good data agent.** You give it context at three levels:
+
+| Layer | Where it applies | What to put in it |
+|---|---|---|
+| **Agent instructions** | The whole agent, on every question | The agent's objective, which data source to prefer for which topic, key terminology and acronyms, and how to format answers |
+| **Data source instructions** | Only when the agent routes a question to that source | Background on the source, descriptions of key tables and columns, and "when asked about X, use table Y" rules that shape the SQL, DAX, or KQL |
+| **Example queries** | Only when the agent queries that source | Pairs of a natural-language question and the exact query that answers it |
+
+Each data source also has a short **description** that the agent reads when deciding which source to route a question to.
+
+#### Agent instructions
+
+Microsoft Learn recommends this structure for agent instructions:
+
+```
+## Objective
+## Data sources
+## Key terminology
+## Response guidelines
+## Handling common topics
+```
+
+For example, under *Data sources* you might say "Use SalesLakehouse for product and transaction data. Use CRMModel for customer demographics." Under *Key terminology*: "GMV refers to Gross Merchandise Value."
+
+**Video:** Microsoft Fabric: Data Agents Agent Instructions
+
+<p><a href="https://www.youtube.com/watch?v=r18-STutAyE"><img src="https://img.youtube.com/vi/r18-STutAyE/0.jpg" height = 200></a></p>
+
+#### Data source instructions
+
+Data source instructions are the query-level guidance. They're applied only when the agent sends a question to that specific source, so they're the place for table-level detail. Learn's suggested template:
+
+```
+## General knowledge
+## Table descriptions
+## When asked about
+```
+
+For example: "When asked about shoe sales, always use the SalesProduct table."
+
+#### Example queries
+
+**Example queries** (also called few-shot examples) are sample questions paired with the query that answers them. When a question comes in, the agent looks up the most relevant examples for that data source and feeds them into query generation, so it learns your joins, filters, and calculations by example instead of guessing.
+
+![Screenshot showing where you can add the example queries you provide to the AI.](https://learn.microsoft.com/en-us/fabric/data-science/media/data-agent-scenario/add-example-queries-lakehouse.png)
+
+What to know:
+
+- **Supported sources:** lakehouses, warehouses, and KQL databases. Example queries aren't supported for semantic models or ontologies; use instructions for those.
+- **Validation:** every example is checked against the source's schema. Examples that fail validation aren't sent to the agent, so make sure yours pass.
+- **Limit:** up to 100 example queries per data source.
+- **Best practices:** make each question map clearly to its query, add comments in the query (for example, `-- substitute customer_id here`), use examples to show complex joins and calculations, avoid overlapping or contradicting examples, and write questions the way your users actually ask them.
+- **Debugging:** the run steps view shows which examples were retrieved for a question. If the wrong ones show up, refine or add more targeted examples.
+- **Validating at scale:** the Fabric data agent Python SDK can score your SQL examples for clarity, relatedness, and mapping, and flag examples that conflict with each other.
+
+**Video:** Microsoft Fabric: How to use Data Agent Example Queries
+
+<p><a href="https://www.youtube.com/watch?v=v0mD01QP5gY"><img src="https://img.youtube.com/vi/v0mD01QP5gY/0.jpg" height = 200></a></p>
+
+> **Preview:** For SQL sources on the preview runtime, you can also add **schema object descriptions** (business descriptions for tables and columns) and **topics** (large, subject-based instructions the agent only sends when a question matches). See <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-configurations">Configure your data agent</a>.
+
+### Security, governance, and limits
+
+- **Permissions follow the user.** The agent queries with the requesting user's credentials. Row-level and column-level security still apply. Sharing or configuring an agent doesn't grant anyone access to its data sources.
+- **Policy wins over prompts.** Learn describes four layers of intent, from highest to lowest precedence: organizational (tenant policies), role-based (workspace governance), developer (your instructions and examples), and user (the questions people ask). A higher layer always overrides a lower one.
+- **Microsoft Purview** DLP and access restriction policies apply, and agent prompts and responses can be audited and discovered.
+- **Lifecycle:** data agents support Git integration and deployment pipelines.
+- **Limits to plan for:** English only; responses are capped at 25 rows and 25 columns because agents are built for conversational insights, not full data extracts; no unstructured files such as PDF or DOCX; and the data source's capacity must be in the same region as the agent's capacity.
+
+**Video:** Microsoft Fabric: Data Security & Data Agents
+
+<p><a href="https://www.youtube.com/watch?v=1OOe9-EteL0"><img src="https://img.youtube.com/vi/1OOe9-EteL0/0.jpg" height = 200></a></p>
+
+### Expanding data agents beyond Microsoft Fabric
+
+A data agent doesn't have to live only in Fabric. Once you **publish** it, other experiences can call it, and it still runs in Fabric against your governed data. A few rules apply everywhere:
+
+- **Publish first.** Only published data agents can be consumed outside Fabric.
+- **Write a rich description when you publish.** Outside Fabric, an orchestrator decides when to call your agent, and it reads the description to decide.
+- **Same tenant, same account.** The data agent and the consuming experience must be in the same tenant, and you sign in to both with the same account.
+- **Compliance boundary.** Responses returned to these experiences might leave Fabric's compliance boundary or geographic region and are handled under that experience's terms.
+
+| Where | How you connect |
+|---|---|
+| **Microsoft 365 Copilot and Teams** | Select **Publish to Agent Store** when you publish. Users chat with the agent directly or @mention it in Copilot Chat. |
+| **Copilot Studio** | Add the data agent as a **tool** (Fabric IQ Data MCP), or as a **connected agent** (the earlier experience, preview). Then publish your Copilot Studio agent to Teams and Microsoft 365 Copilot. |
+| **Microsoft Foundry** | Add one or more data agents to a Foundry agent with the **Fabric IQ (OneLake Catalog)** tool (preview), or connect a single agent by workspace and item ID. |
+| **Your own code and MCP clients** | Call the agent from a notebook or app with the Fabric data agent Python SDK, or from any MCP client through the agent's MCP endpoint (preview). |
+
+#### Microsoft 365 Copilot
+
+Publishing to the Agent Store puts your data agent next to every other agent in Microsoft 365 Copilot, where people can use it from Teams. Users only see results their own access allows, and they can use Copilot's code interpreter to chart the answers. Microsoft 365 Copilot has its own orchestrator, which can reshape the answer. If you want the output delivered as-is, say so in the publishing description. See <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-microsoft-365-copilot">Consume a data agent from Microsoft Copilot</a>.
+
+**Video:** Microsoft Fabric: Publish Data Agents Directly to Microsoft 365
+
+<p><a href="https://www.youtube.com/watch?v=yCD8-qAIT2I"><img src="https://img.youtube.com/vi/yCD8-qAIT2I/0.jpg" height = 200></a></p>
+
+#### Copilot Studio
+
+Copilot Studio is Microsoft's low-code agent builder. A Copilot Studio agent can combine your data agent with other knowledge sources, tools, and agents, then publish to Teams and Microsoft 365 Copilot.
+
+- **As a tool (current experience):** add the **Fabric IQ Data MCP** tool, pick a data agent from the OneLake catalog, write a description, and choose the authentication mode. You can add several data agents to one Copilot Studio agent. See <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-microsoft-copilot-studio-tool">Add a Fabric data agent as a tool in Copilot Studio</a>.
+- **As a connected agent (earlier experience, preview):** validated for Teams only, and not currently supported in Microsoft 365 Copilot. See <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-microsoft-copilot-studio">Consume a data agent in Copilot Studio</a>.
+- **Authentication matters.** With **User** authentication, each person needs access to the data agent and its sources. With **Maker** authentication, everyone sees data through the builder's access, so choose it deliberately.
+
+**Video:** Microsoft Fabric: Connect Data Agents to Teams with Copilot Studio
+
+<p><a href="https://www.youtube.com/watch?v=7ccFIUfjiIc"><img src="https://img.youtube.com/vi/7ccFIUfjiIc/0.jpg" height = 200></a></p>
+
+#### Microsoft Foundry and Fabric IQ
+
+For developers building custom agents, Microsoft Foundry can call Fabric data agents as tools. This is where **Fabric IQ** (see <a href="#7-3">7.3</a>) shows up in practice: the **Fabric IQ (OneLake Catalog)** tool lists the published data agents you have access to, and you add them by name. A single Foundry agent can call several data agents (for example, one for sales and one for support), and each is exposed as an MCP endpoint. Requests run as the signed-in user, so Fabric permissions still apply. See <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-foundry-fabric-iq">Add Fabric data agents to a Foundry agent with Fabric IQ</a> and the earlier single-agent method, <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-foundry">Consume a data agent in Microsoft Foundry</a>.
+
+**Video:** Microsoft Fabric: Connect Data Agent to Azure AI Foundry
+
+<p><a href="https://www.youtube.com/watch?v=nqUt-wCYY2M"><img src="https://img.youtube.com/vi/nqUt-wCYY2M/0.jpg" height = 200></a></p>
+
+#### The Fabric data agent Python SDK
+
+The SDK lets you create, configure, evaluate, and call data agents from a Fabric notebook, including adding and validating example queries in bulk. See <a href="https://learn.microsoft.com/en-us/fabric/data-science/fabric-data-agent-sdk">Fabric data agent SDK</a>.
+
+**Video:** Microsoft Fabric: Extend Fabric Data Agents with Python SDK End to End Tutorial
+
+<p><a href="https://www.youtube.com/watch?v=YJu9NQB3MuU"><img src="https://img.youtube.com/vi/YJu9NQB3MuU/0.jpg" height = 200></a></p>
+
+### MCP servers for data agents
+
+The **Model Context Protocol (MCP)** is an open standard for connecting AI systems to tools and data. An *MCP client* is the app the user works in (for example, Visual Studio Code). An *MCP server* exposes tools the client can discover and call.
+
+**When you publish a data agent, it becomes an MCP server** (preview) that exposes a single tool: the data agent itself. An MCP client sends a question to that tool and gets back an answer grounded in your Fabric data.
+
+- **Find the details:** open the published agent's **Settings** and select the **Model Context Protocol** tab for the server URL, tool name, and tool description. You can also download an `mcp.json` file for clients such as Visual Studio Code.
+- **The endpoint** follows this pattern and only works after the agent is published:
+
+```
+https://api.fabric.microsoft.com/v1/mcp/workspaces/{WorkspaceId}/dataagents/{DataAgentId}/agent
+```
+
+- **Your description is the tool description.** MCP clients decide when to call your agent from the description you wrote when publishing, so make it specific about what the agent knows and which questions it answers.
+- **Authentication:** every request carries a Fabric bearer token for the `https://api.fabric.microsoft.com/.default` scope. The token can represent a user or a service principal. The server doesn't support dynamic client registration, so the client must obtain the token itself.
+- **Any MCP client works** if it supports streamable HTTP and can attach the token. Learn shows a Python example and Visual Studio Code in agent mode.
+- **Long-running questions** can use MCP tasks: the server returns an ID and the client checks back for the result.
+- **Programmatic access:** because OpenAI retired the Assistants API, Learn recommends the MCP endpoint for calling a data agent from code.
+
+See <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-mcp-server">Data agent as Model Context Protocol server</a>.
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Create, tune, and publish a Fabric data agent</b></p>
+
+![Screenshot showing where you select tables for the data agent.](https://learn.microsoft.com/en-us/fabric/data-science/media/data-agent-scenario/get-started.png)
+
+In this Activity you will load the AdventureWorks sample into a lakehouse, create a data agent over it, add agent instructions and example queries, test and refine it, publish it, and then call it from outside Fabric.
+
+Open the following reference and complete the steps:
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
+- [Fabric data agent example with the AdventureWorks dataset](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-end-to-end-tutorial)
+- [Fabric data agent tenant settings](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-tenant-settings) (check these first)
+- [Example queries](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-example-queries)
+- [Consume a data agent from Microsoft Copilot](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-microsoft-365-copilot) (optional, requires Microsoft 365 Copilot)
+- [Data agent as Model Context Protocol server](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-mcp-server) (optional)
 
-- [Data Agents example with the AdventureWorks dataset](https://learn.microsoft.com/en-us/fabric/data-science/ai-skill-scenario) 
+> If you only reviewed the documentation in this Activity, ensure you bookmark each of these references and then perform the Activity in full once you do have your deployment.
 
-
-> If you only reviewed the documentation in this Activity, ensure you bookmark each of these references and then perform the Activity in full once you do have your deployment. 
+### More data agent videos from Tales from the Field
 
 <a href="https://www.youtube.com/watch?v=5ivA4zdnDtE"><img src="https://img.youtube.com/vi/5ivA4zdnDtE/0.jpg" height = 200></a> 
 
-<p><a href="https://www.youtube.com/watch?v=cuF00-iV_YA"><img src="https://img.youtube.com/vi/cuF00-iV_YA/0.jpg" height = 200></a> 
+<p><a href="https://www.youtube.com/watch?v=cuF00-iV_YA"><img src="https://img.youtube.com/vi/cuF00-iV_YA/0.jpg" height = 200></a></p>
+
+Learn more: <a href="https://learn.microsoft.com/en-us/fabric/data-science/concept-data-agent">Fabric data agent concepts</a> | <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-configurations">Configure your data agent</a> | <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-sharing">Data agent sharing and permissions</a>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
