@@ -92,6 +92,32 @@ Fabric offers three different approaches in bringing data into OneLake through m
 
 Mirroring is enabled by creating a secure connection to your operational data source. You choose whether to replicate an entire database or individual tables and Mirroring will automatically keep your data in sync. Once set up, data will continuously replicate into the OneLake for analytics consumption.
 
+### What happens behind the scenes
+
+Changes arrive in Fabric incrementally as Delta files from the data source. How the changed data is identified depends on the source. For example, in SQL Server 2025 the SQL Database Engine scans the source database's transaction log at a high frequency and publishes the changes for each table to corresponding files in the Fabric landing zone.
+
+Inside Fabric, a replicator engine runs continuously, scans for newly published files at a high frequency, and immediately merges the incoming changes into the target Delta table. Changes can be published as fast as every **15 seconds**.
+
+Backoff logic detects periods of low activity. This avoids excessive overhead on source database engines outside of Fabric, and keeps latency low by responding to how often data changes arrive.
+
+<p>
+<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/overview/fabric-mirror-overview.svg">
+
+### What affects replication speed
+
+For database mirroring and open mirroring, near real-time replication can depend on several factors:
+
+- Location or region of the source
+- Location or region of the destination
+- Volume of changes
+- Frequency of changes
+- Network bandwidth and latency from the source
+- Compute resources allocated to the on-premises data gateway
+
+> **Note:** Metadata mirroring doesn't replicate data, so these factors don't apply in the same way. Its latency reflects source system access time and shortcut performance.
+
+### Core tenets of Mirroring
+
 The following are core tenets of Mirroring:
 
 - Enabling Mirroring in Fabric is simple and intuitive, without having the need to create complex ETL pipelines, allocate other compute resources, and manage data movement.
