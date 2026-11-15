@@ -156,49 +156,108 @@ Open the following reference and complete the steps you see there:
 
 <h2 id="5.3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">5.3 Monitor Fabric mirrored database replication</h2>
 <br></br>
-Once the mirrored database is configured, you can monitor the current state of replication. The Monitor replication section shows you the database level status, and a list of tables under replication along with the corresponding status, total rows replicated, and the last completed time to refresh mirrored table from source.
+Once the mirrored database is configured, you can monitor replication in three ways: from the Fabric portal, programmatically through the REST API, and through workspace monitoring.
+
+### Monitor from the Fabric portal
+
+The **Monitor replication** section shows you the database level status, and a list of tables under replication along with the corresponding status, total rows replicated, and the last completed time to refresh the mirrored table from source.
 
 <p>
+<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/monitor/monitor-mirrored-database.png">
 
-<img src="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/media/monitor/monitor-mirrored-database.png#lightbox">
+> **Tip:** If you observe a delay in the appearance of mirrored data, follow the <a href="https://learn.microsoft.com/en-us/fabric/mirroring/troubleshooting#data-doesnt-appear-to-be-replicating">troubleshooting guide</a> to debug the potential issue.
 
 ### Possible Replication Statuses
 
 #### Database Level
 
-| Status               | Description                                                                 |
-|----------------------|-----------------------------------------------------------------------------|
-| Running              | Replication is currently running, bringing snapshot and change data into OneLake. |
-| Running with warning | Replication is running, but with transient errors.                          |
-| Stopping/Stopped     | Replication has stopped.                                                    |
-| Error                | Fatal error in replication that can't be recovered.                         |
+| Status | Description |
+|---|---|
+| Running | Replication is currently running, bringing snapshot and change data into OneLake. |
+| Running with warning | Replication is running, with transient errors. |
+| Stopping/Stopped | Replication has stopped. |
+| Failed | Fatal error in replication that can't be recovered. |
+| Paused | Replication is paused. This happens when you pause and resume the Fabric capacity. See <a href="https://learn.microsoft.com/en-us/fabric/mirroring/troubleshooting#changes-to-fabric-capacity">Changes to Fabric capacity</a>. |
 
 #### Table Level
 
-| Status               | Description                                                                 |
-|----------------------|-----------------------------------------------------------------------------|
-| Running              | Data is replicating.                                                        |
-| Running with warning | Warning of nonfatal error with replication of the data from the table.      |
-| Stopping/Stopped     | Replication has stopped.                                                    |
-| Error                | Fatal error in replication for that table.                                  |
+| Status | Description |
+|---|---|
+| Running | Data is replicating. |
+| Running with warning | Warning of nonfatal error with replication of the data from the table. |
+| Stopping/Stopped | Replication has stopped. |
+| Failed | Fatal error in replication for that table. |
 
+#### Other columns in the monitoring view
+
+| Column | Description |
+|---|---|
+| Name | The name of the source table in `[schema_name].[table_name]` or `[table_name]` format. |
+| Rows replicated | The cumulative count of replicated rows, including all inserts, updates, and deletes applied to the target table. |
+| Last completed | The last completed time to refresh the mirrored table from source. An empty value means the table isn't yet mirrored. |
+
+### Monitor programmatically
+
+You can monitor mirrored databases programmatically by using the REST APIs or SDK to get the mirroring status of the mirrored database or of specific tables. See <a href="https://learn.microsoft.com/en-us/fabric/mirroring/mirrored-database-rest-api">Microsoft Fabric mirroring public REST API</a>.
 
 ### Workspace monitoring
 
-<a href="https://learn.microsoft.com/en-us/fabric/fundamentals/workspace-monitoring-overview">Workspace monitoring</a>, currently in preview, is an observability feature in Microsoft Fabric that enables developers and admins to access detailed logs and performance metrics of their workspaces.
+<a href="https://learn.microsoft.com/en-us/fabric/fundamentals/workspace-monitoring-overview">Workspace monitoring</a> is an observability feature in Microsoft Fabric that enables developers and admins to access detailed logs and performance metrics of their workspaces.
 
 Mirroring in Fabric supports operation logs in workspace monitoring to provide a more comprehensive monitoring experience for your mirrored databases. You can use these logs to monitor execution and performance of your mirrored database, including data replication, table changes, mirroring status, failures, and replication latency.
 
-To get started, <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/enable-workspace-monitoring">enable monitoring</a> in your workspace. Once the monitoring of your workspace is enabled, the mirrored database execution logs are automatically ingested into the MirroredDatabaseTableExecution table in the monitoring KQL database. To learn more about the available logs and the structure see <a href="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/monitor-logs">Mirrored database operation logs</a>.
+To get started, <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/enable-workspace-monitoring">enable monitoring</a> in your workspace. Once the monitoring of your workspace is enabled, the mirrored database execution logs are automatically ingested into the `MirroredDatabaseTableExecution` table in the monitoring KQL database. To learn more about the available logs and their structure, see <a href="https://learn.microsoft.com/en-us/fabric/mirroring/monitor-logs">Mirrored database operation logs (preview)</a>.
 
 <p>
-<img src="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/media/monitor/enable-workspace-monitoring.png#lightbox">
-<p>
-Then you have full access to an advanced monitoring experience for mirrored database:
+<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/monitor/enable-workspace-monitoring.png">
 
-Derive insights on-demand: Query the granular operation logs directly using KQL in the monitoring database to get instant access to the information you need.
+The operation logs complement the at-a-glance view in the Fabric portal. You can use them to:
+
+- Understand the amount of data replicated over time for your mirrored databases and tables.
+- Track additions and removals of tables for mirroring.
+- Monitor the mirroring status and diagnose failures.
+- Measure the time and latency for initial snapshots and incremental data replication.
+
+Useful columns in the `MirroredDatabaseTableExecution` table include:
+
+| Column | What it tells you |
+|---|---|
+| OperationName | The replication step, such as `AddTable`, `StartSnapshotting`, `Snapshotting`, `Replicating`, `StartReseeding`, `FailTable`, or `RemoveTable`. |
+| SourceSchemaName / SourceTableName | The source schema and table the log entry is about. |
+| ProcessedRows / ProcessedBytes | How many rows and how much data the operation processed. |
+| ReplicatorBatchLatency | The latency, in seconds, to replicate the batch of data. |
+| ErrorType / ErrorMessage | Whether a failure was a `UserError` or `SystemError`, and the error details. |
+
+Then you have full access to an advanced monitoring experience for your mirrored database:
+
+- **Derive insights on-demand:** Query the granular operation logs directly using KQL in the monitoring database to get instant access to the information you need.
+
 <p>
-<img src="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/media/monitor/monitor-query-mirrored-database-logs.png#lightbox">
+<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/monitor/monitor-query-mirrored-database-logs.png">
+
+- **Build customized monitoring dashboards:** Bring the monitoring data into Power BI or <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/dashboard-real-time-create">Real-Time Dashboards</a> to create dashboards tailored to your needs.
+
+<p>
+<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/monitor/monitor-dashboard.png">
+
+- **Set up alerting:** <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/user-flow-6">Set up alerts</a> based on the logs and metrics you're tracking.
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Query mirroring latency with KQL</b></p>
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+
+1. Enable workspace monitoring in the workspace that holds your mirrored database (Workspace settings > Monitoring).
+2. Open the monitoring KQL database that Fabric creates in the workspace.
+3. Run the following query to see the replication latency and volume for each mirrored table over the last 24 hours:
+
+```kusto
+MirroredDatabaseTableExecution
+| where Timestamp > ago(24h)
+| summarize AvgLatencySec = avg(ReplicatorBatchLatency), MaxLatencySec = max(ReplicatorBatchLatency), RowsProcessed = sum(ProcessedRows) by ItemName, SourceSchemaName, SourceTableName
+| order by MaxLatencySec desc
+```
+
+For more queries, see the <a href="https://github.com/microsoft/fabric-samples/tree/main/workspace-monitoring/Mirrored%20database%20operations">mirrored database sample queries</a> in the fabric-samples GitHub repository.
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
