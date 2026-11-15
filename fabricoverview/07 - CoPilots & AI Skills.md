@@ -139,19 +139,6 @@ For more details, check out the [Overview of Copilot in Fabric](https://learn.mi
 
 [You can find the complete list of Microsoft Purview learning and reference resources at this location.](https://learn.microsoft.com/en-us/training/purview/)
 
-<br>
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Configure Fabric Mirrored Database</b></p>
-
-<p><img src="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/media/azure-sql-database/fabric-mirroring-sql-database.svg" height = 400></p>
-
-In this activity, you will learn how Copilot in Power BI supports enterprise developers, self-service users, and business users and provides information on integration points and the different experiences designed for creating and consuming content using Copilot.
-
-Open the following reference and complete the steps you see there:
-
-- Open the following Link in another tab follow the instructions to obtain Revenue Opportunities.pbix file <a href="https://learn.microsoft.com/en-us/power-bi/create-reports/tutorial-copilot-power-bi-get-started"> Copilot in Power BI tutorial: Get started</a>
-- Open the following Link in another tab follow the instructions <a href="https://learn.microsoft.com/en-us/power-bi/create-reports/tutorial-copilot-power-bi-prepare-model">Prepare semantic model for AI</a>
-- Open the following Link in another tab follow the instructions <a href="https://learn.microsoft.com/en-us/power-bi/create-reports/tutorial-copilot-power-bi-discover-data">Discover data and ask questions</a>
-- Open the following Link in another tab follow the instructions <a href="https://learn.microsoft.com/en-us/power-bi/create-reports/tutorial-copilot-power-bi-explore-data">Explore data and get more insights</a>
 
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
