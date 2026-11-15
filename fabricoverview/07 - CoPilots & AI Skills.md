@@ -72,6 +72,35 @@ Copilot and other generative AI features in preview bring new ways to transform 
 ## Enable Copilot
 Before your business can start using Copilot capabilities in Microsoft Fabric, you need to enable Copilot.  To understand how to enable Copilot right click on this link to open in another window, <a href="https://learn.microsoft.com/en-us/fabric/get-started/copilot-enable-fabric">Enable Copilot in Fabric</a>.
 
+### Fabric Copilot capacities
+
+By default, Fabric bills Copilot usage to whichever capacity holds the content you're working on, so Copilot costs get spread across every capacity in your organization. A **Fabric Copilot capacity** is a Fabric capacity you designate to collect and bill the Copilot and data agent usage of a specific group of users, wherever they use it. That lets you offload Copilot consumption from the capacities running your production workloads and monitor all of it in one place.
+
+**What it covers.** When a user is assigned to a Fabric Copilot capacity, it's billed for their:
+
+- Copilot in Power BI Desktop.
+- Copilot in Power BI on Pro, Premium per-user (PPU), Trial, Premium capacity, or Fabric capacity workspaces. This is also how users in Pro and PPU workspaces get Copilot.
+- Copilot in Data Factory, Data Engineering, Data Warehouse, Data Science, Real-Time Intelligence, and Activator, and data agents, in workspaces on a capacity smaller than F64.
+
+**How to set it up:**
+
+1. A Fabric administrator enables Copilot for users and allows capacity administrators to designate Copilot capacities, using the tenant setting *Capacities can be designated as Copilot in Fabric capacities* (enabled by default).
+2. A capacity administrator assigns a group of users to their capacity as Fabric Copilot capacity users.
+3. Users don't need to do anything. Fabric bills their Copilot usage to the assigned capacity automatically.
+
+**Things to know:**
+
+- The Copilot capacity must be an F2 or P1 or larger, and it's supported only in the tenant's home region.
+- Each user can have only one Copilot capacity. If a user is assigned to several, the most recently created one is used. A user's Copilot capacity takes precedence over the workspace's capacity.
+- Embedded capacities aren't supported, and Fabric AI functions aren't billed through a Copilot capacity.
+- Data is still processed in the region where Copilot is used, and the Copilot capacity administrator can see usage and billing records that include item and workspace metadata.
+
+See <a href="https://learn.microsoft.com/en-us/fabric/enterprise/fabric-copilot-capacity">Fabric Copilot capacity</a> and <a href="https://learn.microsoft.com/en-us/fabric/admin/service-admin-portal-copilot">Copilot and Agent tenant settings</a>.
+
+**Video:** Microsoft Fabric: Use Copilot Capacities to Offload Copilot Usage
+
+<p><a href="https://www.youtube.com/watch?v=k3RRi-xMflw"><img src="https://img.youtube.com/vi/k3RRi-xMflw/0.jpg" height = 200></a></p>
+
 Read on for answers to your questions about how it works in the different workloads, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
 
 ### Copilot experiences at a glance
