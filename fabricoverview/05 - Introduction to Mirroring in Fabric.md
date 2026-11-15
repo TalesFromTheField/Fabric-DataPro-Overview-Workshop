@@ -183,10 +183,32 @@ Mirroring Azure Databricks Unity Catalog is **metadata mirroring**. Fabric creat
 
 **Complications to plan for**
 
-- **Unity Catalog permissions are not mirrored.** Grants and policies defined in Unity Catalog don't carry over, so you must reconfigure security in Fabric. Queries in Fabric use the credential of the Databricks connection, so plan carefully who can read the mirrored item.
+- **Unity Catalog permissions are not mirrored.** Grants and policies defined in Unity Catalog don't carry over, so you must reconfigure security in Fabric. Queries in Fabric use the credential of the Databricks connection, so plan carefully who can read the mirrored item. To recreate Unity Catalog permissions in Fabric, see <b>Carrying Unity Catalog permissions into Fabric</b> below.
 - **External data access must be enabled** on the Unity Catalog metastore. See <a href="https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/access-open-api">Enable external data access to Unity Catalog</a>.
 - **Fabric must reach the ADLS Gen2 account.** For firewall-protected storage, use <a href="https://learn.microsoft.com/en-us/fabric/security/security-trusted-workspace-access">trusted workspace access</a> and allow the Fabric workspace identity in the storage firewall. Unity Catalog row-level, column-level, and attribute-based policies are not enforced at the storage layer, so data read this way isn't filtered by them.
 - **Runtime and region.** Requires a Fabric Spark runtime with Spark 3.4 and Delta 2.4 or later, and the feature is available only in the regions listed on Learn.
+
+#### Carrying Unity Catalog permissions into Fabric
+
+Mirroring brings across the catalog metadata, not the access policies. To get matching security in Fabric, turn on **OneLake security** for the Mirrored Azure Databricks item (**Manage OneLake security** in the ribbon) and recreate the Unity Catalog access as OneLake security roles. The mirrored catalog supports Read roles, including row-level and column-level security. There are two ways to build those roles:
+
+| Approach | How it works | Best for |
+|---|---|---|
+| Manual mapping | Sync the same Microsoft Entra group into Unity Catalog (automatic identity management), grant it USE, BROWSE, and SELECT there, then add that group to a OneLake security role on the mirrored tables. | A small number of groups and catalogs that rarely change |
+| <a href="https://github.com/microsoft/Policy-Weaver">Policy Weaver</a> (open-source accelerator) | A Python package published by Microsoft that reads Unity Catalog grants, resolves the effective read privileges (including nested groups), and writes matching OneLake security roles on the mirrored item. It runs in a Fabric notebook or anywhere with Python 3.11 or later, so you can schedule it to keep roles in sync. It also supports Snowflake. | Many groups or catalogs, or permissions that change often |
+
+> **Important:** Policy Weaver is an open-source accelerator on GitHub, not a built-in Fabric feature. Test it in a non-production workspace first, and keep the mapping in sync as catalogs and permissions change.
+
+Policy Weaver prerequisites for Azure Databricks:
+
+- A service principal with a client secret, added as **Admin** on the Fabric workspace that holds the mirrored item, with the tenant setting that lets service principals call Fabric public APIs turned on. Microsoft Graph `User.Read.All` (application) is recommended.
+- Unity Catalog integrated with Microsoft Entra ID through SCIM. Only account-level groups, users, and service principals sync; legacy workspace-local groups don't.
+- The same service principal added in the Azure Databricks account console with the **Account Admin** role and an OAuth secret.
+- OneLake security turned on for the mirrored item.
+
+For the roles to apply when people query through the SQL analytics endpoint or Direct Lake, set the endpoint to **User's identity** access mode, and make sure every principal in a role also has **Read** permission on the item. Role changes take about 5 minutes to apply, and group membership changes take about an hour.
+
+Learn more: <a href="https://github.com/microsoft/Policy-Weaver">Policy Weaver on GitHub</a> | <a href="https://blog.fabric.microsoft.com/en-us/blog/secure-mirrored-azure-databricks-data-in-fabric-with-onelake-security/">Secure mirrored Azure Databricks data with OneLake security</a> | <a href="https://learn.microsoft.com/en-us/fabric/onelake/security/data-access-control-model">OneLake security roles, permissions, and scopes</a>
 
 Learn more: <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-databricks-tutorial">Tutorial</a> | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-databricks-limitations">Limitations</a> | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-databricks-security">Security</a> | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-databricks-faq">FAQ</a>
 
@@ -208,7 +230,7 @@ Customers often ask for bidirectional integration between Snowflake and Fabric. 
 - **Iceberg tables need a storage connection**, and only Iceberg tables reachable through the same storage connection can be mirrored together.
 - **Views and materialized views sync every 12 hours**, not in near real time.
 - **External, transient, temporary, and dynamic tables are not supported.**
-- **Security doesn't carry over.** Granular permissions must be reconfigured in Fabric.
+- **Security doesn't carry over.** Granular permissions must be reconfigured in Fabric. The open-source Policy Weaver accelerator can sync Snowflake policies to OneLake security roles too; see <b>Carrying Unity Catalog permissions into Fabric</b> above.
 - **Snowflake costs still apply.** Mirroring uses Snowflake warehouse and cloud services compute to read changes. It runs continuously with no scheduling.
 - **Full reseeds.** Stopping and restarting mirroring, DDL changes, and dbt drop-and-recreate patterns all trigger a full reseed of the affected tables.
 - **Identifiers are case-sensitive.**
