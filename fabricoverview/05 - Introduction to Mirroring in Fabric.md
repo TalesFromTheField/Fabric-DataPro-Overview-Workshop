@@ -164,6 +164,22 @@ For database mirroring and open mirroring, the Fabric compute and OneLake storag
 
 - A running Fabric capacity is required for mirroring. A paused or deleted capacity affects mirroring and no data is replicated. However, the background compute used for replication doesn't consume your capacity units.
 
+### Retention for mirrored data
+
+Mirroring continuously replicates your data into OneLake in Delta Lake table format. To keep mirrored data efficiently stored and ready for analytics, mirroring automatically runs **vacuum** to remove old files that are no longer referenced by a Delta log.
+
+You can customize the retention setting to fit your needs:
+
+- **Shorter retention** reduces mirroring storage consumption.
+- **Longer retention** lets you use Delta's time travel capabilities for analytics.
+
+| Mirrored database | Default retention |
+|---|---|
+| Created from the Fabric portal after mid-June 2025 | 1 day |
+| Created before mid-June 2025 | 7 days |
+
+To check or change the setting, open your mirrored database in the Fabric portal, go to **Settings** > **Delta table management**, and specify the retention threshold. You can also set it through the <a href="https://learn.microsoft.com/en-us/fabric/mirroring/mirrored-database-rest-api#configure-data-retention">mirroring public REST API</a> by using the `retentionInDays` property.
+
 
 
 <br>
