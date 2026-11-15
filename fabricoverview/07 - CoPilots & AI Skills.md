@@ -6,7 +6,7 @@
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2> 07 - Copilots & Data Agents </h2>
+<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2> 07 - Copilots, Data Agents & Fabric IQ </h2>
 
 In this workshop you'll cover using The Microsoft Fabric Platform to implement a complete Analytics solution.
 
@@ -14,24 +14,24 @@ In each module you'll get more references, which you should follow up on to lear
 
 (<a href="00%20-%20Pre-Requisites.md" >Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.) *Note in this section you will need an F2 and higher or a P-SKU in order to test or access Copilot or Data Agents, formerly known in preview as AI Skills.
 
-In this section you will learn about Copilots and Data Agents in Microsoft Fabric.  
+In this module you will learn where Copilot helps you inside Microsoft Fabric, how Copilot differs from data agents and operations agents, and how Fabric IQ and ontologies give those agents a shared understanding of your business.
 
-
-
-You'll cover these topics in this Module on CoPilots & Data Agents:
+You'll cover these topics in this Module on Copilots, Data Agents & Fabric IQ:
 
 <dl>
 
-  <dt><a href="#7-1" >7.1 - Understanding Copilots & Data Agents, the Differences & Requirements</a></dt>
-  <dt><a href="#7-2" >7.2 - Copilots in Microsoft Fabric</a></dt>
-  <dt><a href="#7-3" >7.3 - Microsoft Fabric Data Agents</a></dt>
-
+  <dt><a href="#7-1" >7.1 - Copilots, Data Agents & Operations Agents: Differences & Requirements</a></dt>
+  <dt><a href="#7-2" >7.2 - Copilot in Microsoft Fabric</a></dt>
+  <dt><a href="#7-3" >7.3 - What is Fabric IQ?</a></dt>
+  <dt><a href="#7-4" >7.4 - Ontology</a></dt>
+  <dt><a href="#7-5" >7.5 - Fabric Data Agents</a></dt>
+  <dt><a href="#7-6" >7.6 - Operations Agents</a></dt>
 
 </dl>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-# 07.1 - Understanding Copilots & Data Agents in Microsoft Fabric
+<h2 id="7-1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.1 - Copilots, Data Agents & Operations Agents: Differences & Requirements</h2>
 
 In this section, we will explore the **Copilot** and **Data Agents** features within Microsoft Fabric, highlighting their differences, use cases, and how they can enhance your data workflows.  At the time of the publishing of this course, both **Copilot** and **Data Agents** require an F64 capacity in order to utilize their functionality.
 
@@ -135,7 +135,19 @@ Open the following reference and complete the steps you see there:
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 
-<h2 id="7-3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.3 Microsoft Fabric Data Agents</h2>
+<h2 id="7-3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.3 - What is Fabric IQ?</h2>
+
+> **Coming soon:** This section is being written.
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<h2 id="7-4"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.4 - Ontology</h2>
+
+> **Coming soon:** This section is being written.
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<h2 id="7-5"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.5 - Fabric Data Agents</h2>
 
 With the Microsoft Fabric Data Agents, you can make data more accessible to your colleagues. You can configure a generative AI system to generate queries that answer questions about your data. After you configure the Data Agents, you can share it with your colleagues, who can then ask their questions in plain English. Based on their questions, the AI generates queries over your data that answer those questions.
 
@@ -165,6 +177,12 @@ In this Activity you will execute code from the following exercises to create  A
 <a href="https://www.youtube.com/watch?v=5ivA4zdnDtE"><img src="https://img.youtube.com/vi/5ivA4zdnDtE/0.jpg" height = 200></a> 
 
 <p><a href="https://www.youtube.com/watch?v=cuF00-iV_YA"><img src="https://img.youtube.com/vi/cuF00-iV_YA/0.jpg" height = 200></a> 
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<h2 id="7-6"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.6 - Operations Agents</h2>
+
+> **Coming soon:** This section is being written.
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
