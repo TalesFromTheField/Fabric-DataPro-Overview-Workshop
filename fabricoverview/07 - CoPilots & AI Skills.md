@@ -126,48 +126,33 @@ Each Fabric workload has its own Copilot, built into the item you're working in.
 
 > **Note:** Status reflects Microsoft Learn's <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-ai-feature-state">Release status of AI and Copilot experiences in Fabric</a> page and the individual feature pages at the time of writing. Copilot changes quickly, so check that page for the latest. Data agents aren't in this table because they're a separate, configurable item; see <a href="#7-5">7.5</a>.
 
-The sections below walk through each workload's Copilot in more detail.
+### Copilot videos from Tales from the Field
 
-### Copilot for Data Science and Data Engineering
-Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored to support data professionals in their workflow. It provides intelligent code completion, automates routine tasks, and supplies industry-standard code templates to facilitate building robust data pipelines and crafting complex analytical models. Utilizing advanced machine learning algorithms, Copilot offers contextual code suggestions that adapt to the specific task at hand, helping you code more effectively and with greater ease. From data preparation to insight generation, Microsoft Fabric Copilot acts as an interactive aide, lightening the load on engineers and scientists and expediting the journey from raw data to meaningful conclusions.
+The table above links to Microsoft Learn for each Copilot experience. These videos show several of them in action.
 
-<p><a href="https://www.youtube.com/watch?v=GOq5gOdKEVs"><img src="https://img.youtube.com/vi/GOq5gOdKEVs/0.jpg" height = 200></a> 
+**Copilot for Data Engineering and Data Science**
 
-### Copilot for Data Factory
-Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks.
+<p><a href="https://www.youtube.com/watch?v=GOq5gOdKEVs"><img src="https://img.youtube.com/vi/GOq5gOdKEVs/0.jpg" height = 200></a></p>
 
-<p><a href="https://www.youtube.com/watch?v=ckw6tZPzP7Y"><img src="https://img.youtube.com/vi/ckw6tZPzP7Y/0.jpg" height = 200></a> 
+**Copilot for Data Factory**
 
-### Copilot for Data Warehouse
-Microsoft Copilot for Synapse Data Warehouse is an AI assistant designed to streamline your data warehousing tasks. Key features of Copilot for Warehouse include Natural Language to SQL, code completion, quick actions, and intelligent insights. For more information, see <a href="https://learn.microsoft.com/en-us/fabric/data-warehouse/copilot">Copilot for Data Warehouse</a>.
+<p><a href="https://www.youtube.com/watch?v=ckw6tZPzP7Y"><img src="https://img.youtube.com/vi/ckw6tZPzP7Y/0.jpg" height = 200></a></p>
 
-<p><a href="https://www.youtube.com/watch?v=WC-mxioPp_8"><img src="https://img.youtube.com/vi/WC-mxioPp_8/0.jpg" height = 200></a> 
+**Copilot for Data Warehouse**
 
-### Copilot for Power BI
-Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. You can use Copilot for Power BI to generate a summary for the report page that you just created, and generate synonyms for better Q&A capabilities.
+<p><a href="https://www.youtube.com/watch?v=WC-mxioPp_8"><img src="https://img.youtube.com/vi/WC-mxioPp_8/0.jpg" height = 200></a></p>
 
-For more information on the features and how to use Copilot for Power BI, see <a href="https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-introduction">Overview of Copilot for Power BI</a>.
+**Copilot for Power BI**
 
-<p><a href="https://www.youtube.com/watch?v=iTI2HUWLvVI"><img src="https://img.youtube.com/vi/iTI2HUWLvVI/0.jpg" height = 200></a> 
+<p><a href="https://www.youtube.com/watch?v=iTI2HUWLvVI"><img src="https://img.youtube.com/vi/iTI2HUWLvVI/0.jpg" height = 200></a></p>
 
-### Copilot for Real-Time Intelligence
-Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists.
+### Build your own AI solutions
 
-For more information, see <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/copilot-real-time-intelligence">Copilot for Real-Time Intelligence overview</a>.
+Copilot in Fabric isn't configurable, but you can build your own AI solutions on top of Fabric data. Microsoft publishes several solution accelerators on GitHub; see <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-fabric-overview#create-your-own-ai-solution-accelerators">Create your own AI solution accelerators</a>. For a configurable, no-code option inside Fabric, see data agents in <a href="#7-5">7.5</a>.
 
-<p><a href="https://www.youtube.com/watch?v=WC-mxioPp_8"><img src="https://img.youtube.com/vi/WC-mxioPp_8/0.jpg" height = 200></a> 
+<p><a href="https://www.youtube.com/watch?v=0jOEUeOykzQ"><img src="https://img.youtube.com/vi/0jOEUeOykzQ/0.jpg" height = 200></a></p>
 
-### Create your own AI solution accelerators
-Build your own copilots
-Using the client advisor AI accelerator tool, you can build custom copilot with your enterprise data. The client advisor AI accelerator uses Azure OpenAI Service, Azure AI Search, and Microsoft Fabric to create custom Copilot solutions. This all-in-one custom copilot empowers client advisors to use generative AI across structured and unstructured data optimizing daily tasks and fostering better interactions with clients. To learn more, see the GitHub repo.
-
-<p><a href="https://www.youtube.com/watch?v=0jOEUeOykzQ"><img src="https://img.youtube.com/vi/0jOEUeOykzQ/0.jpg" height = 200></a> 
-
-<p><a href="https://www.youtube.com/watch?v=8da4smSAoEk"><img src="https://img.youtube.com/vi/8da4smSAoEk/0.jpg" height = 200></a> 
-
-For more details, check out the [Overview of Copilot in Fabric](https://learn.microsoft.com/en-us/fabric/get-started/copilot-fabric-overview) (https://blog.fabric.microsoft.com/en-us/blog/data-warehouse-copilot-ai-skill/).
-
-[You can find the complete list of Microsoft Purview learning and reference resources at this location.](https://learn.microsoft.com/en-us/training/purview/)
+<p><a href="https://www.youtube.com/watch?v=8da4smSAoEk"><img src="https://img.youtube.com/vi/8da4smSAoEk/0.jpg" height = 200></a></p>
 
 
 
@@ -642,12 +627,19 @@ Learn more: <a href="https://learn.microsoft.com/en-us/fabric/real-time-intellig
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 <ul>
-  <li><a href="https://learn.microsoft.com/en-us/fabric/get-started/copilot-privacy-security">Privacy, security, and responsible use of Copilot in Fabric</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/fabric/get-started/copilot-fabric-consumption">Copilot in Fabric consumption</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/fabric/get-started/copilot-faq-fabric" >Copilot for Microsoft Fabric and Power BI: FAQ</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/fabric/data-science/ai-skill-tenant-switch" >Data Agents tenant settings</a></li>
-    <li><a href="https://learn.microsoft.com/en-us/fabric/data-science/ai-skill-sharing" >Data Agents sharing and permission management</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/fabric/get-started/whats-new" >As always, this is a fast-changing technology, so ensure you check this reference to find the latest improvements.</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-fabric-overview">Overview of Copilot in Fabric</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-ai-feature-state">Release status of AI and Copilot experiences in Fabric</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-privacy-security">Privacy, security, and responsible AI use of Copilot in Fabric</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-fabric-consumption">Consumption rates and billing for Copilot in Fabric</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/enterprise/fabric-copilot-capacity">Fabric Copilot capacity</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-faq-fabric">Copilot for Microsoft Fabric and Power BI: FAQ</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/iq/overview">What is Fabric IQ?</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/overview">What is ontology?</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/data-science/concept-data-agent">Fabric data agent concepts</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-tenant-settings">Fabric data agent tenant settings</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-sharing">Fabric data agent sharing and permission management</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/operations-agent">Create and configure operations agents</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/fundamentals/whats-new">As always, this is a fast-changing technology, so ensure you check this reference to find the latest improvements.</a></li>
 </ul>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
