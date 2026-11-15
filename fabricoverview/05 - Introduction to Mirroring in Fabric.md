@@ -66,9 +66,9 @@ Fabric offers three different approaches in bringing data into OneLake through m
 
 | Platform                                                                 | Near Real-Time Replication | Type of Mirroring     | Tutorial                                                                 |
 |--------------------------------------------------------------------------|-----------------------------|------------------------|--------------------------------------------------------------------------|
-| Azure Cosmos DB | Yes | Database mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-cosmos-db">Tutorial: Azure Cosmos DB</a> |
-| Azure Databricks | N/A (metadata only, via shortcuts) | Metadata mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-databricks">Tutorial: Azure Databricks</a> |
-| Azure Database for PostgreSQL | Yes | Database mirroring | <a href="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/azure-database-postgresql-tutorial">Tutorial: Azure Database for PostgreSQL</a> |
+| Azure Cosmos DB | Yes | Database mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-cosmos-db-tutorial">Tutorial: Azure Cosmos DB</a> |
+| Azure Databricks | N/A (metadata only, via shortcuts) | Metadata mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-databricks-tutorial">Tutorial: Azure Databricks</a> |
+| Azure Database for PostgreSQL | Yes | Database mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-database-postgresql-tutorial">Tutorial: Azure Database for PostgreSQL</a> |
 | Azure Database for MySQL (preview) | Yes | Database mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-database-mysql-tutorial">Tutorial: Azure Database for MySQL (preview)</a> |
 | Azure SQL Database | Yes | Database mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-sql-database-tutorial">Tutorial: Azure SQL Database</a> |
 | Azure SQL Managed Instance | Yes | Database mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-sql-managed-instance-tutorial">Tutorial: Azure SQL Managed Instance</a> |
@@ -77,9 +77,9 @@ Fabric offers three different approaches in bringing data into OneLake through m
 | Oracle | Yes | Database mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/oracle-tutorial">Tutorial: Oracle</a> |
 | SAP (via SAP Datasphere) | Yes | Database mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/sap-datasphere-tutorial">Tutorial: SAP Datasphere</a> |
 | SharePoint List (preview) | Yes | Database mirroring, Metadata mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/sharepoint-list-tutorial">Tutorial: SharePoint List (preview)</a> |
-| Snowflake | Yes | Database mirroring, Metadata mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/snowflake">Tutorial: Snowflake</a> |
-| SQL Server | Yes | Database mirroring | <a href="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/sql-server-tutorial?tabs=sql201622">Tutorial: SQL Server</a> |
-| Open mirrored databases | Yes | Open mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/open-mirroring">Tutorial: Open mirroring</a> |
+| Snowflake | Yes | Database mirroring, Metadata mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/snowflake-tutorial">Tutorial: Snowflake</a> |
+| SQL Server | Yes | Database mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/sql-server-tutorial">Tutorial: SQL Server</a> |
+| Open mirrored databases | Yes | Open mirroring | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/open-mirroring-tutorial">Tutorial: Open mirroring</a> |
 | Fabric SQL database | Yes | Database mirroring | Automatically configured |
 
 > **Note:** Metadata mirroring doesn't replicate data. It references source data in place through OneLake shortcuts, so latency reflects source system access and shortcut performance rather than replication speed.
@@ -124,7 +124,7 @@ The following are core tenets of Mirroring:
 
 - Mirroring in Fabric is a fully managed service, so you don't have to worry about hosting, maintaining, or managing replication of the mirrored connection.
 
-- For a comprehensive introduction to troubleshooting mirroring concepts, please view the following video:
+- To learn more about Mirroring in Fabric, watch the following videos:
 
      <p><a href="https://www.youtube.com/watch?v=I09E-0RlgNc"><img src="https://img.youtube.com/vi/I09E-0RlgNc/0.jpg"></a> 
      <p><a href="https://www.youtube.com/watch?v=YMWySj-x660"><img src="https://img.youtube.com/vi/YMWySj-x660/0.jpg"></a> 
@@ -153,7 +153,7 @@ In addition to mirroring enabling data replication by creating a secure connecti
 
 Once data is in the landing zone with the proper format, replication will start running and manage the complexity of merging the changes with updates, insert, and delete to be reflected into delta tables. This method ensures that any data written into the landing zone is immediately reflected, keeping the data in Fabric up-to-date.
 
-- For a comprehensive introduction to troubleshooting mirroring concepts, please view the following video:
+- To learn more about open mirroring, watch the following video:
 
 <p><a href="https://www.youtube.com/watch?v=81M93gBYrlw"><img src="https://img.youtube.com/vi/81M93gBYrlw/0.jpg"></a> 
 
@@ -253,7 +253,7 @@ To check or change the setting, open your mirrored database in the Fabric portal
 <br>
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Configure Fabric Mirrored Database</b></p>
 
-<p><img src="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/media/azure-sql-database/fabric-mirroring-sql-database.svg" height = 400></p>
+<p><img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/azure-sql-database/fabric-mirroring-sql-database.svg" height = 400></p>
 
 In this activity, you will learn how to Configure Microsoft Fabric mirrored databases from Azure SQL Database.
 
@@ -261,7 +261,7 @@ In this activity, you will learn how to Configure Microsoft Fabric mirrored data
 
 Open the following reference and complete the steps you see there:
 
-<a href="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/azure-sql-database-tutorial"> Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database</a>
+<a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-sql-database-tutorial"> Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database</a>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
@@ -482,10 +482,10 @@ The following video will discuss 5 errors that could prevent the use of technolo
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
 <ul>
-  <li><a href="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/explore" >Explore data in your mirrored database using Microsoft Fabric</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/azure-cosmos-db" >Mirroring Azure Cosmos DB (Preview)</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/azure-databricks" >Mirroring Azure Databricks Unity Catalog (Preview)</a></li>
-  <li><a href="https://learn.microsoft.com/en-us/fabric/database/mirrored-database/snowflake" >Mirroring Snowflake</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/mirroring/explore" >Explore data in your mirrored database using Microsoft Fabric</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-cosmos-db" >Mirroring Azure Cosmos DB</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-databricks" >Mirroring Azure Databricks Unity Catalog</a></li>
+  <li><a href="https://learn.microsoft.com/en-us/fabric/mirroring/snowflake" >Mirroring Snowflake</a></li>
 </ul>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
