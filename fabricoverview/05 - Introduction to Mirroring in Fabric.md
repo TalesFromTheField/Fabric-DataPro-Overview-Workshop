@@ -134,12 +134,17 @@ The following are core tenets of Mirroring:
 
 ## How does metadata mirroring work?
 
-Mirroring not only enables data replication but can also be achieved through shortcuts or metadata mirroring rather than full data replication, allowing data to be available without physically moving or duplicating it. Mirroring in this context refers to replicating only metadata—such as catalog names, schemas, and tables—rather than the actual data itself. This approach enables Fabric to make data from different sources accessible without duplicating it, simplifying data management and minimizing storage needs.
+Metadata mirroring references source data through <a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts">OneLake shortcuts</a> instead of replicating it. Only the metadata, such as catalog names, schemas, and tables, is synchronized into Fabric. The data itself stays where it is, which keeps a single version of truth with no duplication and no ETL, and minimizes storage needs in Fabric.
 
-For example, when accessing data registered in Unity Catalog, Fabric mirrors only the catalog structure from Azure Databricks, allowing the underlying data to be accessed through shortcuts. This method ensures that any changes in the source data are instantly reflected in Fabric without requiring data movement, maintaining real-time synchronization and enhancing efficiency in accessing up-to-date information.
+For example, when you mirror data registered in Azure Databricks Unity Catalog, Fabric mirrors only the catalog structure and reads the underlying tables through shortcuts. Changes in the source data are reflected in Fabric without any data movement.
 
+Keep these points in mind:
 
+- **There's no replication engine.** Latency reflects source system access time and shortcut performance rather than replication speed. New or changed tables can take anywhere from a few seconds to several minutes to appear in the SQL analytics endpoint.
+- **Fabric must be able to reach the source storage.** Because Fabric reads the data in place, it needs network access to the storage that holds the source tables, for example the ADLS Gen2 account behind Azure Databricks, or the storage that holds Snowflake Iceberg tables.
+- **Cross-tenant sharing is supported.** Because metadata mirroring relies on OneLake shortcuts, the data can be shared with other tenants through OneLake external data sharing. See <a href="#5.3">5.3 - Share and use mirrored data</a>.
 
+Sources that use metadata mirroring today include Azure Databricks Unity Catalog, Dremio catalog (preview), and the metadata mirroring options for Snowflake and SharePoint List (preview). For the details and gotchas of the two most common sources, see <b>Deep dive: Azure Databricks and Snowflake</b> later in this section.
 
 
 ## How does open mirroring work?
