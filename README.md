@@ -35,7 +35,7 @@ In this workshop you'll cover these topics:
 - 04 - The Lakehouse: Create a Lakehouse, load data and use shortcuts, transform data with Spark and Data Wrangler, and enrich data with AI functions.
 - 05 - Mirroring in Microsoft Fabric: Understand when to use Mirroring, configure replication, and monitor and troubleshoot mirrored databases.
 - 06 - Real-Time Intelligence: Ingest streaming data with Eventstreams, store and query it in Eventhouses and KQL databases, and explore Real-Time Dashboards, Activator, and Fabric Maps.
-- 07 - Copilots & Data Agents: Understand the differences and requirements, use Copilot across Fabric workloads, and configure Fabric data agents to answer natural-language questions about data.
+- 07 - Copilots, Data Agents & Fabric IQ: Understand the differences and requirements, use Copilot across Fabric workloads, and configure Fabric data agents to answer natural-language questions about data.
 - 08 - OLTP Databases in Fabric: Explore Database Hub, SQL database, and Cosmos DB in Fabric, and understand how operational data connects to analytics in OneLake.
 - 09 - Bonus Building Architectures with Microsoft Fabric (optional): Design and size solutions, discover and govern data, integrate source control, and monitor and manage deployments.
 
@@ -143,7 +143,7 @@ This is a modular workshop, and in each section, you'll learn concepts, technolo
    
   <tr><td><a href="fabricoverview/06%20-%20Real-Time%20Intelligence.md" >06 - Real-Time Intelligence</a></td><td> Eventstreams, Eventhouses, KQL databases and queries, Real-Time Dashboards, Activator, and Fabric Maps.</td></tr>
   
-  <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/07%20-%20CoPilots%20%26%20AI%20Skills.md" >07 - Copilots & Data Agents</a> </td><td style="background-color: AliceBlue; color: black;"> Copilot capabilities across Fabric workloads and configuring Fabric data agents to answer natural-language questions about your data.</td></tr>
+  <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/07%20-%20CoPilots%20%26%20AI%20Skills.md" >07 - Copilots, Data Agents & Fabric IQ</a> </td><td style="background-color: AliceBlue; color: black;"> Copilot capabilities across Fabric workloads and configuring Fabric data agents to answer natural-language questions about your data.</td></tr>
 
   <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/08%20-%20OLTP%20Databases%20in%20Fabric.md" >08 - OLTP Databases in Fabric</a> </td><td style="background-color: AliceBlue; color: black;"> Database Hub, SQL database, Cosmos DB, and connecting operational workloads to analytics in OneLake.</td></tr>
 
