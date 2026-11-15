@@ -200,7 +200,68 @@ Open the following reference and complete the steps you see there:
 <h2 id="5.3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">5.3 Share and use mirrored data</h2>
 <br></br>
 
-_Content coming soon: sharing and permissions, cross-tenant sharing, and cross-database queries._
+Once your data is mirrored into OneLake, you can share it with colleagues, share it with other organizations, and combine it with the rest of your Fabric data without moving or copying it.
+
+### Share a mirrored database
+
+Sharing makes access control and management easier. Security controls such as row-level security (RLS) and object-level security (OLS) help you control access to sensitive information.
+
+When you share a mirrored database, you grant other users or groups access to that mirrored database **without** giving them access to the workspace and the rest of its items. Sharing a mirrored database also grants access to its SQL analytics endpoint.
+
+> **Note:** You must be an admin or member in your workspace to share an item in Microsoft Fabric.
+
+To share, go to your workspace and select **Share** next to the mirrored database name. By default, recipients get Read permission on the mirrored database and its SQL analytics endpoint. You can also grant:
+
+| Permission option | What it allows |
+|---|---|
+| Read all SQL analytics endpoint data | Read all data through the SQL analytics endpoint using T-SQL queries (ReadData permission). |
+| Read all OneLake data | Access the mirrored data directly in OneLake, for example with Spark or OneLake Explorer, and subscribe to OneLake events in Real-Time hub (ReadAll and SubscribeOneLakeEvents permissions). |
+| Read and write | Edit the mirrored database configuration and read and write data in the landing zone (Write permission). |
+
+To review, grant, or revoke permissions later, select the **Manage permissions** quick action on the mirrored database or its SQL analytics endpoint.
+
+> **Note:** When mirroring from Azure SQL Database, Azure SQL Managed Instance, Azure Database for PostgreSQL, Azure Database for MySQL, or SQL Server 2025, the source's managed identity needs **Read and write** permission on the mirrored database. This is granted automatically when you create the mirrored database in the Fabric portal. If you create it through the API, grant the permission yourself.
+
+For more information, see <a href="https://learn.microsoft.com/en-us/fabric/mirroring/share-and-manage-permissions">Share your mirrored database and manage permissions</a>.
+
+### Share mirrored data across tenants
+
+You can also share mirrored databases, and data accessible through shortcuts, with another organization's Fabric tenant by using <a href="https://learn.microsoft.com/en-us/fabric/governance/external-data-sharing-overview">OneLake external data sharing</a>. Because metadata mirroring relies on OneLake shortcuts, it supports cross-tenant sharing too.
+
+The data is shared in place, and no data is copied. Cross-tenant sharing creates a read-only OneLake shortcut in the consuming tenant that points back to the original data, so both organizations work from the same live data without ETL or duplication.
+
+<p>
+<img src="https://learn.microsoft.com/en-us/fabric/governance/media/external-data-sharing-overview/external-data-share-illustration.png">
+
+How it works:
+
+1. A Fabric admin turns on external data sharing in **both** the sharing tenant and the consuming tenant, including who can create and accept shares.
+2. A user with Read and Reshare permissions on the mirrored database creates an external data share and invites a user in the other tenant.
+3. The recipient accepts the share from the link they receive and chooses a lakehouse where the shortcut is created.
+4. Users in the consuming tenant can then work with the shared data in Power BI reports, Spark notebooks, data science experiments, and SQL analytics endpoint queries.
+
+> **Important:** Governance controls from the sharing tenant, such as Microsoft Purview sensitivity labels and data loss prevention, don't carry over to the consuming tenant. The consuming tenant applies its own access control and compliance policies and can grant access to anyone, and data might cross geographic boundaries when it's accessed there. Shares can be revoked at any time from the **External data shares** tab on the Manage permissions page.
+
+Learn more: <a href="https://learn.microsoft.com/en-us/fabric/governance/external-data-sharing-enable">Enable external data sharing</a> | <a href="https://learn.microsoft.com/en-us/fabric/governance/external-data-sharing-create">Create an external data share</a> | <a href="https://learn.microsoft.com/en-us/fabric/governance/external-data-sharing-accept">Accept an external data share</a>
+
+### Query across databases
+
+With mirrored data in OneLake, you can write cross-database queries that join data from mirrored databases, warehouses, and the SQL analytics endpoints of lakehouses in a single T-SQL query. Reference tables in other items by using three-part naming: `database.schema.table`.
+
+For example, from a mirrored database you can join to a table in the warehouse `ContosoWarehouse`:
+
+```sql
+SELECT *
+FROM ContosoWarehouse.dbo.ContosoSalesTable AS Contoso
+INNER JOIN Affiliation
+ON Affiliation.AffiliationId = Contoso.RecordTypeID;
+```
+
+For more information, see <a href="https://learn.microsoft.com/en-us/fabric/data-warehouse/query-warehouse#write-a-cross-database-query">Write a cross-database query</a>.
+
+### Report with Direct Lake
+
+Mirrored data is stored in Delta Lake format in OneLake, so Power BI can connect to it in <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/direct-lake-overview">Direct Lake</a> mode. This gives you fast, near real-time reporting directly over your operational data, without extra data movement or duplication.
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
