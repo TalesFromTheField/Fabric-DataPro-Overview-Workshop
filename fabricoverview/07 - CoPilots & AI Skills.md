@@ -145,8 +145,53 @@ For more details, check out the [Overview of Copilot in Fabric](https://learn.mi
 
 
 <h2 id="7-3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.3 - What is Fabric IQ?</h2>
+<br></br>
 
-> **Coming soon:** This section is being written.
+**Fabric IQ is a marketing term, not a single product, item, or button.** It's the name Microsoft gives to a collection of technologies inside Microsoft Fabric that help companies and organizations build intelligence onto their data. Fabric IQ takes the data you've already unified in OneLake and raises it to the language of your business (customers, orders, shipments, assets) so that people, applications, and AI agents interpret it the same way and can reason and act on it, instead of working only with tables, columns, and joins.
+
+In the Fabric portal, you'll see this as the **IQ** workload (preview): a grouping of related Fabric items. Several of those items also belong to other workloads, such as Data Science, Real-Time Intelligence, and Power BI. OneLake is the foundation underneath all of them.
+
+### Fabric IQ is part of Microsoft IQ
+
+Fabric IQ is one of four "IQ" layers that Microsoft groups under **Microsoft IQ**, the enterprise intelligence layer of the Microsoft stack. Each layer gives Copilot and agents a different kind of context:
+
+| IQ layer | Gives Copilot and agents context about |
+|---|---|
+| **Fabric IQ** | The state of your business: business entities and the analytical, real-time, and operational data behind them |
+| **Work IQ** | How your people work: email, meetings, chats, files, people, and connected business apps |
+| **Foundry IQ** | Your organization's policies and authoritative documents |
+| **Web IQ** | Information from the public web |
+
+### What is Work IQ?
+
+**Work IQ** is the workplace intelligence layer behind Microsoft 365 Copilot. It continuously builds a semantic understanding of your organization's work across Microsoft 365 (mail, calendar, chats, meetings, files, sites, and people) and business data from Dynamics 365 and Power Platform. Copilot Chat, the Microsoft 365 apps, and prebuilt agents such as Researcher and Analyst use it, and developers can call it from their own agents through a remote MCP server, agent-to-agent (A2A), or a REST API.
+
+Work IQ is permission-aware: every request runs as a specific user and only reaches what that user is allowed to see.
+
+### How Fabric IQ and Work IQ connect
+
+Put simply, **Work IQ knows what your people are working on, and Fabric IQ knows what your business data says.** When the two come together, Microsoft 365 Copilot can ground an answer in governed Fabric data and then reconcile it with the user's files, chats, and email. For example, a seller preparing for a customer meeting can get the account's latest numbers alongside the related emails and meeting notes.
+
+- **Power BI data in Microsoft 365 Copilot Chat (GA).** Users with a Microsoft 365 Copilot license can ask data questions in Copilot Chat. Copilot finds a relevant Power BI report they have access to and answers from its semantic model, respecting row-level and object-level security and sensitivity labels. See <a href="https://learn.microsoft.com/en-us/fabric/iq/connectors/microsoft-365-copilot-overview">Fabric IQ in Microsoft 365 Copilot Chat</a>.
+- **Fabric data agents in Microsoft 365 Copilot.** A data agent (see <a href="#7-5">7.5</a>) can be published as a Microsoft 365 agent so people can query lakehouses, warehouses, KQL databases, semantic models, and ontologies from Copilot. Data agents and ontologies don't answer in Copilot Chat until an agent is explicitly published.
+- **Governance carries across.** Purview sensitivity labels and data loss prevention policies still apply, and admins control the connection with tenant settings in both the Microsoft 365 admin center (*Fabric data available in M365 Copilot*) and the Fabric admin portal (*Share Fabric data with your Microsoft 365 services*).
+
+### What's inside Fabric IQ, and what this workshop covers
+
+The IQ workload contains six items. **In this workshop we focus on three of them: ontologies, data agents, and operations agents.** The others are listed so you know they exist, but we won't cover them here.
+
+| Fabric IQ item | What it does | In this workshop |
+|---|---|---|
+| **Ontology** (preview) | A shared business vocabulary (entity types, properties, relationships, rules, and metrics) bound to your data so people and agents use the same definitions | **Yes**, see <a href="#7-4">7.4</a> |
+| **Data agent** | A conversational Q&A agent over your Fabric data, grounded in semantic models and ontologies | **Yes**, see <a href="#7-5">7.5</a> |
+| **Operations agent** | Monitors real-time data, detects conditions you care about, and recommends or takes governed actions | **Yes**, see <a href="#7-6">7.6</a> |
+| Power BI semantic model | Curated measures, hierarchies, and relationships for reporting; ontologies can be generated from them | Only as a source for ontologies |
+| Graph (preview) | Stores and traverses relationships for multi-hop and impact questions; integrated with ontology | No |
+| Planning | Planning, forecasting, and plan-versus-actuals over semantic models | No |
+
+How the three fit together: **the ontology defines what your business means, data agents answer questions in that language, and operations agents watch live data in that language and act on it.**
+
+Learn more: <a href="https://learn.microsoft.com/en-us/fabric/iq/overview">What is Fabric IQ?</a> | <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/">Work IQ overview</a> | <a href="https://learn.microsoft.com/en-us/fabric/iq/connectors/microsoft-365-copilot-overview">Fabric IQ in Microsoft 365 Copilot Chat</a>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
