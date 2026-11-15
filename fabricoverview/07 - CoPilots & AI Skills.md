@@ -196,8 +196,104 @@ Learn more: <a href="https://learn.microsoft.com/en-us/fabric/iq/overview">What 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <h2 id="7-4"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.4 - Ontology</h2>
+<br></br>
 
-> **Coming soon:** This section is being written.
+An **ontology** (preview) is the business vocabulary of Fabric IQ. It defines the things your organization cares about (customers, products, stores, shipments, machines), their properties, how they relate to each other, and the rules and metrics that give them business meaning. You then **bind** those definitions to data you already have in Fabric, so people, applications, and AI agents all use the same language and the same definitions.
+
+Put simply: your lakehouse knows a table called `dim_customer`; your ontology knows **Customer**.
+
+> **Important:** Ontology is in preview. The old ontology experience retires on **January 31, 2027**. If you built an ontology in the old experience, use the in-product action to copy it into the new experience, then reconnect any agents or dashboards to the new item. See <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/overview#migrate-from-old-experience">Migrate from old experience</a>.
+
+### Why use an ontology?
+
+Most organizations describe the same concept differently across sources, semantic models, applications, and teams. An ontology gives you one common context layer so you can:
+
+- **Model the business in business terms**, independent of any single physical table.
+- **Reuse what you already built** by generating an ontology from a Power BI semantic model, including its relationships, calculated columns, and DAX measures.
+- **Leave the data where it is.** An ontology is a virtual layer. Bindings point at the source system, and nothing is copied into the ontology.
+- **Give every agent the same context**, so answers stay consistent across teams and tools instead of depending on how each prompt was written.
+
+### How ontology fits in Fabric IQ
+
+Ontology is the **business context and semantic modeling layer** between your data and the experiences that consume it. It stores and serves definitions and bindings, but it is **not a query engine**. Agents and dashboards read the ontology for context, then run their queries against the bound source.
+
+![Graphic showing how ontology in Fabric gives a live, unified view of the business.](https://learn.microsoft.com/en-us/fabric/iq/ontology/media/overview/ontology-fabric-iq-overview.png)
+
+### Core concepts
+
+| Concept | What it is | Example |
+|---|---|---|
+| **Entity type** | The reusable definition of a business concept, independent of any one source table | Customer, Store, Machine |
+| **Entity instance** | A data-backed occurrence of an entity type | One specific store or machine |
+| **Property** | A named, typed characteristic of an entity type, mapped to fields in one or more sources | A machine's operating state |
+| **Relationship** | How two entity types connect | Customer *places* Order; Machine *belongs to* Production Line |
+| **Metric** | A governed calculation. In preview, metrics come from DAX measures in a source semantic model, which stays the owner of the DAX | Revenue, on-shelf availability |
+| **Rule** | Business logic written in natural language and linked to entity types, properties, and relationships | What "below safety stock" means |
+| **Namespace** | A scope that organizes elements, useful when several domains or teams own concepts | Sales, Supply Chain |
+| **Data binding** | The mapping from a definition to the source data that supplies it | Store details bound to a lakehouse table; freezer temperature bound to an eventhouse |
+
+Two modeling features help as an ontology grows: **inheritance** (for example, *Frozen product* is a type of *Product*) and **shared properties** (define a property once and reuse it across entity types).
+
+### What can an ontology bind to?
+
+During preview, bindings can point to **semantic models, lakehouses, eventhouses, warehouses, SQL databases, mirrored databases**, and OneLake shortcuts, views, and materialized views. This is where the workshop comes together: anything you mirrored in <a href="05%20-%20Introduction%20to%20Mirroring%20in%20Fabric.md">Module 05</a> can be bound into an ontology without copying it again.
+
+### Two ways to build an ontology
+
+1. **Generate it from a Power BI semantic model.** The model's tables and relationships become the starting structure, and its measures appear as metrics. Start here when you already have a trusted semantic model. See <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/how-to-generate-from-semantic-models">Generate an ontology from semantic models</a>.
+2. **Build it from scratch.** Create entity types, bind data, and add relationships yourself, or ask the built-in **ontology agent** to help.
+
+The **ontology agent** is a chat experience inside the ontology item. It can draft definitions and bindings from connected Fabric sources, describe the ontology, answer business questions by querying the data behind it (using DAX, KQL, SQL, or GQL), and suggest improvements. It works **proposal-first**: you review each change before it's applied. See <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/how-to-use-ontology-agent">Use the ontology agent</a>.
+
+### Who uses an ontology?
+
+An ontology on its own doesn't answer questions; something has to consume it. These are the supported consumers:
+
+| Consumer | Best for | In this workshop |
+|---|---|---|
+| Ontology agent | Building, improving, and testing queries on the ontology | This section |
+| Fabric data agent | Interactive Q&A over Fabric data with ontology context | <a href="#7-5">7.5</a> |
+| Fabric operations agent | Continuous monitoring with recommended or automated actions | <a href="#7-6">7.6</a> |
+| Foundry IQ agent | Developer-built agents with tool calling and enterprise integration | Not covered |
+| Copilot Studio agent | Low-code agents connected through the Fabric IQ MCP tool | Not covered |
+| Custom agents (ontology MCP server) | Any MCP-compatible client or custom agent | Not covered |
+| Real-Time Dashboards | Visual exploration of ontology-backed data | Not covered |
+
+See <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/concepts-agent-integration">Agent integration options for ontology</a> to compare them.
+
+### Graph is optional
+
+**Graph** is an opt-in execution layer for questions where the relationship path matters, such as multi-hop traversal, dependency analysis, or shortest path. An ontology doesn't load instance data into a graph by default; you choose to materialize it when you need it. Routine lookups, aggregations, and metrics keep running against their source systems.
+
+### Governance, lifecycle, and interoperability
+
+- **Security follows the data.** Workspace and item permissions control access to the ontology, and queries respect OneLake security and source row-level, object-level, and column-level security.
+- **Version history.** Create named checkpoints manually and restore a known state.
+- **Standards.** Import RDF, Turtle, or OWL definitions into an empty ontology, and export to RDF or Turtle.
+- **Developer tooling.** REST APIs and Fabric CI/CD are supported.
+
+### Before you start: tenant settings and capacity
+
+- **Tenant settings:** a Fabric administrator enables *Users can create Fabric items* and *Users can create ontology (preview) items*. If you plan to connect a data agent or operations agent, their tenant settings must be enabled too. See <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/overview-tenant-settings">Required tenant settings for ontology</a>.
+- **Capacity:** Microsoft Learn suggests starting evaluation on an **F8** (an F4 might suit light testing). Usage appears in the Capacity Metrics app as *Ontology Discovery*, *Ontology Logic and Operations*, and *Ontology AI Reasoning*. Learn's example estimates are about 0.5 to 1 CU-hours for a small ontology agent edit and about 20 CU-hours for drafting a full ontology from a workspace.
+- **Tip:** close the ontology item when you're done. While it's open, it refreshes its definition automatically about every 20 minutes, and each refresh consumes capacity. See <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/resources-capacity-usage">Billing and capacity usage for ontology</a>.
+
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided or in Class Activity: Build your first ontology</b></p>
+
+In this Activity you will follow the Microsoft Learn ontology tutorial for Lakeshore Retail, a fictional retailer that sells ice cream and tracks sales and refrigerator telemetry. You'll load sample data into a lakehouse and an eventhouse, import a semantic model, create entity types such as Store, Products, and Sale, bind them to data, enrich the ontology, and then ask the ontology agent questions such as "What is the top product by revenue across all stores?"
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
+
+- [Part 0: Introduction and environment setup](https://learn.microsoft.com/en-us/fabric/iq/ontology/tutorial-0-introduction)
+- [Part 1: Create an ontology](https://learn.microsoft.com/en-us/fabric/iq/ontology/tutorial-1-create-ontology)
+- [Part 2: Enrich the ontology](https://learn.microsoft.com/en-us/fabric/iq/ontology/tutorial-2-enrich-ontology)
+- [Part 3: Explore the ontology](https://learn.microsoft.com/en-us/fabric/iq/ontology/tutorial-3-preview-ontology)
+- [Part 4: Use the ontology agent](https://learn.microsoft.com/en-us/fabric/iq/ontology/tutorial-4-use-agent)
+- [Part 5: Conclude and clean up resources](https://learn.microsoft.com/en-us/fabric/iq/ontology/tutorial-5-conclusion)
+
+> If you only reviewed the documentation in this Activity, ensure you bookmark each of these references and then perform the Activity in full once you do have your deployment.
+
+Learn more: <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/overview">What is ontology?</a> | <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/resources-glossary">Ontology glossary</a> | <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/resources-troubleshooting">Troubleshoot ontology</a>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
