@@ -17,8 +17,9 @@ You'll cover these topics in this Module on the User Experience:
 <dl>
   <dt><a href="#5.1" >5.1 - What is Mirroring in Fabric?</a></dt>
   <dt><a href="#5.2" >5.2 - When to use Mirroring in Fabric</a></dt>
-  <dt><a href="#5.3" >5.3 - Monitor Fabric mirrored database replication </a></dt>
-  <dt><a href="#5.4" >5.4 - Troubleshoot Fabric mirrored database</a></dt>
+  <dt><a href="#5.3" >5.3 - Share and use mirrored data</a></dt>
+  <dt><a href="#5.4" >5.4 - Monitor Fabric mirrored database replication </a></dt>
+  <dt><a href="#5.5" >5.5 - Troubleshoot Fabric mirrored database</a></dt>
 </dl>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
@@ -154,7 +155,14 @@ Open the following reference and complete the steps you see there:
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="5.3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">5.3 Monitor Fabric mirrored database replication</h2>
+<h2 id="5.3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">5.3 Share and use mirrored data</h2>
+<br></br>
+
+_Content coming soon: sharing and permissions, cross-tenant sharing, and cross-database queries._
+
+<p style="border-bottom: 1px solid lightgrey;"></p>
+
+<h2 id="5.4"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">5.4 Monitor Fabric mirrored database replication</h2>
 <br></br>
 Once the mirrored database is configured, you can monitor replication in three ways: from the Fabric portal, programmatically through the REST API, and through workspace monitoring.
 
@@ -262,7 +270,7 @@ For more queries, see the <a href="https://github.com/microsoft/fabric-samples/t
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 
-<h2 id="5.4"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">5.4 Troubleshoot Fabric Mirrored database</h2>
+<h2 id="5.5"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">5.5 Troubleshoot Fabric mirrored database</h2>
 
 <br></br>
 As with any service, it is crucial to understand troubleshooting methods for anticipated issues. For detailed guidance on troubleshooting Mirroring, use the links for each data source below.
