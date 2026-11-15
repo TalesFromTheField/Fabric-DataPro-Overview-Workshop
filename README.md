@@ -17,7 +17,7 @@ In this workshop, you'll learn what the Microsoft Fabric platform is, the variou
 
 The focus of this workshop is to understand how to use Microsoft Fabric in a solution, focusing on the data aspects of the platform. 
 
-You'll start with an introduction to Microsoft Fabric, then explore the desktop tools used to connect to the platform. Next, you'll learn about Data Warehouse and data integration, the Lakehouse, Mirroring, and Real-Time Intelligence. The main workshop concludes with Copilots and Fabric data agents, followed by SQL database and Cosmos DB in Fabric for operational workloads. An optional bonus module covers designing and sizing solutions, data governance, source control, monitoring, and management.
+You'll start with an introduction to Microsoft Fabric, then explore the desktop tools used to connect to the platform. Next, you'll learn about Data Warehouse and data integration, the Lakehouse, Mirroring, and Real-Time Intelligence. The main workshop concludes with Copilots, Fabric data agents, and Fabric IQ (ontologies and operations agents), followed by SQL database and Cosmos DB in Fabric for operational workloads. An optional bonus module covers designing and sizing solutions, data governance, source control, monitoring, and management.
 
 This GitHub README.md file explains how the workshop is laid out, what you will learn, and the technologies you will use in this solution. To clone or download this workshop to your local computer, click the **Code** button above the repository's file list. [More about cloning a repository is here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
@@ -35,7 +35,7 @@ In this workshop you'll cover these topics:
 - 04 - The Lakehouse: Create a Lakehouse, load data and use shortcuts, transform data with Spark and Data Wrangler, and enrich data with AI functions.
 - 05 - Mirroring in Microsoft Fabric: Understand when to use Mirroring, configure replication, and monitor and troubleshoot mirrored databases.
 - 06 - Real-Time Intelligence: Ingest streaming data with Eventstreams, store and query it in Eventhouses and KQL databases, and explore Real-Time Dashboards, Activator, and Fabric Maps.
-- 07 - Copilots, Data Agents & Fabric IQ: Understand the differences and requirements, use Copilot across Fabric workloads, and configure Fabric data agents to answer natural-language questions about data.
+- 07 - Copilots, Data Agents & Fabric IQ: Compare Copilot, data agents, and operations agents and their requirements; use Copilot across Fabric workloads and Fabric Copilot capacities; understand Fabric IQ and ontologies; build and tune data agents and extend them to Microsoft 365 Copilot, Copilot Studio, Microsoft Foundry, and MCP; and monitor real-time data with operations agents.
 - 08 - OLTP Databases in Fabric: Explore Database Hub, SQL database, and Cosmos DB in Fabric, and understand how operational data connects to analytics in OneLake.
 - 09 - Bonus Building Architectures with Microsoft Fabric (optional): Design and size solutions, discover and govern data, integrate source control, and monitor and manage deployments.
 
@@ -65,6 +65,8 @@ The solution includes the following technologies - although you are not limited 
   <tr><td>Cosmos DB in Fabric</td><td>A NoSQL database for application data, integrated with OneLake for analytics.</td></tr>
   <tr><td>Copilot in Fabric</td><td>Assists with authoring code, queries, data transformations, and reports across Fabric workloads.</td></tr>
   <tr><td>Fabric data agents</td><td>Answer natural-language questions by generating and executing queries over configured data sources.</td></tr>
+  <tr><td>Fabric IQ ontology</td><td>Defines business entities, relationships, rules, and metrics bound to OneLake data so people and AI agents share the same business vocabulary.</td></tr>
+  <tr><td>Fabric operations agents</td><td>Monitor real-time data against business rules and recommend or take approved actions through Microsoft Teams.</td></tr>
   <tr><td>Microsoft Power BI</td><td>Creates semantic models, interactive reports, and dashboards to analyze and share insights.</td></tr>
 
 </table>
@@ -143,7 +145,7 @@ This is a modular workshop, and in each section, you'll learn concepts, technolo
    
   <tr><td><a href="fabricoverview/06%20-%20Real-Time%20Intelligence.md" >06 - Real-Time Intelligence</a></td><td> Eventstreams, Eventhouses, KQL databases and queries, Real-Time Dashboards, Activator, and Fabric Maps.</td></tr>
   
-  <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/07%20-%20CoPilots%20%26%20AI%20Skills.md" >07 - Copilots, Data Agents & Fabric IQ</a> </td><td style="background-color: AliceBlue; color: black;"> Copilot capabilities across Fabric workloads and configuring Fabric data agents to answer natural-language questions about your data.</td></tr>
+  <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/07%20-%20CoPilots%20%26%20AI%20Skills.md" >07 - Copilots, Data Agents & Fabric IQ</a> </td><td style="background-color: AliceBlue; color: black;"> Copilot vs. data agents vs. operations agents, Copilot across Fabric workloads and Fabric Copilot capacities, Fabric IQ and ontologies, building and extending data agents (Microsoft 365 Copilot, Copilot Studio, Foundry, MCP), and operations agents.</td></tr>
 
   <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/08%20-%20OLTP%20Databases%20in%20Fabric.md" >08 - OLTP Databases in Fabric</a> </td><td style="background-color: AliceBlue; color: black;"> Database Hub, SQL database, Cosmos DB, and connecting operational workloads to analytics in OneLake.</td></tr>
 
