@@ -159,6 +159,69 @@ Once data is in the landing zone with the proper format, replication will start 
 
 <p>
 
+## Deep dive: Azure Databricks and Snowflake
+
+These two sources come up in almost every customer conversation, and both behave differently from classic database mirroring. This subsection covers how each one works and the complications to plan for before you start.
+
+### Azure Databricks Unity Catalog mirroring
+
+Mirroring Azure Databricks Unity Catalog is **metadata mirroring**. Fabric creates a **Mirrored Azure Databricks** item and a SQL analytics endpoint, then reads the Delta tables in place through OneLake shortcuts to the ADLS Gen2 storage behind Unity Catalog. No data is copied, and Power BI reports can use Direct Lake against the mirrored tables.
+
+- **Automatically sync future catalog changes** is on by default, so schemas, tables, materialized views, and streaming tables added to or removed from Unity Catalog are reflected in Fabric. You can instead choose specific schemas and tables to include or exclude.
+- Changes typically appear in seconds to minutes, governed by the SQL analytics endpoint metadata sync.
+
+**What doesn't come across**
+
+| Item | Behavior |
+|---|---|
+| Views and metric views | Not shown in Fabric |
+| Non-Delta external tables | Not shown in Fabric |
+| Tables with row filters or column masks | Not supported |
+| Lakehouse federated tables | Not supported |
+| Delta Sharing tables | Not supported |
+| Renaming a schema or table that's in an include or exclude list | Not supported |
+
+**Complications to plan for**
+
+- **Unity Catalog permissions are not mirrored.** Grants and policies defined in Unity Catalog don't carry over, so you must reconfigure security in Fabric. Queries in Fabric use the credential of the Databricks connection, so plan carefully who can read the mirrored item.
+- **External data access must be enabled** on the Unity Catalog metastore. See <a href="https://learn.microsoft.com/en-us/azure/databricks/data-governance/unity-catalog/access-open-api">Enable external data access to Unity Catalog</a>.
+- **Fabric must reach the ADLS Gen2 account.** For firewall-protected storage, use <a href="https://learn.microsoft.com/en-us/fabric/security/security-trusted-workspace-access">trusted workspace access</a> and allow the Fabric workspace identity in the storage firewall. Unity Catalog row-level, column-level, and attribute-based policies are not enforced at the storage layer, so data read this way isn't filtered by them.
+- **Runtime and region.** Requires a Fabric Spark runtime with Spark 3.4 and Delta 2.4 or later, and the feature is available only in the regions listed on Learn.
+
+Learn more: <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-databricks-tutorial">Tutorial</a> | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-databricks-limitations">Limitations</a> | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-databricks-security">Security</a> | <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-databricks-faq">FAQ</a>
+
+### Snowflake: mirroring and bidirectional access with OneLake
+
+<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/snowflake/fabric-mirroring-snowflake.svg" alt="Diagram of Fabric mirroring for Snowflake" width="700">
+
+Customers often ask for bidirectional integration between Snowflake and Fabric. That isn't a single feature; it's a combination of the patterns below, each with its own direction and requirements.
+
+| Pattern | Direction | What happens |
+|---|---|---|
+| Database mirroring of managed tables | Snowflake to Fabric | Managed tables and views are replicated into OneLake as Delta in near real time. |
+| Metadata mirroring of Iceberg tables | Snowflake to Fabric | Iceberg table metadata is mirrored and shortcuts point to the Iceberg storage. Tables appear as Delta, with no copy. |
+| Snowflake database item in Fabric | One shared copy | A Snowflake database writes its Iceberg tables to OneLake by default, so Snowflake and Fabric use the same copy of the data. |
+| Snowflake reads Fabric data | Fabric to Snowflake | Delta tables in OneLake are exposed as virtual Iceberg tables (a metadata conversion) that Snowflake can query. |
+
+**Complications for Snowflake mirroring**
+
+- **Iceberg tables need a storage connection**, and only Iceberg tables reachable through the same storage connection can be mirrored together.
+- **Views and materialized views sync every 12 hours**, not in near real time.
+- **External, transient, temporary, and dynamic tables are not supported.**
+- **Security doesn't carry over.** Granular permissions must be reconfigured in Fabric.
+- **Snowflake costs still apply.** Mirroring uses Snowflake warehouse and cloud services compute to read changes. It runs continuously with no scheduling.
+- **Full reseeds.** Stopping and restarting mirroring, DDL changes, and dbt drop-and-recreate patterns all trigger a full reseed of the affected tables.
+- **Identifiers are case-sensitive.**
+- **Connectivity.** Supported authentication is username and password, Microsoft Entra SSO, or key pair. Workspace identity and direct Private Link are not supported; use a gateway for private networks. A storage integration is required if `PREVENT_UNLOAD_TO_INLINE_URL` is set.
+
+**Complications for OneLake and Snowflake interoperability**
+
+- Writing Iceberg tables to OneLake requires Snowflake on Azure with the Fabric capacity in the same Azure region, an external volume that points to OneLake, and consent for Snowflake's multitenant app with Contributor access to the workspace.
+- The tenant settings that let service principals call Fabric and OneLake APIs must be enabled.
+- The Snowflake database item works over the public network only (no on-premises data gateway), requires the Admin or Member workspace role, and isn't supported for workspaces protected by Private Link.
+
+Learn more: <a href="https://learn.microsoft.com/en-us/fabric/mirroring/snowflake">Mirroring Snowflake</a> | <a href="https://learn.microsoft.com/en-us/fabric/onelake/snowflake/create-snowflake-database-item">Snowflake database item</a> | <a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-iceberg-snowflake">Use Snowflake with OneLake Iceberg tables</a> | <a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-iceberg-tables">Delta and Iceberg table formats in OneLake</a>
+
 ### Cost of mirroring
 
 For database mirroring and open mirroring, the Fabric compute and OneLake storage are free up to a capacity-based limit.
