@@ -102,7 +102,7 @@ Module 05 - Mirroring in Fabric:
   Line 42: "Mirroing" → "Mirroring" (typo)
   Line 70: "PostgrSQL" → "PostgreSQL" (typo)
 
-Module 07 - Copilots & AI Skills:
+Module 07 - Copilots, Data Agents & Fabric IQ:
   Line 15: "CoPilot" → "Copilot" (product name inconsistency)
 ```
 

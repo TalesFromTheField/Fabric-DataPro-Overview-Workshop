@@ -6,7 +6,7 @@ This is a **Microsoft Fabric workshop** for data professionals, published by
 the Tales from the Field team. The content teaches how to design,
 implement, use, and manage Microsoft Fabric analytics solutions covering
 OneLake, Data Factory, Synapse, Power BI, Lakehouses, Data Warehouses,
-Real-Time Intelligence, Mirroring, Copilots & AI Skills, and OLTP databases.
+Real-Time Intelligence, Mirroring, Copilots, Data Agents & Fabric IQ, and OLTP databases.
 
 Licensed under Creative Commons Attribution 4.0 (documentation) and MIT (code).
 

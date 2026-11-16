@@ -7,7 +7,7 @@
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2>05 -  Mirroring in Fabric</h2>
-<br></br>
+
 In this module we will explore various data replication techniques using Mirroring in Fabric, which offers efficient and low-latency solutions. You will also explore the process of integrating diverse data sources.
 
 (<a href="00%20-%20Pre-Requisites.md" >Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.)
@@ -25,7 +25,7 @@ You'll cover these topics in this Module on the User Experience:
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <h2 id="5.1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">5.1 What is Mirroring in Fabric?</h2>
-<br></br>
+
 
 Mirroring in Fabric is a low-cost and low-latency solution to bring data from various systems together into a single analytics platform. You can continuously replicate your existing data estate directly into Fabric's OneLake from a variety of Azure databases and external data sources.
 
@@ -35,10 +35,7 @@ Mirroring in Fabric allows users to enjoy a highly integrated, end-to-end, and e
 
 Mirroring in Fabric accelerates the data integration process, providing a turnkey solution for creating data replicas in OneLake to meet all analytical needs.
 
-</br>
-
-<h2 id="5.2"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">5.2 - When to use Mirroring in Fabric</h2>
-<br></br>
+<h2 id="5.2"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">5.2 When to use Mirroring in Fabric</h2>
 
 Today, many organizations face challenges with mission-critical operational or analytical data being isolated in silos, requiring complex ETL pipelines and business processes to access and work with this data. This situation leads to restricted access to important, constantly changing data, friction between people, processes, and technology, long wait times to create necessary data pipelines, and a lack of freedom to use preferred tools for analysis and sharing insights. Additionally, there is often no proper foundation for data collaboration and no common, open data formats for various analytical scenarios such as BI, AI, Integration, Engineering, and Apps.
 
@@ -101,7 +98,7 @@ Inside Fabric, a replicator engine runs continuously, scans for newly published 
 Backoff logic detects periods of low activity. This avoids excessive overhead on source database engines outside of Fabric, and keeps latency low by responding to how often data changes arrive.
 
 <p>
-<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/overview/fabric-mirror-overview.svg">
+<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/overview/fabric-mirror-overview.svg" alt="Diagram of database, metadata, and open mirroring in Microsoft Fabric" height=400>
 
 ### What affects replication speed
 
@@ -126,10 +123,10 @@ The following are core tenets of Mirroring:
 
 - To learn more about Mirroring in Fabric, watch the following videos:
 
-     <p><a href="https://www.youtube.com/watch?v=I09E-0RlgNc"><img src="https://img.youtube.com/vi/I09E-0RlgNc/0.jpg"></a> 
-     <p><a href="https://www.youtube.com/watch?v=YMWySj-x660"><img src="https://img.youtube.com/vi/YMWySj-x660/0.jpg"></a> 
-     <p><a href="https://www.youtube.com/watch?v=wW6eLVnzO78"><img src="https://img.youtube.com/vi/wW6eLVnzO78/0.jpg"></a> 
-    <p><a href="https://www.youtube.com/watch?v=K8xIVBMKfrc"><img src="https://img.youtube.com/vi/K8xIVBMKfrc/0.jpg"></a> 
+     <p><a href="https://www.youtube.com/watch?v=I09E-0RlgNc"><img src="https://img.youtube.com/vi/I09E-0RlgNc/0.jpg" alt="Tales From The Field video: Microsoft Fabric mirroring overview" height=200></a>
+     <p><a href="https://www.youtube.com/watch?v=YMWySj-x660"><img src="https://img.youtube.com/vi/YMWySj-x660/0.jpg" alt="Tales From The Field video: Database mirroring in Microsoft Fabric" height=200></a>
+     <p><a href="https://www.youtube.com/watch?v=wW6eLVnzO78"><img src="https://img.youtube.com/vi/wW6eLVnzO78/0.jpg" alt="Tales From The Field video: Mirroring data into Microsoft Fabric" height=200></a>
+    <p><a href="https://www.youtube.com/watch?v=K8xIVBMKfrc"><img src="https://img.youtube.com/vi/K8xIVBMKfrc/0.jpg" alt="Tales From The Field video: Mirroring in Microsoft Fabric" height=200></a>
 
 
 ## How does metadata mirroring work?
@@ -155,7 +152,7 @@ Once data is in the landing zone with the proper format, replication will start 
 
 - To learn more about open mirroring, watch the following video:
 
-<p><a href="https://www.youtube.com/watch?v=81M93gBYrlw"><img src="https://img.youtube.com/vi/81M93gBYrlw/0.jpg"></a> 
+<p><a href="https://www.youtube.com/watch?v=81M93gBYrlw"><img src="https://img.youtube.com/vi/81M93gBYrlw/0.jpg" alt="Tales From The Field video: Open mirroring in Microsoft Fabric" height=200></a>
 
 <p>
 
@@ -214,7 +211,7 @@ Learn more: <a href="https://learn.microsoft.com/en-us/fabric/mirroring/azure-da
 
 ### Snowflake: mirroring and bidirectional access with OneLake
 
-<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/snowflake/fabric-mirroring-snowflake.svg" alt="Diagram of Fabric mirroring for Snowflake" width="700">
+<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/snowflake/fabric-mirroring-snowflake.svg" alt="Diagram of Fabric mirroring for Snowflake" height=400>
 
 Customers often ask for bidirectional integration between Snowflake and Fabric. That isn't a single feature; it's a combination of the patterns below, each with its own direction and requirements.
 
@@ -275,7 +272,7 @@ To check or change the setting, open your mirrored database in the Fabric portal
 <br>
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Configure Fabric Mirrored Database</b></p>
 
-<p><img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/azure-sql-database/fabric-mirroring-sql-database.svg" height = 400></p>
+<p><img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/azure-sql-database/fabric-mirroring-sql-database.svg" alt="Diagram of configuring a Fabric mirrored database from Azure SQL Database" height=400></p>
 
 In this activity, you will learn how to Configure Microsoft Fabric mirrored databases from Azure SQL Database.
 
@@ -288,7 +285,7 @@ Open the following reference and complete the steps you see there:
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <h2 id="5.3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">5.3 Share and use mirrored data</h2>
-<br></br>
+
 
 Once your data is mirrored into OneLake, you can share it with colleagues, share it with other organizations, and combine it with the rest of your Fabric data without moving or copying it.
 
@@ -321,7 +318,7 @@ You can also share mirrored databases, and data accessible through shortcuts, wi
 The data is shared in place, and no data is copied. Cross-tenant sharing creates a read-only OneLake shortcut in the consuming tenant that points back to the original data, so both organizations work from the same live data without ETL or duplication.
 
 <p>
-<img src="https://learn.microsoft.com/en-us/fabric/governance/media/external-data-sharing-overview/external-data-share-illustration.png">
+<img src="https://learn.microsoft.com/en-us/fabric/governance/media/external-data-sharing-overview/external-data-share-illustration.png" alt="Illustration of sharing mirrored data across Microsoft Fabric tenants" height=400>
 
 How it works:
 
@@ -356,7 +353,7 @@ Mirrored data is stored in Delta Lake format in OneLake, so Power BI can connect
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 <h2 id="5.4"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">5.4 Monitor Fabric mirrored database replication</h2>
-<br></br>
+
 Once the mirrored database is configured, you can monitor replication in three ways: from the Fabric portal, programmatically through the REST API, and through workspace monitoring.
 
 ### Monitor from the Fabric portal
@@ -364,7 +361,7 @@ Once the mirrored database is configured, you can monitor replication in three w
 The **Monitor replication** section shows you the database level status, and a list of tables under replication along with the corresponding status, total rows replicated, and the last completed time to refresh the mirrored table from source.
 
 <p>
-<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/monitor/monitor-mirrored-database.png">
+<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/monitor/monitor-mirrored-database.png" alt="Fabric portal view for monitoring a mirrored database" height=400>
 
 > **Tip:** If you observe a delay in the appearance of mirrored data, follow the <a href="https://learn.microsoft.com/en-us/fabric/mirroring/troubleshooting#data-doesnt-appear-to-be-replicating">troubleshooting guide</a> to debug the potential issue.
 
@@ -410,7 +407,7 @@ Mirroring in Fabric supports operation logs in workspace monitoring to provide a
 To get started, <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/enable-workspace-monitoring">enable monitoring</a> in your workspace. Once the monitoring of your workspace is enabled, the mirrored database execution logs are automatically ingested into the `MirroredDatabaseTableExecution` table in the monitoring KQL database. To learn more about the available logs and their structure, see <a href="https://learn.microsoft.com/en-us/fabric/mirroring/monitor-logs">Mirrored database operation logs (preview)</a>.
 
 <p>
-<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/monitor/enable-workspace-monitoring.png">
+<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/monitor/enable-workspace-monitoring.png" alt="Workspace monitoring settings for mirrored database operations" height=400>
 
 The operation logs complement the at-a-glance view in the Fabric portal. You can use them to:
 
@@ -434,12 +431,12 @@ Then you have full access to an advanced monitoring experience for your mirrored
 - **Derive insights on-demand:** Query the granular operation logs directly using KQL in the monitoring database to get instant access to the information you need.
 
 <p>
-<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/monitor/monitor-query-mirrored-database-logs.png">
+<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/monitor/monitor-query-mirrored-database-logs.png" alt="KQL query results for mirrored database operation logs" height=400>
 
 - **Build customized monitoring dashboards:** Bring the monitoring data into Power BI or <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/dashboard-real-time-create">Real-Time Dashboards</a> to create dashboards tailored to your needs.
 
 <p>
-<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/monitor/monitor-dashboard.png">
+<img src="https://learn.microsoft.com/en-us/fabric/mirroring/media/monitor/monitor-dashboard.png" alt="Power BI dashboard for monitoring mirrored database replication" height=400>
 
 - **Set up alerting:** <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/user-flow-6">Set up alerts</a> based on the logs and metrics you're tracking.
 
@@ -465,7 +462,6 @@ For more queries, see the <a href="https://github.com/microsoft/fabric-samples/t
 
 <h2 id="5.5"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">5.5 Troubleshoot Fabric mirrored database</h2>
 
-<br></br>
 As with any service, it is crucial to understand troubleshooting methods for anticipated issues. For detailed guidance on troubleshooting Mirroring, use the links for each data source below.
 <p>
 
@@ -491,14 +487,14 @@ For general scenarios that apply to every source (capacity paused or throttled, 
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Examine insights into common mirroring challenges</b></p>
 
-<br></br>
+
 The following video will discuss 5 errors that could prevent the use of technology for forklifting, locating changes, and migrating those changes from your OLTP database into Microsoft Fabric.
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
 - For a comprehensive introduction to troubleshooting mirroring concepts, please view the following video:
 
-     <p><a href="https://www.youtube.com/watch?v=eID9cbAsdk0"><img src="https://img.youtube.com/vi/eID9cbAsdk0/0.jpg" height = 200></a> 
+     <p><a href="https://www.youtube.com/watch?v=eID9cbAsdk0"><img src="https://img.youtube.com/vi/eID9cbAsdk0/0.jpg" alt="Tales From The Field video: Troubleshooting Fabric mirroring concepts" height=200></a>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 

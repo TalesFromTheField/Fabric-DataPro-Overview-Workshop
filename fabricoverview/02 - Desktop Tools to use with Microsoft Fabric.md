@@ -160,7 +160,7 @@ This workshop repository is already set up for these servers. When you open the 
 
 Keep these points in mind:
 
-- GitHub Copilot is a separate product from Copilot in Microsoft Fabric, which you'll explore in Module 07 - Copilots & Data Agents. You need a GitHub Copilot plan to use it.
+- GitHub Copilot is a separate product from Copilot in Microsoft Fabric, which you'll explore in Module 07 - Copilots, Data Agents & Fabric IQ. You need a GitHub Copilot plan to use it.
 - Review each tool call before you approve it. Copilot acts with your Fabric permissions, so a mistaken or unattended request could change or delete items in your workspace. For guidance, see the [Fabric Core MCP Server overview](https://learn.microsoft.com/en-us/rest/api/fabric/articles/mcp-servers/core-remote/overview-core-mcp-server).
 
 <h3>Considerations</h3>

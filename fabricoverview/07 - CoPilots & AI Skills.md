@@ -12,7 +12,7 @@ In this workshop you'll cover using The Microsoft Fabric Platform to implement a
 
 In each module you'll get more references, which you should follow up on to learn more. Also watch for links within the text - click on each one to explore that topic.
 
-(<a href="00%20-%20Pre-Requisites.md" >Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.) *Note in this section you will need an F2 and higher or a P-SKU (a Power BI Premium per capacity stock-keeping unit, or SKU) in order to test or access Copilot or Data Agents, formerly known in preview as AI Skills. For the full list of what this module's Activities need, see <a href="00%20-%20Pre-Requisites.md#module-07-activities">For the Module 07 Activities</a> in section 0.2 of the Pre-Requisites page.
+(<a href="00%20-%20Pre-Requisites.md" >Make sure you check out the <b>Pre-Requisites</b> page before you start</a>. You'll need all of the items loaded there before you can proceed with the workshop.) *Note in this section you will need an F2 and higher or a P-SKU (a Power BI Premium per capacity stock-keeping unit, or SKU) in order to test or access Copilot or Data Agents, formerly known during preview as an <b>AI skill</b>. For the full list of what this module's Activities need, see <a href="00%20-%20Pre-Requisites.md#module-07-activities">For the Module 07 Activities</a> in section 0.2 of the Pre-Requisites page.
 
 In this module you will learn where Copilot helps you inside Microsoft Fabric, how Copilot differs from data agents and operations agents, and how Fabric IQ and ontologies give those agents a shared understanding of your business.
 
@@ -20,19 +20,19 @@ You'll cover these topics in this Module on Copilots, Data Agents & Fabric IQ:
 
 <dl>
 
-  <dt><a href="#7-1" >7.1 - Copilots, Data Agents & Operations Agents: Differences & Requirements</a></dt>
-  <dt><a href="#7-2" >7.2 - Copilot in Microsoft Fabric</a></dt>
-  <dt><a href="#7-3" >7.3 - What is Fabric IQ?</a></dt>
-  <dt><a href="#7-4" >7.4 - Ontology</a></dt>
-  <dt><a href="#7-5" >7.5 - Fabric Data Agents</a></dt>
-  <dt><a href="#7-6" >7.6 - Operations Agents</a></dt>
+  <dt><a href="#7.1" >7.1 - Copilots, Data Agents & Operations Agents: Differences & Requirements</a></dt>
+  <dt><a href="#7.2" >7.2 - Copilot in Microsoft Fabric</a></dt>
+  <dt><a href="#7.3" >7.3 - What is Fabric IQ?</a></dt>
+  <dt><a href="#7.4" >7.4 - Ontology</a></dt>
+  <dt><a href="#7.5" >7.5 - Fabric Data Agents</a></dt>
+  <dt><a href="#7.6" >7.6 - Operations Agents</a></dt>
 
 </dl>
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="7-1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.1 - Copilots, Data Agents & Operations Agents: Differences & Requirements</h2>
-<br></br>
+<h2 id="7.1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.1 Copilots, Data Agents & Operations Agents: Differences & Requirements</h2>
+
 
 Microsoft Fabric gives you three kinds of AI help, and this module covers all three. They use similar generative AI technology, but they do very different jobs. The quickest way to tell them apart: **Copilot helps you build, a data agent answers questions, and an operations agent watches and acts.**
 
@@ -46,16 +46,16 @@ Microsoft Fabric gives you three kinds of AI help, and this module covers all th
 | **Does it change anything?** | It drafts code, queries, or visuals for you to accept | No. It's read-only | It sends recommendations in Teams and, once someone approves, runs a Fabric item or a Power Automate flow |
 | **Whose identity it uses** | Yours | The person asking | Its own Microsoft Entra agent identity, running with its creator's permissions |
 | **Where people use it** | Inside the Fabric item | Fabric, Microsoft 365 Copilot, Teams, Copilot Studio, Microsoft Foundry, and Model Context Protocol (MCP) clients | Fabric and Microsoft Teams |
-| **Covered in** | <a href="#7-2">7.2</a> | <a href="#7-5">7.5</a> | <a href="#7-6">7.6</a> |
+| **Covered in** | <a href="#7.2">7.2</a> | <a href="#7.5">7.5</a> | <a href="#7.6">7.6</a> |
 
-Microsoft Learn sums up the first difference this way: Fabric copilots "come preconfigured," while data agents are "standalone configurable artifacts" that you tailor with your own instructions and examples. Ontologies (<a href="#7-4">7.4</a>) sit underneath both kinds of agent and give them a shared understanding of your business.
+Microsoft Learn sums up the first difference this way: Fabric copilots "come preconfigured," while data agents are "standalone configurable artifacts" that you tailor with your own instructions and examples. Ontologies (<a href="#7.4">7.4</a>) sit underneath both kinds of agent and give them a shared understanding of your business.
 
 ### Requirements
 
 The complete list of prerequisites for this module's Activities is in <a href="00%20-%20Pre-Requisites.md#module-07-activities">Module 00, section 0.2, <b>For the Module 07 Activities</b></a>. In summary, check these before you start:
 
 - **Capacity:** a paid Fabric capacity of **F2 or higher**, or a Power BI Premium capacity of **P1 or higher**. Copilot, data agents, and operations agents aren't available on **trial capacities**.
-- **Power BI Desktop, Pro, and Premium per-user workspaces (not needed for this module's Activities):** these get Copilot through a **Fabric Copilot capacity** (see <a href="#7-2">7.2</a>). Power BI Desktop can also use Copilot through a workspace on a Copilot-enabled F2 or P1 (or higher) capacity where you're an Admin, Member, or Contributor; see <a href="https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-enable-power-bi#use-copilot-in-power-bi-desktop">Enable Fabric Copilot for Power BI</a>.
+- **Power BI Desktop, Pro, and Premium per-user workspaces (not needed for this module's Activities):** these get Copilot through a **Fabric Copilot capacity** (see <a href="#7.2">7.2</a>). Power BI Desktop can also use Copilot through a workspace on a Copilot-enabled F2 or P1 (or higher) capacity where you're an Admin, Member, or Contributor; see <a href="https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-enable-power-bi#use-copilot-in-power-bi-desktop">Enable Fabric Copilot for Power BI</a>.
 - **Tenant settings:** Copilot is on by default for paid capacities in the US and the EU Data Boundary, through the tenant setting *Users can use Copilot and other features powered by Azure OpenAI*. Admins can limit it to specific security groups. Data agents rely on the Copilot and Azure OpenAI settings rather than a setting of their own, and operations agents also need the <a href="https://learn.microsoft.com/en-us/fabric/admin/service-admin-portal-microsoft-fabric-tenant-settings#enable-operations-agents">Enable operations agents</a> tenant setting; see <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-enable-fabric">Enable Copilot in Fabric</a>, <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-tenant-settings">data agent tenant settings</a>, and the <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/operations-agent#prerequisites">operations agent prerequisites</a>.
 - **Region:** the Azure OpenAI service behind Copilot runs in US datacenters and the EU Data Boundary. If your capacity is anywhere else, an admin must allow data to be processed outside your capacity's region (and, for data agents and operations agents, stored outside it) before these features, including the ontology agent, work.
 - **Clouds:** Copilot isn't available in sovereign clouds yet.
@@ -66,7 +66,7 @@ Learn more: <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copil
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="7-2"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.2 - Copilots in Microsoft Fabric</h2>
+<h2 id="7.2"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.2 Copilots in Microsoft Fabric</h2>
 
 Copilot and other generative AI features in preview bring new ways to transform and analyze data, generate insights, and create visualizations and reports in Microsoft Fabric and Power BI.
 
@@ -122,9 +122,9 @@ Each Fabric workload has its own Copilot, built into the item you're working in.
 | Power BI | Power BI apps | App-scoped Copilot that searches the app's reports, answers questions, and summarizes content, limited to what the app contains. | Preview |
 | Real-Time Intelligence | [KQL queryset](https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-for-writing-queries) | Turns natural-language questions into KQL queries, then lets you refine or explore a previously generated query. | GA |
 | Real-Time Intelligence | Real-Time Dashboards | [Generates a dashboard](https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-generate-dashboard), creates or refines the KQL behind a tile from a prompt, and helps you [explore dashboard data](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/dashboard-explore-data). | GA |
-| Real-Time Intelligence | [Operations agent](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/operations-agent) setup | Copilot chat turns what you want monitored into the agent's goals, rules, and backing queries, and flags unclear instructions or missing data before you start the agent. See <a href="#7-6">7.6</a>. | GA |
+| Real-Time Intelligence | [Operations agent](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/operations-agent) setup | Copilot chat turns what you want monitored into the agent's goals, rules, and backing queries, and flags unclear instructions or missing data before you start the agent. See <a href="#7.6">7.6</a>. | GA |
 
-> **Note:** Status reflects Microsoft Learn's <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-ai-feature-state">Release status of AI and Copilot experiences in Fabric</a> page and the individual feature pages at the time of writing. Copilot changes quickly, so check that page for the latest. Data agents aren't in this table because they're a separate, configurable item; see <a href="#7-5">7.5</a>.
+> **Note:** Status reflects Microsoft Learn's <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-ai-feature-state">Release status of AI and Copilot experiences in Fabric</a> page and the individual feature pages at the time of writing. Copilot changes quickly, so check that page for the latest. Data agents aren't in this table because they're a separate, configurable item; see <a href="#7.5">7.5</a>.
 
 ### Copilot videos from Tales from the Field
 
@@ -148,7 +148,7 @@ The table above links to Microsoft Learn for each Copilot experience. These vide
 
 ### Build your own AI solutions
 
-Copilot in Fabric isn't configurable, but you can build your own AI solutions on top of Fabric data. Microsoft publishes several solution accelerators on GitHub; see <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-fabric-overview#create-your-own-ai-solution-accelerators">Create your own AI solution accelerators</a>. For a configurable, no-code option inside Fabric, see data agents in <a href="#7-5">7.5</a>.
+Copilot in Fabric isn't configurable, but you can build your own AI solutions on top of Fabric data. Microsoft publishes several solution accelerators on GitHub; see <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-fabric-overview#create-your-own-ai-solution-accelerators">Create your own AI solution accelerators</a>. For a configurable, no-code option inside Fabric, see data agents in <a href="#7.5">7.5</a>.
 
 **Video:** How to Chat with Your Data in Microsoft Fabric with Semantic Kernel using Azure OpenAI
 
@@ -163,8 +163,8 @@ Copilot in Fabric isn't configurable, but you can build your own AI solutions on
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 
-<h2 id="7-3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.3 - What is Fabric IQ?</h2>
-<br></br>
+<h2 id="7.3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.3 What is Fabric IQ?</h2>
+
 
 **Fabric IQ is a marketing term, not a single product, item, or button.** It's the name Microsoft gives to a collection of technologies inside Microsoft Fabric that help companies and organizations build intelligence onto their data. Fabric IQ takes the data you've already unified in OneLake and raises it to the language of your business (customers, orders, shipments, assets) so that people, applications, and AI agents interpret it the same way and can reason and act on it, instead of working only with tables, columns, and joins.
 
@@ -192,7 +192,7 @@ Work IQ is permission-aware: every request runs as a specific user and only reac
 Put simply, **Work IQ knows what your people are working on, and Fabric IQ knows what your business data says.** When the two come together, Microsoft 365 Copilot can ground an answer in governed Fabric data and then reconcile it with the user's files, chats, and email. For example, a seller preparing for a customer meeting can get the account's latest numbers alongside the related emails and meeting notes.
 
 - **Power BI data in Microsoft 365 Copilot Chat (GA).** Users with a Microsoft 365 Copilot license can ask data questions in Copilot Chat. Copilot finds a relevant Power BI report they have access to and answers from its semantic model, respecting row-level and object-level security and sensitivity labels. See <a href="https://learn.microsoft.com/en-us/fabric/iq/connectors/microsoft-365-copilot-overview">Fabric IQ in Microsoft 365 Copilot Chat</a>.
-- **Fabric data agents in Microsoft 365 Copilot.** A data agent (see <a href="#7-5">7.5</a>) can be published as a Microsoft 365 agent so people can query lakehouses, warehouses, KQL databases, semantic models, and ontologies from Copilot. Data agents and ontologies don't answer in Copilot Chat until an agent is explicitly published.
+- **Fabric data agents in Microsoft 365 Copilot.** A data agent (see <a href="#7.5">7.5</a>) can be published as a Microsoft 365 agent so people can query lakehouses, warehouses, KQL databases, semantic models, and ontologies from Copilot. Data agents and ontologies don't answer in Copilot Chat until an agent is explicitly published.
 - **Governance carries across.** Purview sensitivity labels and data loss prevention policies still apply, and admins control the connection with tenant settings in both the Microsoft 365 admin center (*Fabric data available in M365 Copilot*) and the Fabric admin portal (*Share Fabric data with your Microsoft 365 services*).
 
 ### What's inside Fabric IQ, and what this workshop covers
@@ -201,9 +201,9 @@ The IQ workload contains six items. **In this workshop we focus on three of them
 
 | Fabric IQ item | What it does | In this workshop |
 |---|---|---|
-| **Ontology** (preview) | A shared business vocabulary (entity types, properties, relationships, rules, and metrics) bound to your data so people and agents use the same definitions | **Yes**, see <a href="#7-4">7.4</a> |
-| **Data agent** | A conversational Q&A agent over your Fabric data, grounded in semantic models and ontologies | **Yes**, see <a href="#7-5">7.5</a> |
-| **Operations agent** | Monitors real-time data, detects conditions you care about, and recommends or takes governed actions | **Yes**, see <a href="#7-6">7.6</a> |
+| **Ontology** (preview) | A shared business vocabulary (entity types, properties, relationships, rules, and metrics) bound to your data so people and agents use the same definitions | **Yes**, see <a href="#7.4">7.4</a> |
+| **Data agent** | A conversational Q&A agent over your Fabric data, grounded in semantic models and ontologies | **Yes**, see <a href="#7.5">7.5</a> |
+| **Operations agent** | Monitors real-time data, detects conditions you care about, and recommends or takes governed actions | **Yes**, see <a href="#7.6">7.6</a> |
 | Power BI semantic model | Curated measures, hierarchies, and relationships for reporting; ontologies can be generated from them | Only as a source for ontologies |
 | Graph (preview) | Stores and traverses relationships for multi-hop and impact questions; integrated with ontology | No |
 | Planning | Planning, forecasting, and plan-versus-actuals over semantic models | No |
@@ -214,8 +214,8 @@ Learn more: <a href="https://learn.microsoft.com/en-us/fabric/iq/overview">What 
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="7-4"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.4 - Ontology</h2>
-<br></br>
+<h2 id="7.4"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.4 Ontology</h2>
+
 
 An **ontology** (preview) is the business vocabulary of Fabric IQ. It defines the things your organization cares about (customers, products, stores, shipments, machines), their properties, how they relate to each other, and the rules and metrics that give them business meaning. You then **bind** those definitions to data you already have in Fabric, so people, applications, and AI agents all use the same language and the same definitions.
 
@@ -236,7 +236,7 @@ Most organizations describe the same concept differently across sources, semanti
 
 Ontology is the **business context and semantic modeling layer** between your data and the experiences that consume it. It stores and serves definitions and bindings, but it is **not a query engine**. Agents and dashboards read the ontology for context, then run their queries against the bound source.
 
-![Graphic showing how ontology in Fabric gives a live, unified view of the business.](https://learn.microsoft.com/en-us/fabric/iq/ontology/media/overview/ontology-fabric-iq-overview.png)
+<img src="https://learn.microsoft.com/en-us/fabric/iq/ontology/media/overview/ontology-fabric-iq-overview.png" alt="Graphic showing how ontology in Fabric gives a live, unified view of the business." height=400>
 
 ### Core concepts
 
@@ -271,8 +271,8 @@ An ontology on its own doesn't answer questions; something has to consume it. Th
 | Consumer | Best for | In this workshop |
 |---|---|---|
 | Ontology agent | Building, improving, and testing queries on the ontology | This section |
-| Fabric data agent | Interactive Q&A over Fabric data with ontology context | <a href="#7-5">7.5</a> (concept only; see below) |
-| Fabric operations agent | Continuous monitoring with recommended or automated actions | <a href="#7-6">7.6</a> (concept only; see below) |
+| Fabric data agent | Interactive Q&A over Fabric data with ontology context | <a href="#7.5">7.5</a> (concept only; see below) |
+| Fabric operations agent | Continuous monitoring with recommended or automated actions | <a href="#7.6">7.6</a> (concept only; see below) |
 | Foundry IQ agent | Developer-built agents with tool calling and enterprise integration | Not covered |
 | Copilot Studio agent | Low-code agents connected through the Fabric IQ MCP tool | Not covered |
 | Custom agents (ontology MCP server) | Any MCP-compatible client or custom agent | Not covered |
@@ -303,7 +303,7 @@ Data agents and operations agents can both use an ontology as a source, but beca
 
 In this Activity you will follow the Microsoft Learn ontology tutorial for Lakeshore Retail, a fictional retailer that sells ice cream and tracks sales and refrigerator telemetry. You'll load sample data into a lakehouse and an eventhouse, import a semantic model, create entity types such as Store, Products, and Sale, bind them to data, enrich the ontology, and then ask the ontology agent questions such as "What is the top product by revenue across all stores?" For a refresher before you start, see <a href="04%20-%20The%20Lakehouse%20and%20Warehouse.md#4.1">Module 04, section 4.1</a> and <a href="04%20-%20The%20Lakehouse%20and%20Warehouse.md#4.2">section 4.2</a> for Lakehouses and loading files into them, and <a href="06%20-%20Real-Time%20Intelligence.md#6.3">Module 06, section 6.3</a> for Eventhouses.
 
-The three Activities in this module are independent; don't connect the Lakeshore Retail ontology to a data agent (<a href="#7-5">7.5</a>) or an operations agent (<a href="#7-6">7.6</a>), because it binds its Sale entity type to a semantic model, and both agents have a known issue that stops them from working with an ontology that uses semantic models for binding (see <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/resources-troubleshooting#troubleshoot-ontology-as-data-agent-source">Troubleshoot ontology as data agent source</a> and <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/how-to-create-operations-agent#prerequisites">Create an operations agent grounded in an ontology</a>).
+The three Activities in this module are independent; don't connect the Lakeshore Retail ontology to a data agent (<a href="#7.5">7.5</a>) or an operations agent (<a href="#7.6">7.6</a>), because it binds its Sale entity type to a semantic model, and both agents have a known issue that stops them from working with an ontology that uses semantic models for binding (see <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/resources-troubleshooting#troubleshoot-ontology-as-data-agent-source">Troubleshoot ontology as data agent source</a> and <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/how-to-create-operations-agent#prerequisites">Create an operations agent grounded in an ontology</a>).
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
@@ -321,8 +321,8 @@ Learn more: <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/overvi
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="7-5"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.5 - Fabric Data Agents</h2>
-<br></br>
+<h2 id="7.5"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.5 Fabric Data Agents</h2>
+
 
 A **Fabric data agent** is a Fabric item you build and configure so people can ask questions about your data in plain English and get answers back. You choose the data, teach the agent your business context, test it, and then publish and share it, much like building and sharing a Power BI report. Microsoft Learn lists the data agent as generally available; some newer capabilities covered below are still in preview and are marked as such.
 
@@ -333,7 +333,7 @@ Data agents are **read-only**. They only generate SQL, DAX, and KQL *read* queri
 When someone asks a question, the data agent:
 
 1. **Checks the question** against security, responsible AI policies, and the user's permissions.
-2. **Picks the right data source** from the ones you added (up to five, in any combination): lakehouses, warehouses, Power BI semantic models, KQL databases, mirrored databases, ontologies (see <a href="#7-4">7.4</a>), and Microsoft Graph.
+2. **Picks the right data source** from the ones you added (up to five, in any combination): lakehouses, warehouses, Power BI semantic models, KQL databases, mirrored databases, ontologies (see <a href="#7.4">7.4</a>), and Microsoft Graph.
 3. **Generates a query** with the matching tool: natural language to SQL for lakehouses and warehouses, to DAX for semantic models, to KQL for KQL databases, or a Microsoft Graph query.
 4. **Validates and runs the query** as the user asking the question, then returns a readable answer, often with a table or summary.
 
@@ -385,7 +385,7 @@ For example: "When asked about shoe sales, always use the SalesProduct table."
 
 **Example queries** (also called few-shot examples) are sample questions paired with the query that answers them. When a question comes in, the agent looks up the most relevant examples for that data source and feeds them into query generation, so it learns your joins, filters, and calculations by example instead of guessing.
 
-![Screenshot showing where you can add the example queries you provide to the AI.](https://learn.microsoft.com/en-us/fabric/data-science/media/data-agent-scenario/add-example-queries-lakehouse.png)
+<img src="https://learn.microsoft.com/en-us/fabric/data-science/media/data-agent-scenario/add-example-queries-lakehouse.png" alt="Screenshot showing where you can add the example queries you provide to the AI." height=400>
 
 What to know:
 
@@ -433,7 +433,7 @@ A data agent doesn't have to live only in Fabric. Once you **publish** it, other
 | **Apps and automation with a service principal** (preview) | Call a published data agent from background services, custom apps, or CI/CD pipelines without a signed-in user. Not yet supported for agents connected to a KQL database. | <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-service-principal">Use service principal authentication with a data agent</a> |
 | **Monitoring in Foundry** (preview) | When a Foundry agent calls your data agent, the data agent's traces (which sources it queried, how long each step took, and whether it succeeded) flow to the Foundry project's Application Insights. | <a href="https://learn.microsoft.com/en-us/fabric/data-science/fabric-data-agent-foundry-observability">Observability for Fabric data agents in Microsoft Foundry</a> |
 
-> **Not the same thing:** Microsoft 365 also has Fabric IQ experiences that answer from **Power BI reports and semantic models directly, without a data agent**: <a href="https://learn.microsoft.com/en-us/fabric/iq/connectors/microsoft-365-copilot-overview">Fabric IQ in Microsoft 365 Copilot Chat</a> (see <a href="#7-3">7.3</a>), the **Fabric** capability in <a href="https://learn.microsoft.com/en-us/fabric/iq/connectors/agent-builder-overview">Microsoft 365 Agent Builder</a>, the Fabric IQ plugin in <a href="https://learn.microsoft.com/en-us/fabric/iq/connectors/cowork-overview">Copilot Cowork</a>, and the <a href="https://learn.microsoft.com/en-us/fabric/iq/connectors/fabric-iq-mcp">Fabric IQ MCP server</a>. Learn notes that the Cowork plugin and the Fabric IQ MCP server don't currently support data agents or ontologies. To bring a data agent into Microsoft 365, publish it to the Agent Store (first row above).
+> **Not the same thing:** Microsoft 365 also has Fabric IQ experiences that answer from **Power BI reports and semantic models directly, without a data agent**: <a href="https://learn.microsoft.com/en-us/fabric/iq/connectors/microsoft-365-copilot-overview">Fabric IQ in Microsoft 365 Copilot Chat</a> (see <a href="#7.3">7.3</a>), the **Fabric** capability in <a href="https://learn.microsoft.com/en-us/fabric/iq/connectors/agent-builder-overview">Microsoft 365 Agent Builder</a>, the Fabric IQ plugin in <a href="https://learn.microsoft.com/en-us/fabric/iq/connectors/cowork-overview">Copilot Cowork</a>, and the <a href="https://learn.microsoft.com/en-us/fabric/iq/connectors/fabric-iq-mcp">Fabric IQ MCP server</a>. Learn notes that the Cowork plugin and the Fabric IQ MCP server don't currently support data agents or ontologies. To bring a data agent into Microsoft 365, publish it to the Agent Store (first row above).
 
 #### Microsoft 365 Copilot
 
@@ -459,7 +459,7 @@ Copilot Studio is Microsoft's low-code agent builder. A Copilot Studio agent can
 
 #### Microsoft Foundry and Fabric IQ
 
-For developers building custom agents, Microsoft Foundry can call Fabric data agents as tools. This is where **Fabric IQ** (see <a href="#7-3">7.3</a>) shows up in practice: the **Fabric IQ (OneLake Catalog)** tool lists the published data agents you have access to, and you add them by name. A single Foundry agent can call several data agents (for example, one for sales and one for support), and each is exposed as an MCP endpoint. Requests run as the signed-in user, so Fabric permissions still apply. See <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-foundry-fabric-iq">Add Fabric data agents to a Foundry agent with Fabric IQ</a>. The earlier **Microsoft Fabric** tool in Foundry, which connected a single data agent by workspace and item ID, was retired on November 6, 2026, so existing Foundry agents need to move to the Fabric IQ tool. To see what the data agent did on each request, connect Application Insights to your Foundry project; see <a href="https://learn.microsoft.com/en-us/fabric/data-science/fabric-data-agent-foundry-observability">Observability for Fabric data agents in Microsoft Foundry</a>.
+For developers building custom agents, Microsoft Foundry can call Fabric data agents as tools. This is where **Fabric IQ** (see <a href="#7.3">7.3</a>) shows up in practice: the **Fabric IQ (OneLake Catalog)** tool lists the published data agents you have access to, and you add them by name. A single Foundry agent can call several data agents (for example, one for sales and one for support), and each is exposed as an MCP endpoint. Requests run as the signed-in user, so Fabric permissions still apply. See <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-foundry-fabric-iq">Add Fabric data agents to a Foundry agent with Fabric IQ</a>. The earlier **Microsoft Fabric** tool in Foundry, which connected a single data agent by workspace and item ID, was retired on November 6, 2026, so existing Foundry agents need to move to the Fabric IQ tool. To see what the data agent did on each request, connect Application Insights to your Foundry project; see <a href="https://learn.microsoft.com/en-us/fabric/data-science/fabric-data-agent-foundry-observability">Observability for Fabric data agents in Microsoft Foundry</a>.
 
 **Video:** Microsoft Fabric: Connect Data Agent to Azure AI Foundry
 
@@ -496,7 +496,7 @@ See <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-mc
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Create, tune, and publish a Fabric data agent</b></p>
 
-![Screenshot showing where you select tables for the data agent.](https://learn.microsoft.com/en-us/fabric/data-science/media/data-agent-scenario/get-started.png)
+<img src="https://learn.microsoft.com/en-us/fabric/data-science/media/data-agent-scenario/get-started.png" alt="Screenshot showing where you select tables for the data agent." height=400>
 
 In this Activity you will load the AdventureWorks sample into a lakehouse, create a data agent over it, add agent instructions and example queries, test and refine it, publish it, and optionally call it from Microsoft 365 Copilot or an MCP client. The tutorial loads the data from a notebook; for a refresher on notebooks, see <a href="04%20-%20The%20Lakehouse%20and%20Warehouse.md#4.3">Module 04, section 4.3</a>.
 
@@ -527,10 +527,10 @@ Learn more: <a href="https://learn.microsoft.com/en-us/fabric/data-science/conce
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="7-6"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.6 - Operations Agents</h2>
-<br></br>
+<h2 id="7.6"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">7.6 Operations Agents</h2>
 
-An **operations agent** is a Fabric item that watches your real-time data for you. You tell it, in plain English, what matters to your business ("alert me when fewer than 3 bikes are available at a station"). It turns that into rules, checks them continuously, and when a rule is met, it messages the right people in Microsoft Teams with what happened and what it recommends. With approval, it can act. Operations agents are part of Real-Time Intelligence and one of the three Fabric IQ items this workshop focuses on (see <a href="#7-3">7.3</a>). Microsoft Learn lists the operations agent as generally available; a few capabilities below are in preview and are marked.
+
+An **operations agent** is a Fabric item that watches your real-time data for you. You tell it, in plain English, what matters to your business ("alert me when fewer than 3 bikes are available at a station"). It turns that into rules, checks them continuously, and when a rule is met, it messages the right people in Microsoft Teams with what happened and what it recommends. With approval, it can act. Operations agents are part of Real-Time Intelligence and one of the three Fabric IQ items this workshop focuses on (see <a href="#7.3">7.3</a>). Microsoft Learn lists the operations agent as generally available; a few capabilities below are in preview and are marked.
 
 Where a data agent waits for someone to ask a question, an operations agent doesn't wait. Each agent is a dedicated item for one business process, so you can deploy several as "virtual experts" across your organization.
 
@@ -539,14 +539,14 @@ Where a data agent waits for someone to ask a question, an operations agent does
 1. **Create it.** In your workspace, create a new **Operations agent** item from the Real-Time Intelligence section.
 2. **Set it up.** On **Agent setup**, give it:
    - **Instructions:** your business goals and the conditions you care about.
-   - **Knowledge:** one data source, either a KQL database in an eventhouse or an ontology (see <a href="#7-4">7.4</a>).
+   - **Knowledge:** one data source, either a KQL database in an eventhouse or an ontology (see <a href="#7.4">7.4</a>).
    - **Actions (optional):** by default it can message you in Teams. You can also let it run a **Fabric item** (such as a notebook, pipeline, or user data function) or trigger a **Power Automate** flow.
 3. **Generate the playbook.** The playbook shows the business entities the agent monitors, how their properties map to your columns, and each rule it will evaluate. Every rule is backed by a query you can inspect, copy, and test yourself.
 4. **Refine it with Copilot chat.** Instead of configuring every rule by hand, describe what you want ("Monitor the turbines and alert me when motor temperature gets too high"). Copilot proposes rules and queries, and it flags instructions that are unclear, reference data that doesn't exist, or ask for something unsupported.
 5. **Start it.** Once started, the agent runs each rule's query **every 5 minutes**.
 6. **Respond.** When a rule is met, the agent summarizes the data and sends a message through the **Fabric Operations Agent** Teams app, with context and a recommended action. The recipient selects **Yes** to approve or **No** to reject. For anomalies, **Investigator insights** (preview) adds a root-cause analysis. Recommendations expire if nobody acts within three days.
 
-![Screenshot of an operations agent playbook and its properties.](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/media/operations-agent/properties.png)
+<img src="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/media/operations-agent/properties.png" alt="Screenshot of an operations agent playbook and its properties." height=400>
 
 ### Rules: state versus transition
 
@@ -564,7 +564,7 @@ Each rule pairs a property with a condition, and the type of condition decides h
 
 For example, "temperature **is above** 80" alerts on every check while it stays hot; "temperature **crosses above** 80" alerts once when it gets hot.
 
-![Screenshot of a rule expanded to show the query behind it.](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/media/operations-agent/rule-details.png)
+<img src="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/media/operations-agent/rule-details.png" alt="Screenshot of a rule expanded to show the query behind it." height=400>
 
 ### Writing good instructions
 
@@ -617,11 +617,11 @@ See <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/ope
 
 ### Operations agent MCP server (preview)
 
-Like data agents (<a href="#7-5">7.5</a>), operations agents can be reached through MCP, but for a different job. Each agent exposes two endpoints: a **configure** endpoint to set instructions, add data sources and actions, generate the playbook, and start or stop the agent; and a **query** endpoint to check its state and search its past operations. From Visual Studio Code or the GitHub Copilot CLI, you can build and run an operations agent by chatting with it. You need the Contributor or Admin role on the workspace. See <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/mcp-remote-operations-agent">Remote MCP server for operations agents</a>.
+Like data agents (<a href="#7.5">7.5</a>), operations agents can be reached through MCP, but for a different job. Each agent exposes two endpoints: a **configure** endpoint to set instructions, add data sources and actions, generate the playbook, and start or stop the agent; and a **query** endpoint to check its state and search its past operations. From Visual Studio Code or the GitHub Copilot CLI, you can build and run an operations agent by chatting with it. You need the Contributor or Admin role on the workspace. See <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/mcp-remote-operations-agent">Remote MCP server for operations agents</a>.
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Create and start an operations agent</b></p>
 
-In this Activity you will set up the Real-Time Intelligence sample data, create an operations agent that monitors it, generate and review its playbook, start it, and receive a recommendation in Microsoft Teams. Use the sample Eventhouse as the agent's source, not the Lakeshore Retail ontology from <a href="#7-4">7.4</a>: that ontology binds its Sale entity type to a semantic model, and operations agents don't currently work with an ontology that uses semantic models for binding. The sample uses London bike rental data, like the Module 06 tutorial; for a refresher, see Module 06, sections <a href="06%20-%20Real-Time%20Intelligence.md#6.2">6.2</a> (eventstreams), <a href="06%20-%20Real-Time%20Intelligence.md#6.3">6.3</a> (Eventhouses), and <a href="06%20-%20Real-Time%20Intelligence.md#6.6">6.6</a> (Activator).
+In this Activity you will set up the Real-Time Intelligence sample data, create an operations agent that monitors it, generate and review its playbook, start it, and receive a recommendation in Microsoft Teams. Use the sample Eventhouse as the agent's source, not the Lakeshore Retail ontology from <a href="#7.4">7.4</a>: that ontology binds its Sale entity type to a semantic model, and operations agents don't currently work with an ontology that uses semantic models for binding. The sample uses London bike rental data, like the Module 06 tutorial; for a refresher, see Module 06, sections <a href="06%20-%20Real-Time%20Intelligence.md#6.2">6.2</a> (eventstreams), <a href="06%20-%20Real-Time%20Intelligence.md#6.3">6.3</a> (Eventhouses), and <a href="06%20-%20Real-Time%20Intelligence.md#6.6">6.6</a> (Activator).
 
 Open the following reference and complete the steps:
 
@@ -667,6 +667,4 @@ Learn more: <a href="https://learn.microsoft.com/en-us/fabric/real-time-intellig
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](08%20-%20OLTP%20Databases%20in%20Fabric.md).
-
-
 

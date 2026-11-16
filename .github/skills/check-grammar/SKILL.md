@@ -119,7 +119,7 @@ Module 03 - Data Integration:
           → "The pipeline ingests the data"
   SUGGEST Line 156: Sentence is 52 words — consider splitting
 
-Module 07 - Copilots & AI Skills:
+Module 07 - Copilots, Data Agents & Fabric IQ:
   ERROR   Line 38: "What is Data Agents?" → "What are Data Agents?"
   SUGGEST Line 45: Undefined acronym "KQL" — define on first use in this module
 ```
