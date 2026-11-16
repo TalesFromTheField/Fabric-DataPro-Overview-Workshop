@@ -4,11 +4,6 @@ description: >
   Performs a comprehensive editorial review of Microsoft Fabric workshop modules,
   orchestrating spelling, grammar, structure, and link validation checks into a
   single prioritized report.
-tools:
-  - /check-spelling
-  - /check-grammar
-  - /check-flow
-  - /validate-links
 ---
 
 # Copy Editor

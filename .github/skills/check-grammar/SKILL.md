@@ -110,15 +110,16 @@ consistency checks listed above. For each issue found, record:
 Present findings organised by module, then by severity:
 
 ```
-Module 03 - Data Warehouse and Data Integration:
-  ERROR   Line 45: Subject-verb disagreement: "The data warehouse
-          provide multiple options" → "provides"
-  ERROR   Line 112: Missing article: "Create Warehouse" → "Create a Warehouse"
+Module 03 - Data Integration:
+  ERROR   Line 45: Subject-verb disagreement: "The Copy job provide
+          incremental copy" → "provides"
+  ERROR   Line 112: Missing article: "Add Copy activity to pipeline"
+          → "Add a Copy activity to the pipeline"
   SUGGEST Line 78: Passive voice: "Data is ingested by the pipeline"
           → "The pipeline ingests the data"
   SUGGEST Line 156: Sentence is 52 words — consider splitting
 
-Module 07 - Copilots & AI Skills:
+Module 07 - Copilots, Data Agents & Fabric IQ:
   ERROR   Line 38: "What is Data Agents?" → "What are Data Agents?"
   SUGGEST Line 45: Undefined acronym "KQL" — define on first use in this module
 ```

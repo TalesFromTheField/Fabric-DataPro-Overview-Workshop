@@ -6,7 +6,7 @@
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2> 08 - Databases In Microsoft Fabric </h2>
+<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2>08 - Databases in Microsoft Fabric</h2>
 
 In this module you will learn how Microsoft Fabric supports operational data workloads through the Databases workload. You will explore both SQL database in Microsoft Fabric and Cosmos DB database in Microsoft Fabric, and learn how operational data integrates with OneLake, analytics, reporting, and AI-powered applications.
 
@@ -19,13 +19,11 @@ You'll cover these topics in this Module on Databases in Microsoft Fabric:
 
 <dl>
 
-  <dt><a href="#8-1" >8.0 - Database Hub</a></dt>
-  <dt><a href="#8-1" >8.1 - SQL Database in Microsoft Fabric</a></dt>
-  <dt><a href="#8-2" >8.2 - Cosmos DB in Microsoft Fabric </a></dt>
+  <dt><a href="#8.1" >8.1 - Database Hub</a></dt>
+  <dt><a href="#8.2" >8.2 - SQL Database in Microsoft Fabric</a></dt>
+  <dt><a href="#8.3" >8.3 - Cosmos DB in Microsoft Fabric </a></dt>
 
 </dl>
-
-## Databases in Fabric Architecture
 
 Microsoft Fabric now includes a dedicated Databases workload that supports both relational and NoSQL operational databases.
 
@@ -38,9 +36,7 @@ Both database types automatically integrate with OneLake, making operational dat
 
 This allows organizations to build translytical solutions that combine operational and analytical processing within a unified platform.
 
-<h2 id="8.0"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">8.0 Database Hub</h2>
-
-## Database Hub
+<h2 id="8.1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">8.1 Database Hub</h2>
 
 Database Hub is the centralized experience for working with databases in Microsoft Fabric. It provides a single location where developers, database administrators, and data professionals can discover, create, connect to, and manage database resources across the Fabric environment.
 
@@ -76,7 +72,7 @@ Databases created through the Fabric Databases workload integrate directly with 
 
 As a result, organizations can build solutions that combine operational processing and analytics within a single platform.
 
-<h2 id="8.1"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">8.1 SQL Database in Microsoft Fabric</h2>
+<h2 id="8.2"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">8.2 SQL Database in Microsoft Fabric</h2>
 
 SQL database in Microsoft Fabric is a developer-friendly transactional database built on the same SQL Database Engine used by Azure SQL Database. It is designed for operational applications while remaining tightly integrated with the Fabric analytics platform.
  
@@ -176,7 +172,7 @@ In this activity, you will follow the basic training tutorial for a full life cy
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<h2 id="8-2"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">8.2 - Cosmos DB in Microsoft Fabric</h2>
+<h2 id="8.3"><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/pencil2.png">8.3 Cosmos DB in Microsoft Fabric</h2>
 
 Cosmos DB database in Microsoft Fabric is an AI-optimized NoSQL database that enables organizations to store and query semi-structured and unstructured application data while remaining fully integrated with the Fabric platform.
 
@@ -226,4 +222,4 @@ These features enable developers to build intelligent applications that combine 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
 
-Congratulations! You have completed this workshop on *Microsoft Fabric for the Data Professional*. You now have the tools, assets, and processes you need to extrapolate this information into other applications.
+Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](09%20-%20Bonus%20Building%20Architectures%20with%20Microsoft%20Fabric.md).

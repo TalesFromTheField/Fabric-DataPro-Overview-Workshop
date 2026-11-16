@@ -700,4 +700,4 @@ The key takeaway is that the Lakehouse and Warehouse are complementary choices o
 - [Custom SQL pools in Fabric Data Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/custom-sql-pools)
 - [Data clustering in Fabric Data Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/data-clustering)
 
-Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can <a href="05 - Introduction to Mirroring in Fabric.md">proceed to the next Module</a>.
+Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](05%20-%20Introduction%20to%20Mirroring%20in%20Fabric.md).

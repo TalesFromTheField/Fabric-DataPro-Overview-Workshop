@@ -164,7 +164,7 @@ Module 02 - Desktop Tools:
   ERROR   Heading id="2.9" but TOC lists "2.8"
   WARNING TOC title "Using Storage Explorer" vs heading "Using Azure Storage Explorer"
 
-Module 07 - Copilots & AI Skills:
+Module 07 - Copilots, Data Agents & Fabric IQ:
   ERROR   Section 7.1 uses Markdown # instead of HTML <h2>
 
 Module 09 - Bonus:

@@ -43,7 +43,7 @@ You'll cover these topics in this Module on the Developer Experience:
 
 SQL Server Management Studio (SSMS) is a free tool for managing and querying SQL Server and Azure SQL databases. It also connects to Microsoft Fabric, where you can use it with a Warehouse, the SQL analytics endpoint of a Lakehouse, and SQL database in Fabric. The current release, [SSMS 22](https://learn.microsoft.com/en-us/ssms/install/install), runs only on Windows. On macOS or Linux, use VS Code and its MSSQL extension instead (see section 2.2).
 
-SSMS helps when you outgrow the query editor that's built into the Fabric portal. For example, you can set session options with `SET` statements and run transactions that span several batches. Keep in mind that the tables in a SQL analytics endpoint are read-only. You can query them and create views, functions, and stored procedures, but you change the data in the Lakehouse itself, as you'll see in Module 04 - The Lakehouse.
+SSMS helps when you outgrow the query editor that's built into the Fabric portal. For example, you can set session options with `SET` statements and run transactions that span several batches. Keep in mind that the tables in a SQL analytics endpoint are read-only. You can query them and create views, functions, and stored procedures, but you change the data in the Lakehouse itself, as you'll see in Module 04 - The Lakehouse and Warehouse.
 
 To connect SSMS to a Warehouse or SQL analytics endpoint:
 
@@ -72,7 +72,7 @@ In this Activity you will copy the SQL connection string of a Warehouse, connect
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
-- If you don't have a Warehouse yet, [create a sample Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-warehouse-sample), or come back to this Activity after you create a Warehouse in Module 03 - Data Warehouse and Data Integration.
+- If you don't have a Warehouse yet, [create a sample Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-warehouse-sample), or come back to this Self-Guided Activity after you complete Module 04 - The Lakehouse and Warehouse, where you create one.
 - [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/data-warehouse/how-to-connect#connect-using-sql-server-management-studio-ssms)
 - Open a new query window and run a `SELECT` query against one of the tables.
 
@@ -160,7 +160,7 @@ This workshop repository is already set up for these servers. When you open the 
 
 Keep these points in mind:
 
-- GitHub Copilot is a separate product from Copilot in Microsoft Fabric, which you'll explore in Module 07 - Copilots & Data Agents. You need a GitHub Copilot plan to use it.
+- GitHub Copilot is a separate product from Copilot in Microsoft Fabric, which you'll explore in Module 07 - Copilots, Data Agents & Fabric IQ. You need a GitHub Copilot plan to use it.
 - Review each tool call before you approve it. Copilot acts with your Fabric permissions, so a mistaken or unattended request could change or delete items in your workspace. For guidance, see the [Fabric Core MCP Server overview](https://learn.microsoft.com/en-us/rest/api/fabric/articles/mcp-servers/core-remote/overview-core-mcp-server).
 
 <h3>Considerations</h3>
@@ -230,7 +230,7 @@ Power BI Desktop runs only on Windows. If you use macOS, you can [create semanti
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Create reports using Power BI Desktop</b></p>
 
-In this Activity you will connect Power BI Desktop to a Warehouse and build a report. Use the Warehouse you create in Module 03 - Data Warehouse and Data Integration, or a [sample Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-warehouse-sample).
+In this Activity you will connect Power BI Desktop to a Warehouse and build a report. Use a [sample Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-warehouse-sample), or come back to this Self-Guided Activity after you complete Module 04 - The Lakehouse and Warehouse and use the Warehouse you create there.
 
 Some steps in the reference use older names. The ribbon button is now named **OneLake catalog**, and Warehouses no longer have a default semantic model, so selecting **Connect** creates a new Direct Lake semantic model. To follow the reference's steps, select **Connect to SQL endpoint**.
 
@@ -266,7 +266,7 @@ In this Activity you will install Azure Storage Explorer, connect it to a Lakeho
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
-- If you don't have a Lakehouse with files yet, complete the first sections of [Quickstart: Get data into OneLake](https://learn.microsoft.com/en-us/fabric/onelake/quickstart-get-data) to create a Lakehouse and upload a sample file. Skip the clean-up section, so that you can use the Lakehouse in this Activity. You'll also create a Lakehouse in Module 04 - The Lakehouse.
+- If you don't have a Lakehouse with files yet, complete the first sections of [Quickstart: Get data into OneLake](https://learn.microsoft.com/en-us/fabric/onelake/quickstart-get-data) to create a Lakehouse and upload a sample file. Skip the clean-up section, so that you can use the Lakehouse in this Activity. Alternatively, come back to this Self-Guided Activity after you complete Module 04 - The Lakehouse and Warehouse, where you create a Lakehouse.
 - Download and install the newest release of [Azure Storage Explorer](https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer). The reference below lists version 1.29.0 as the minimum, but that version is no longer supported.
 - [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/onelake/onelake-azure-storage-explorer)
 
@@ -295,4 +295,4 @@ You can also right-click this link to open it in another tab and review this vid
     <li><a href="https://learn.microsoft.com/en-us/fabric/onelake/onelake-azcopy">Use AzCopy with OneLake</a></li>
 </ul>
 
-Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](03%20-%20Data%20Warehouse%20and%20Data%20Integration.md).
+Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](03%20-%20Data%20Integration.md).

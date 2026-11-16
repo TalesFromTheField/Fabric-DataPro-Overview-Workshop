@@ -186,7 +186,7 @@ README.md
   BROKEN        Line 42   https://learn.microsoft.com/.../media/diagram.png
                 Returns 404 after redirect; likely moved during Learn reorganisation.
 
-fabricoverview/03 - Data Warehouse and Data Integration.md
+fabricoverview/03 - Data Integration.md
   MISSING       Line 118  ../graphics/pipeline-overview.png
                 Referenced file does not exist.
 
