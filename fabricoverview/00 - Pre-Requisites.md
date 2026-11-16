@@ -96,7 +96,7 @@ Module 02 - Desktop Tools to use with Microsoft Fabric shows you how to use each
 
 | Tool | Used in | Runs on |
 |---|---|---|
-| [SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/ssms/install/install) | Module 02, section 2.1, and Module 08, section 8.1. Also one of the SQL clients for Module 05. | Windows |
+| [SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/ssms/install/install) | Module 02, section 2.1, and Module 08, section 8.2. Also one of the SQL clients for Module 05. | Windows |
 | [Visual Studio Code](https://code.visualstudio.com/) | Module 02, section 2.2. With the SQL Server (mssql) extension, also a SQL client for Modules 05 and 08. With GitHub Copilot, also an MCP client for the optional MCP steps in Module 07, sections 7.5 and 7.6. | Windows, macOS, Linux |
 | GitHub Copilot in VS Code and [Node.js](https://nodejs.org/en) 20 LTS or later | Module 02, section 2.2: GitHub Copilot with the Fabric MCP servers. Module 07, section 7.5 (optional data agent MCP step) and section 7.6 (optional operations agent MCP step): GitHub Copilot only. Node.js is needed only for the Module 02 Fabric MCP servers. | Windows, macOS, Linux |
 | [Power BI Desktop](https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-get-the-desktop) | Module 02, section 2.3 | Windows |
