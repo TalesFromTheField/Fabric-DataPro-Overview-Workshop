@@ -5,7 +5,7 @@
 #### <i>A workshop from the Tales from the Field team</i>
 
 
-### https://aka.ms/fabricdata
+### https://aka.ms/dataconfabric
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
