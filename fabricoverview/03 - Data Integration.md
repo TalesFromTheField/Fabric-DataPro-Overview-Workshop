@@ -193,7 +193,7 @@ Use Copy activity instead when data movement is just one action inside a broader
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Move Data with Copy job</b></p>
 
-Create a Copy job that moves data into a Fabric analytics destination. If you already have a warehouse available, use it as the destination. If not, use another available destination and revisit the warehouse load after section 3.5.
+Create a Copy job that moves data into a Fabric analytics destination. If you already have a Warehouse, use it as the destination. If not, use another available destination, and repeat the load into a Warehouse after you create one in Module 04 - The Lakehouse and Warehouse, section 4.5.
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
@@ -313,4 +313,4 @@ The key takeaway is that Data Factory gives you multiple ways to integrate data,
 - [Differences between Dataflow Gen1 and Dataflow Gen2](https://learn.microsoft.com/en-us/fabric/data-factory/dataflows-gen2-overview)
 - [Microsoft Copilot in Fabric in the Data Factory workload](https://learn.microsoft.com/en-us/fabric/data-factory/copilot-fabric-data-factory)
 
-Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can <a href="04 - The Lakehouse and Warehouse.md">proceed to the next Module</a>.
+Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](04%20-%20The%20Lakehouse%20and%20Warehouse.md).

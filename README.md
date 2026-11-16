@@ -17,7 +17,7 @@ In this workshop, you'll learn what the Microsoft Fabric platform is, the variou
 
 The focus of this workshop is to understand how to use Microsoft Fabric in a solution, focusing on the data aspects of the platform. 
 
-You'll start with an introduction to Microsoft Fabric, then explore the desktop tools used to connect to the platform. Next, you'll learn about Data Warehouse and data integration, the Lakehouse, Mirroring, and Real-Time Intelligence. The main workshop concludes with Copilots, Fabric data agents, and Fabric IQ (ontologies and operations agents), followed by SQL database and Cosmos DB in Fabric for operational workloads. An optional bonus module covers designing and sizing solutions, data governance, source control, monitoring, and management.
+You'll start with an introduction to Microsoft Fabric, then explore the desktop tools used to connect to the platform. Next, you'll learn about data integration, the Lakehouse and Warehouse, Mirroring, and Real-Time Intelligence. The main workshop concludes with Copilots, Fabric data agents, and Fabric IQ (ontologies and operations agents), followed by SQL database and Cosmos DB in Fabric for operational workloads. An optional bonus module covers designing and sizing solutions, data governance, source control, monitoring, and management.
 
 This GitHub README.md file explains how the workshop is laid out, what you will learn, and the technologies you will use in this solution. To clone or download this workshop to your local computer, click the **Code** button above the repository's file list. [More about cloning a repository is here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
@@ -31,8 +31,8 @@ In this workshop you'll cover these topics:
 
 - 01 - Introduction and Overview: Understand Fabric concepts, OneLake architecture, compute engines, roles, capacity, AI capabilities, and Workspaces.
 - 02 - Desktop Tools to use with Microsoft Fabric: Connect to Fabric using SQL Server Management Studio (SSMS), Visual Studio Code, Power BI Desktop, and Azure Storage Explorer.
-- 03 - Data Warehouse and Data Integration: Create and query a Data Warehouse, ingest and transform data with Data Factory pipelines and Dataflow Gen2, and use T-SQL for data engineering.
-- 04 - The Lakehouse: Create a Lakehouse, load data and use shortcuts, transform data with Spark and Data Wrangler, and enrich data with AI functions.
+- 03 - Data Integration: Choose the right data movement pattern, load data with Copy activity in Data Factory pipelines and with Copy job, and transform data with Dataflow Gen2.
+- 04 - The Lakehouse and Warehouse: Create a Lakehouse, load and organize data with shortcuts and medallion layers, transform data with Spark notebooks, and run Spark workloads in production; then create a Warehouse, choose an ingestion pattern, transform data with T-SQL, protect changes with time travel and table clones, and tune workloads with custom SQL pools and data clustering.
 - 05 - Mirroring in Microsoft Fabric: Understand when to use Mirroring, configure replication, and monitor and troubleshoot mirrored databases.
 - 06 - Real-Time Intelligence: Ingest streaming data with Eventstreams, store and query it in Eventhouses and KQL databases, and explore Real-Time Dashboards, Activator, and Fabric Maps.
 - 07 - Copilots, Data Agents & Fabric IQ: Compare Copilot, data agents, and operations agents and their requirements; use Copilot across Fabric workloads and Fabric Copilot capacities; understand Fabric IQ and ontologies; build and tune data agents and extend them to Microsoft 365 Copilot, Copilot Studio, Microsoft Foundry, and MCP; and monitor real-time data with operations agents.
@@ -84,10 +84,10 @@ This workshop expects that you understand data architectures, working with large
 
 If you are new to these, here are a few references you can complete prior to class:
 
--  [Big Data Architectures](https://learn.microsoft.com/en-us/azure/architecture/data-guide/big-data/)
+-  [Big Data Architectures](https://learn.microsoft.com/en-us/azure/architecture/databases/guide/big-data-architectures)
 -  [Pipelines](https://learn.microsoft.com/en-us/azure/architecture/data-guide/technology-choices/pipeline-orchestration-data-movement)
--  [Data Security](https://learn.microsoft.com/en-us/azure/architecture/data-guide/scenarios/securing-data-solutions)
--  [Data Analysis](https://learn.microsoft.com/en-us/azure/architecture/solution-ideas/articles/analytics-start-here)
+-  [Data Security](https://learn.microsoft.com/en-us/azure/security/fundamentals/data-encryption-best-practices)
+-  [Data Analysis](https://learn.microsoft.com/en-us/azure/architecture/analytics/analytics-get-started)
 
 <img style="float: left; margin: 0px 15px 15px 0px;" src="https://raw.githubusercontent.com/microsoft/sqlworkshops/master/graphics/bulletlist.png"> <h3>Setup</h3>
 
@@ -137,9 +137,9 @@ This is a modular workshop, and in each section, you'll learn concepts, technolo
   <tr><td style="background-color: AliceBlue; color: black;"><a href="fabricoverview/02%20-%20Desktop%20Tools%20to%20use%20with%20Microsoft%20Fabric.md" >02 - Desktop Tools to use with Microsoft Fabric</a> </td><td style="background-color: AliceBlue; color: black;"> SSMS, Visual Studio Code, Power BI Desktop, and Azure Storage Explorer for connecting to and working with Fabric.</td></tr>
   
 
-   <tr><td><a href="fabricoverview/03%20-%20Data%20Warehouse%20and%20Data%20Integration.md" >03 - Data Warehouse and Data Integration</a></td><td> Creating and querying a Data Warehouse, ingesting and transforming data with Data Factory pipelines and Dataflow Gen2, and data engineering with T-SQL.</td></tr>
+   <tr><td><a href="fabricoverview/03%20-%20Data%20Integration.md" >03 - Data Integration</a></td><td> Choosing the right data movement pattern, loading data with Copy activity in Data Factory pipelines and with Copy job, and transforming data with Dataflow Gen2.</td></tr>
 
-  <tr><td><a href="fabricoverview/04%20-%20The%20Lakehouse.md" >04 - The Lakehouse</a></td><td> Lakehouse concepts, loading data and shortcuts, Spark transformations, Data Wrangler, and AI functions.</td></tr>
+  <tr><td><a href="fabricoverview/04%20-%20The%20Lakehouse%20and%20Warehouse.md" >04 - The Lakehouse and Warehouse</a></td><td> Lakehouse concepts, loading and organizing data with shortcuts and medallion layers, Spark notebook transformations, operationalizing Spark workloads, Warehouse concepts, Warehouse ingestion and T-SQL transformations, time travel and table clones, and custom SQL pools and data clustering.</td></tr>
 
   <tr><td><a href="fabricoverview/05%20-%20Introduction%20to%20Mirroring%20in%20Fabric.md" >05 - Mirroring in Microsoft Fabric</a></td><td> When to use Mirroring, configuring replication, and monitoring and troubleshooting mirrored databases.</td></tr>
    

@@ -255,6 +255,6 @@ workshop's MCP servers.
   "lakehouse", "OneLake" not "one lake", "Data Warehouse" not "data warehouse"
   when referring to the Fabric service).
 - When referencing workshop modules, use the full numbered title
-  (e.g., "Module 03 - Data Warehouse and Data Integration").
+  (e.g., "Module 03 - Data Integration").
 - Prefer linking to Microsoft Learn for deeper reading rather than reproducing
   lengthy documentation inline.
