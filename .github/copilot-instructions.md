@@ -211,6 +211,25 @@ This repository includes Copilot agents for comprehensive workflows:
 If a user asks to "check links", "audit content", "validate the structure", or
 reports broken links, suggest the appropriate skill.
 
+## Branching and Merging
+
+`main` is protected by the **Protect main** ruleset, so every change needs a
+pull request. Don't push directly to `main`, force push to it, or delete it.
+
+- **Merge commits only** — Squash and rebase are disabled, so they fail. When
+  merging through the API or the GitHub MCP server, use `merge_method: merge`.
+- **One branch per pull request** — Create each branch from the latest `main`.
+  GitHub deletes the branch after the merge, so start the next change on a new
+  branch (to reuse a name, delete your local copy first). Names in use include
+  `<github-username>/<topic>` (for example, `joshluedeman/module2`) and
+  `issue-<n>-<topic>`. When committing on GitHub.com, choose **Create a new
+  branch for this commit and start a pull request**.
+- **PR titles become merge commit titles** — Use the conventional form from
+  PR #25 and PR #26: `docs(module-NN): <imperative summary>`. If a change isn't
+  limited to one module, use another scope, such as `docs(copilot):`, or none.
+  The description becomes the commit body: put `Closes #<n>` in it when the PR
+  resolves an issue, or `Part of #<n>` when it completes only part of one.
+
 ## MCP Server Setup
 
 This repository has MCP servers configured in `.vscode/mcp.json` and
