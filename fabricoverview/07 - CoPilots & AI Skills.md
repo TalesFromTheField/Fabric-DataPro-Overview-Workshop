@@ -55,9 +55,9 @@ Microsoft Learn sums up the first difference this way: Fabric copilots "come pre
 To follow along with the Activities in this module, check these before you start:
 
 - **Capacity:** a paid Fabric capacity of **F2 or higher**, or a Power BI Premium capacity of **P1 or higher**. Copilot, data agents, and operations agents aren't available on **trial capacities**.
-- **Power BI Desktop, Pro, and Premium per-user workspaces:** these get Copilot through a **Fabric Copilot capacity** (see <a href="#7-2">7.2</a>).
-- **Tenant settings:** Copilot is on by default for paid capacities, through the tenant setting *Users can use Copilot and other features powered by Azure OpenAI*. Admins can limit it to specific security groups. Data agents and operations agents have their own settings; see <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-enable-fabric">Enable Copilot in Fabric</a>, <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-tenant-settings">data agent tenant settings</a>, and the <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/operations-agent#prerequisites">operations agent prerequisites</a>.
-- **Region:** the Azure OpenAI service behind Copilot runs in US datacenters and the EU Data Boundary. If your capacity is anywhere else, an admin must allow data to be processed outside your capacity's region (and, for data agents, stored outside it) before these features work.
+- **Power BI Desktop, Pro, and Premium per-user workspaces:** these get Copilot through a **Fabric Copilot capacity** (see <a href="#7-2">7.2</a>). Power BI Desktop can also use Copilot through a workspace on a Copilot-enabled F2 or P1 (or higher) capacity where you're an Admin, Member, or Contributor; see <a href="https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-enable-power-bi#use-copilot-in-power-bi-desktop">Enable Fabric Copilot for Power BI</a>.
+- **Tenant settings:** Copilot is on by default for paid capacities in the US and the EU Data Boundary, through the tenant setting *Users can use Copilot and other features powered by Azure OpenAI*. Admins can limit it to specific security groups. Data agents rely on the Copilot and Azure OpenAI settings rather than a setting of their own, and operations agents also need the <a href="https://learn.microsoft.com/en-us/fabric/admin/service-admin-portal-microsoft-fabric-tenant-settings#enable-operations-agents">Enable operations agents</a> tenant setting; see <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-enable-fabric">Enable Copilot in Fabric</a>, <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-tenant-settings">data agent tenant settings</a>, and the <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/operations-agent#prerequisites">operations agent prerequisites</a>.
+- **Region:** the Azure OpenAI service behind Copilot runs in US datacenters and the EU Data Boundary. If your capacity is anywhere else, an admin must allow data to be processed outside your capacity's region (and, for data agents and operations agents, stored outside it) before these features, including the ontology agent, work.
 - **Clouds:** Copilot isn't available in sovereign clouds yet.
 - **Cost:** all three consume capacity units from your Fabric capacity. Plan for it, and see <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-fabric-consumption">Copilot in Fabric consumption</a>.
 
@@ -71,7 +71,7 @@ Learn more: <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copil
 Copilot and other generative AI features in preview bring new ways to transform and analyze data, generate insights, and create visualizations and reports in Microsoft Fabric and Power BI.
 
 ## Enable Copilot
-Before your business can start using Copilot capabilities in Microsoft Fabric, you need to enable Copilot.  To understand how to enable Copilot right click on this link to open in another window, <a href="https://learn.microsoft.com/en-us/fabric/get-started/copilot-enable-fabric">Enable Copilot in Fabric</a>.
+Before your business can start using Copilot capabilities in Microsoft Fabric, you need to enable Copilot.  To understand how to enable Copilot right click on this link to open in another window, <a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-enable-fabric">Enable Copilot in Fabric</a>.
 
 ### Fabric Copilot capacities
 
@@ -290,10 +290,10 @@ See <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/concepts-agent
 ### Before you start: tenant settings and capacity
 
 - **Tenant settings:** a Fabric administrator enables *Users can create Fabric items* and *Users can create ontology (preview) items*. If you plan to connect a data agent or operations agent, their tenant settings must be enabled too. See <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/overview-tenant-settings">Required tenant settings for ontology</a>.
-- **Capacity:** Microsoft Learn suggests starting evaluation on an **F8** (an F4 might suit light testing). Usage appears in the Capacity Metrics app as *Ontology Discovery*, *Ontology Logic and Operations*, and *Ontology AI Reasoning*. Learn's example estimates are about 0.5 to 1 CU-hours for a small ontology agent edit and about 20 CU-hours for drafting a full ontology from a workspace.
-- **Tip:** close the ontology item when you're done. While it's open, it refreshes its definition automatically about every 20 minutes, and each refresh consumes capacity. See <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/resources-capacity-usage">Billing and capacity usage for ontology</a>.
+- **Capacity:** Microsoft Learn suggests starting evaluation on an **F8** (an F4 might suit light testing). Usage appears in the Capacity Metrics app as *Ontology Discovery*, *Ontology Logic and Operations*, and *Ontology AI Reasoning*. During preview, only *Ontology Logic and Operations* (the ontology's Eventhouse and graph usage) is billed. Learn's example *Ontology AI Reasoning* estimates are about 0.5 to 1 CU-hours for a small ontology agent edit and about 20 CU-hours for drafting a full ontology from a workspace.
+- **Tip:** close the ontology item when you're done. While it's open, it refreshes its definition automatically about every 20 minutes, and each refresh adds *Ontology Discovery* usage, which isn't billed during preview. See <a href="https://learn.microsoft.com/en-us/fabric/iq/ontology/resources-capacity-usage">Billing and capacity usage for ontology</a>.
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided or in Class Activity: Build your first ontology</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Build your first ontology</b></p>
 
 In this Activity you will follow the Microsoft Learn ontology tutorial for Lakeshore Retail, a fictional retailer that sells ice cream and tracks sales and refrigerator telemetry. You'll load sample data into a lakehouse and an eventhouse, import a semantic model, create entity types such as Store, Products, and Sale, bind them to data, enrich the ontology, and then ask the ontology agent questions such as "What is the top product by revenue across all stores?"
 
@@ -485,7 +485,7 @@ https://api.fabric.microsoft.com/v1/mcp/workspaces/{WorkspaceId}/dataagents/{Dat
 
 See <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-mcp-server">Data agent as Model Context Protocol server</a>.
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Create, tune, and publish a Fabric data agent</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Create, tune, and publish a Fabric data agent</b></p>
 
 ![Screenshot showing where you select tables for the data agent.](https://learn.microsoft.com/en-us/fabric/data-science/media/data-agent-scenario/get-started.png)
 
@@ -498,7 +498,7 @@ Open the following reference and complete the steps:
 - [Fabric data agent example with the AdventureWorks dataset](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-end-to-end-tutorial)
 - [Fabric data agent tenant settings](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-tenant-settings) (check these first)
 - [Example queries](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-example-queries)
-- [Consume a data agent from Microsoft Copilot](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-microsoft-365-copilot) (optional, requires Microsoft 365 Copilot)
+- [Consume a data agent from Microsoft Copilot](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-microsoft-365-copilot) (optional, requires a Microsoft Copilot license or an Office 365 commercial subscription)
 - [Data agent as Model Context Protocol server](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-mcp-server) (optional)
 
 > If you only reviewed the documentation in this Activity, ensure you bookmark each of these references and then perform the Activity in full once you do have your deployment.
@@ -588,7 +588,7 @@ Operations agents consume capacity in a few ways:
 - **Active monitoring:** the *Operations agent compute* meter at **0.46 CU hours per hour** while the agent runs, plus the eventhouse queries it runs.
 - **When a rule is met:** the *Operations agent autonomous reasoning* meter, based on tokens, while it analyzes data and writes recommendations.
 - **Storage:** data the agent monitors is kept in Fabric for 30 days and billed as OneLake storage.
-- **Actions:** Power Automate flows might need their own licensing.
+- **Actions:** Power Automate flows might need their own licensing: they start from the <a href="https://learn.microsoft.com/en-us/connectors/dataactivator/">Data Activator connector</a>, which is a premium connector.
 
 See <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/operations-agent-billing">Operations agent capacity and billing</a>.
 
@@ -596,7 +596,7 @@ See <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/ope
 
 - One data source per agent. With an eventhouse, only tables and shortcut tables work (not functions or materialized views).
 - Instructions must be in English, and the data must have a timestamp.
-- Available in Azure public cloud Fabric regions **except East US**, not in sovereign clouds, and not in workspaces encrypted with customer-managed keys.
+- Available in Azure public cloud Fabric regions **except East US and South Central US** (see <a href="https://learn.microsoft.com/en-us/fabric/admin/region-availability#regional-fabric-and-power-bi-workload-availability">Fabric region availability</a>), not in sovereign clouds, and not in workspaces encrypted with customer-managed keys.
 - Under heavy use, Teams messages might be throttled to simpler, non-AI-generated messages.
 
 See <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/operations-agent-limitations">Operations agent best practices and limitations</a>.
@@ -605,9 +605,9 @@ See <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/ope
 
 Like data agents (<a href="#7-5">7.5</a>), operations agents can be reached through MCP, but for a different job. Each agent exposes two endpoints: a **configure** endpoint to set instructions, add data sources and actions, generate the playbook, and start or stop the agent; and a **query** endpoint to check its state and search its past operations. From Visual Studio Code or the GitHub Copilot CLI, you can build and run an operations agent by chatting with it. You need the Contributor or Admin role on the workspace. See <a href="https://learn.microsoft.com/en-us/fabric/real-time-intelligence/mcp-remote-operations-agent">Remote MCP server for operations agents</a>.
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Create and start an operations agent</b></p>
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Create and start an operations agent</b></p>
 
-In this Activity you will set up the Real-Time Intelligence sample data, create an operations agent that monitors it, generate and review its playbook, start it, and receive a recommendation in Microsoft Teams. If you completed the ontology Activity in <a href="#7-4">7.4</a>, you can also point an operations agent at your Lakeshore Retail ontology.
+In this Activity you will set up the Real-Time Intelligence sample data, create an operations agent that monitors it, generate and review its playbook, start it, and receive a recommendation in Microsoft Teams. Use the sample Eventhouse as the agent's source, not the Lakeshore Retail ontology from <a href="#7-4">7.4</a>: that ontology binds its Sale entity type to a semantic model, and operations agents don't currently work with an ontology that uses semantic models for binding.
 
 Open the following reference and complete the steps:
 
