@@ -193,7 +193,7 @@ Use Copy activity instead when data movement is just one action inside a broader
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Activity: Move Data with Copy job</b></p>
 
-Create a Copy job that moves data into a Fabric analytics destination. If you already have a Warehouse, use it as the destination. If not, use another available destination, and repeat the load into a Warehouse after you create one in Module 04 - The Lakehouse and Warehouse, section 4.5.
+Create a Copy job that moves data into a Fabric analytics destination. If you already have a Warehouse, use it as the destination. If not, use another available destination, and come back to this Activity after you complete Module 04 - The Lakehouse and Warehouse to load data into the Warehouse you create there.
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 

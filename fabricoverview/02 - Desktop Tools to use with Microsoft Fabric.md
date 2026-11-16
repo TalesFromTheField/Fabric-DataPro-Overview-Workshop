@@ -72,7 +72,7 @@ In this Activity you will copy the SQL connection string of a Warehouse, connect
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
-- If you don't have a Warehouse yet, [create a sample Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-warehouse-sample), or come back to this Activity after you create a Warehouse in Module 04 - The Lakehouse and Warehouse, section 4.5.
+- If you don't have a Warehouse yet, [create a sample Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-warehouse-sample), or come back to this Self-Guided Activity after you complete Module 04 - The Lakehouse and Warehouse, where you create one.
 - [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/data-warehouse/how-to-connect#connect-using-sql-server-management-studio-ssms)
 - Open a new query window and run a `SELECT` query against one of the tables.
 
@@ -230,7 +230,7 @@ Power BI Desktop runs only on Windows. If you use macOS, you can [create semanti
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/point1.png"><b>Self-Guided Activity: Create reports using Power BI Desktop</b></p>
 
-In this Activity you will connect Power BI Desktop to a Warehouse and build a report. Use the Warehouse you create in Module 04 - The Lakehouse and Warehouse, section 4.5, or a [sample Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-warehouse-sample).
+In this Activity you will connect Power BI Desktop to a Warehouse and build a report. Use a [sample Warehouse](https://learn.microsoft.com/en-us/fabric/data-warehouse/create-warehouse-sample), or come back to this Self-Guided Activity after you complete Module 04 - The Lakehouse and Warehouse and use the Warehouse you create there.
 
 Some steps in the reference use older names. The ribbon button is now named **OneLake catalog**, and Warehouses no longer have a default semantic model, so selecting **Connect** creates a new Direct Lake semantic model. To follow the reference's steps, select **Connect to SQL endpoint**.
 
@@ -266,7 +266,7 @@ In this Activity you will install Azure Storage Explorer, connect it to a Lakeho
 
 <p><img style="margin: 0px 15px 15px 0px;" src="../graphics/checkmark.png"><b>Steps</b></p>
 
-- If you don't have a Lakehouse with files yet, complete the first sections of [Quickstart: Get data into OneLake](https://learn.microsoft.com/en-us/fabric/onelake/quickstart-get-data) to create a Lakehouse and upload a sample file. Skip the clean-up section, so that you can use the Lakehouse in this Activity. You'll also create a Lakehouse in Module 04 - The Lakehouse and Warehouse.
+- If you don't have a Lakehouse with files yet, complete the first sections of [Quickstart: Get data into OneLake](https://learn.microsoft.com/en-us/fabric/onelake/quickstart-get-data) to create a Lakehouse and upload a sample file. Skip the clean-up section, so that you can use the Lakehouse in this Activity. Alternatively, come back to this Self-Guided Activity after you complete Module 04 - The Lakehouse and Warehouse, where you create a Lakehouse.
 - Download and install the newest release of [Azure Storage Explorer](https://learn.microsoft.com/en-us/azure/storage/storage-explorer/vs-azure-tools-storage-manage-with-storage-explorer). The reference below lists version 1.29.0 as the minimum, but that version is no longer supported.
 - [Open this reference and follow the steps you see there](https://learn.microsoft.com/en-us/fabric/onelake/onelake-azure-storage-explorer)
 
