@@ -7,7 +7,7 @@
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2>00 Pre-Requisites</h2>
+<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2>00 - Pre-Requisites</h2>
 
 The "Microsoft Fabric Overview for the Data Professional" workshop is taught using the following components, which you will install and configure in the sections that follow. Section 0.1 lists what you must set up before class, and section 0.2 lists optional tools and settings for the Self-Guided Activities.
 
@@ -174,5 +174,19 @@ Validate that you're ready for the Mirroring Activity in Module 05:
 - Connect to your Azure SQL Database with your SQL client, run a query against one of the sample tables, and then disconnect.
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
+
+<p><img style="margin: 0px 15px 15px 0px;" src="../graphics/owl.png"><b>For Further Study</b></p>
+
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/fabric/enterprise/licenses">Understand Microsoft Fabric licenses and capacity</a></li>
+<li><a href="https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial">Fabric trial capacity</a></li>
+<li><a href="https://learn.microsoft.com/en-us/fabric/admin/fabric-switch">Enable Microsoft Fabric for your organization</a></li>
+<li><a href="https://learn.microsoft.com/en-us/fabric/fundamentals/roles-workspaces">Roles in workspaces in Microsoft Fabric</a></li>
+<li><a href="https://learn.microsoft.com/en-us/fabric/admin/about-tenant-settings">About tenant settings</a></li>
+<li><a href="https://learn.microsoft.com/en-us/fabric/fundamentals/copilot-enable-fabric">Enable and configure Copilot in Microsoft Fabric</a></li>
+<li><a href="https://learn.microsoft.com/en-us/fabric/admin/region-availability">Fabric region availability</a></li>
+</ul>
+
+Congratulations! You have completed this Module. If you understand the concepts here and have completed all of the Activities, you can [proceed to the next Module](01%20-%20Introduction%20and%20Overview.md).
 
 
