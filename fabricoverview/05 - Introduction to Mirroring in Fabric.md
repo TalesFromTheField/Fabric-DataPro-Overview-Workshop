@@ -6,7 +6,7 @@
 
 <p style="border-bottom: 1px solid lightgrey;"></p>
 
-<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2>05 -  Mirroring in Fabric</h2>
+<img style="float: left; margin: 0px 15px 15px 0px;" src="../graphics/textbubble.png"> <h2>05 - Mirroring in Fabric</h2>
 
 In this module, you will explore various data replication techniques using Mirroring in Fabric, which offers efficient, low-latency solutions. You will also explore the process of integrating diverse data sources.
 
